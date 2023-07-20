@@ -58,6 +58,6 @@ dromara:
         storage-path: D:/Temp/ # 存储路径
 
 
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: false
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: false
