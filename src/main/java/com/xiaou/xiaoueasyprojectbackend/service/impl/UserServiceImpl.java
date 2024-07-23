@@ -2,7 +2,7 @@ package com.xiaou.xiaoueasyprojectbackend.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xiaou.xiaoueasyprojectbackend.common.domain.enums.ErrorCode;
+import com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums.ErrorCode;
 import com.xiaou.xiaoueasyprojectbackend.common.domain.model.entity.User;
 import com.xiaou.xiaoueasyprojectbackend.common.domain.model.vo.LoginUserVO;
 import com.xiaou.xiaoueasyprojectbackend.common.exception.BusinessException;

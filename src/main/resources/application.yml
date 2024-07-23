@@ -14,6 +14,7 @@ spring:
     url: jdbc:mysql://localhost:3306/xiaou_easy_project
     username: root
     password: 1234
+
   data:
     redis:
       database: 12

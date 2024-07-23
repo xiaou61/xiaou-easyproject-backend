@@ -56,7 +56,7 @@
 
 **[Guava](https://github.com/google/guava)**: 谷歌的核心Java库
 
-[**Javax Servlet**](https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api): Servlet API
+[**Javax Servlet**](https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api): Servlet API (由于项目是sprinboot3所以修改为(jakarta servlet)
 
 **[Hutool](https://hutool.cn/)**: Java工具包
 
@@ -140,5 +140,5 @@ csdn:[Xiaouuuuua-CSDN博客](https://blog.csdn.net/m0_48069349)
 
 https://gitee.com/y_project/RuoYi-Vue
 
-
+[valarchie/AgileBoot-Back-End](https://github.com/valarchie/AgileBoot-Back-End)
 

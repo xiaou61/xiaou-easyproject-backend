@@ -1,7 +1,7 @@
 package com.xiaou.xiaoueasyprojectbackend.common.utils;
 
 import com.xiaou.xiaoueasyprojectbackend.common.core.domain.BaseResponse;
-import com.xiaou.xiaoueasyprojectbackend.common.domain.enums.ErrorCode;
+import com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums.ErrorCode;
 
 /**
  * 返回工具类

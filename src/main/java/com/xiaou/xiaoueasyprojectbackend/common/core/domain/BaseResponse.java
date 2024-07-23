@@ -2,7 +2,7 @@ package com.xiaou.xiaoueasyprojectbackend.common.core.domain;
 
 import java.io.Serializable;
 
-import com.xiaou.xiaoueasyprojectbackend.common.domain.enums.ErrorCode;
+import com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums.ErrorCode;
 import lombok.Data;
 
 /**

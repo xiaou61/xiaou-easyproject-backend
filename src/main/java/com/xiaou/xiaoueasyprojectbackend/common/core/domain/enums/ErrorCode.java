@@ -1,4 +1,4 @@
-package com.xiaou.xiaoueasyprojectbackend.common.domain.enums;
+package com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums;
 
 /**
  * 自定义错误码

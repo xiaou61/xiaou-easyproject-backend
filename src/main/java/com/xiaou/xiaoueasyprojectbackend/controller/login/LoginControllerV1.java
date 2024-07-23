@@ -2,7 +2,7 @@ package com.xiaou.xiaoueasyprojectbackend.controller.login;
 
 
 import com.xiaou.xiaoueasyprojectbackend.common.core.domain.BaseResponse;
-import com.xiaou.xiaoueasyprojectbackend.common.domain.enums.ErrorCode;
+import com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums.ErrorCode;
 import com.xiaou.xiaoueasyprojectbackend.common.domain.model.dto.user.UserLoginRequest;
 import com.xiaou.xiaoueasyprojectbackend.common.domain.model.dto.user.UserRegisterRequest;
 import com.xiaou.xiaoueasyprojectbackend.common.domain.model.entity.User;
