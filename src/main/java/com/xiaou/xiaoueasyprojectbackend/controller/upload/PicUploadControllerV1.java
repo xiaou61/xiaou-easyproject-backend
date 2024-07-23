@@ -22,7 +22,9 @@ import java.util.UUID;
  * @author xiaou61
  * @Date 2024/7/18 13:25
  * @Description: 图片上传 建议直接看FileUploadController 这个因为很file有冲突 有一些未知bug
+ * 如果你只是需求图片上传可以看一下这个 改方法已废弃。
  */
+@Deprecated
 @RestController
 @RequestMapping("/v1/upload/pic")
 @Tag(name = "图片上传")
