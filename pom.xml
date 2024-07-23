@@ -24,6 +24,10 @@
         <aliyunoss.version>3.17.1</aliyunoss.version>
         <xfilestorage.version>2.2.0</xfilestorage.version>
         <jjwt.version>0.12.5</jjwt.version>
+        <druid.version>1.2.6</druid.version>
+        <mybatisplus.version>3.5.5</mybatisplus.version>
+        <mybatis.version>3.0.3</mybatis.version>
+        <mysql.version>8.0.33</mysql.version>
     </properties>
     <dependencies>
         <dependency>
@@ -108,6 +112,40 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>${jjwt.version}</version>
+        </dependency>
+
+        <!--mybatis相关-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <!-- mybatis plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatisplus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <!-- redis -->
+        <!-- 集成redis依赖  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- redis 连接池  -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
 
 

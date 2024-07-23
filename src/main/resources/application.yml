@@ -8,13 +8,30 @@ spring:
       enabled: true
       max-file-size: 200MB
       max-request-size: 200MB
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xiaou_easy_project
+    username: root
+    password: 1234
+  data:
+    redis:
+      database: 12
+      host: localhost
+      port: 6379
+      lettuce:
+        pool:
+          min-idle: 0
+          max-idle: 8
+          max-wait: -1ms
+          max-active: 16
+
 server:
   port: 8080
 
 #文件上传路径
 upload:
   path: D:\onenodes\project\xiaou-easyproject-backend\src\main\java\com\xiaou\xiaoueasyprojectbackend\upload\
-
 
 
 #X-File文件上传配置
@@ -32,3 +49,7 @@ dromara:
         path-patterns: /file/** # 访问路径
         storage-path: D:/Temp/ # 存储路径
 
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
