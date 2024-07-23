@@ -1,5 +1,4 @@
-
-项目logo正在建设中....
+[中文文档](README.md)    [English Docs](README-EN.md)
 
 <div align="center">
   <a href="">
@@ -57,13 +56,13 @@
 
 **[Guava](https://github.com/google/guava)**: 谷歌的核心Java库
 
-**Javax	 Servlet**: Servlet API
+[**Javax Servlet**](https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api): Servlet API
 
 **[Hutool](https://hutool.cn/)**: Java工具包
 
 **[Kaptcha](https://github.com/penggle/kaptcha)**: 验证码生成库
 
-**Aliyun OSS**: 阿里云对象存储服务
+[**Aliyun OSS**](https://github.com/aliyun/aliyun-oss-java-sdk): 阿里云对象存储服务
 
 [**X-File-Storage**](https://github.com/dromara/x-file-storage): 文件存储框架
 
