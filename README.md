@@ -80,7 +80,7 @@
 
 **[Spring Data Redis](https://github.com/spring-projects/spring-data-redis)**: Spring框架的数据访问项目，用于Redis
 
-**[Apache Commons Pool](https://commons.apache.org/proper/commons-pool/)**: Apache的通用对象池库
+[**aspectjweaver**](https://mvnrepository.com/artifact/org.aspectj/aspectjweaver): 用于实现AOP的Java库
 
 <!-- 路线图 -->
 ## 路线图
