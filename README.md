@@ -1,12 +1,12 @@
 
 项目logo正在建设中....
 
-
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="">
+    <img src="https://xiaou-1305448902.cos.ap-nanjing.myqcloud.com/img/202407231245943.png" alt="Logo">
   </a>
   <h3 align="center">Xiaou-easyproject</h3>
+
 
   <p align="center">
     目前文档正在建设中....
