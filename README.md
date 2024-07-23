@@ -71,7 +71,17 @@
 
 **[JJWT](https://github.com/jwtk/jjwt)**: JSON Web Token库
 
+[**MySQL Connector**](https://mvnrepository.com/artifact/mysql/mysql-connector-java): 用于连接MySQL数据库的驱动程序
 
+**[Druid](https://github.com/alibaba/druid)**: 阿里巴巴的数据库连接池
+
+**[MyBatis-Plus](https://github.com/baomidou/mybatis-plus)**: 一个增强的MyBatis框架
+
+**[MyBatis Spring](https://github.com/mybatis/spring-boot-starter)**: 用于整合MyBatis和Spring的库
+
+**[Spring Data Redis](https://github.com/spring-projects/spring-data-redis)**: Spring框架的数据访问项目，用于Redis
+
+**[Apache Commons Pool](https://commons.apache.org/proper/commons-pool/)**: Apache的通用对象池库
 
 <!-- 路线图 -->
 ## 路线图
