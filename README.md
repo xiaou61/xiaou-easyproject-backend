@@ -82,6 +82,8 @@
 
 [**aspectjweaver**](https://mvnrepository.com/artifact/org.aspectj/aspectjweaver): 用于实现AOP的Java库
 
+[redission](https://github.com/redisson/redisson):用于redis操作的框架
+
 <!-- 路线图 -->
 ## 路线图
 
