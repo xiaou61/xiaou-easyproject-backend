@@ -8,9 +8,8 @@
 
 
   <p align="center">
-    目前文档正在建设中....
     <br />
-    <a href=""><strong>浏览文档 »</strong></a>
+    <a href="http://halo.xiaou61.top/"><strong>浏览讲解文档 »</strong></a>
     <br />
     <br />
     <a href="">接口地址正在建设中....</a>
@@ -19,6 +18,7 @@
     ·<br />
     <a href="https://github.com/xiaou61/xiaou-easyproject-backend/issues">请求新功能</a>
   </p>
+
 </div>
 
 
