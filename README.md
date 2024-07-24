@@ -84,6 +84,10 @@
 
 [redission](https://github.com/redisson/redisson):用于redis操作的框架
 
+**[Reactor Core](https://projectreactor.io/)**: 用于构建非阻塞应用程序的流式编程库
+
+**[DashScope SDK](https://central.sonatype.com/artifact/com.alibaba/dashscope-sdk-java)**: 阿里巴巴的通义千问 SDK
+
 <!-- 路线图 -->
 ## 路线图
 
