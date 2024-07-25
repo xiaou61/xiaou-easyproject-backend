@@ -1,7 +1,7 @@
 package com.xiaou.xiaoueasyprojectbackend.common.exception;
 
 
-import com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums.ErrorCode;
+import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.enums.ErrorCode;
 
 /**
  * 自定义异常类

@@ -1,7 +1,7 @@
 package com.xiaou.xiaoueasyprojectbackend.common.manager;
 
 
-import com.xiaou.xiaoueasyprojectbackend.common.core.domain.enums.ErrorCode;
+import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.enums.ErrorCode;
 
 import com.xiaou.xiaoueasyprojectbackend.common.exception.BusinessException;
 import jakarta.annotation.Resource;

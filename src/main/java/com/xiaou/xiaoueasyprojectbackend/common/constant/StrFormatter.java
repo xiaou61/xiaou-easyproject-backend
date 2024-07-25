@@ -1,7 +1,7 @@
 package com.xiaou.xiaoueasyprojectbackend.common.constant;
 
 
-import com.xiaou.xiaoueasyprojectbackend.common.core.text.Convert;
+import com.xiaou.xiaoueasyprojectbackend.common.text.Convert;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.StringUtils;
 
 /**

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.xiaou.xiaoueasyprojectbackend.common.core.text.Constants;
+import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.text.Constants;
 import com.xiaou.xiaoueasyprojectbackend.common.constant.StrFormatter;
 import org.springframework.util.AntPathMatcher;
 
