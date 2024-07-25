@@ -29,6 +29,7 @@
         <mybatis.version>3.0.3</mybatis.version>
         <mysql.version>8.0.33</mysql.version>
         <redisson.version>3.27.2</redisson.version>
+        <bcprov.version>1.59</bcprov.version>
     </properties>
     <dependencies>
         <dependency>
@@ -176,6 +177,13 @@
                     <artifactId>slf4j-simple</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--API 接口加密 -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bcprov.version}</version>
         </dependency>
 
     </dependencies>
