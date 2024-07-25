@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 //启动文件上传服务
 @EnableFileStorage
-@MapperScan("com.xiaou.xiaoueasyprojectbackend.mapper")
+@MapperScan("com.xiaou.xiaoueasyprojectbackend.**.mapper")
 public class XiaouEasyprojectBackendApplication {
 
     public static void main(String[] args) {

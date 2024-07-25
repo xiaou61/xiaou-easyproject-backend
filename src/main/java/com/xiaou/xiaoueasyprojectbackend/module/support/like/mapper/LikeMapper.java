@@ -5,6 +5,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.like.entity.Like;
 
 
 
+
 public interface LikeMapper extends BaseMapper<Like> {
 
 }
