@@ -26,6 +26,13 @@ spring:
           max-idle: 8
           max-wait: -1ms
           max-active: 16
+  #邮箱相关配置
+  mail:
+    host: smtp.qq.com
+    username: 3153566913@qq.com
+    password: twlfnabizpqldgdc
+    port: 587
+    default-encoding: UTF-8
 
 server:
   port: 8080
