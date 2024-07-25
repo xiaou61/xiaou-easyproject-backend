@@ -153,3 +153,4 @@ https://gitee.com/y_project/RuoYi-Vue
 
 [valarchie/AgileBoot-Back-End](https://github.com/valarchie/AgileBoot-Back-End)
 
+[1024-lab/smart-admin: SmartAdmin)](https://github.com/1024-lab/smart-admin?tab=readme-ov-file)
