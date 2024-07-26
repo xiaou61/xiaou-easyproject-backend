@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * @author xiaou61
  * @Date 2024/7/25 19:27
- * @Description: 登录功能实现：多种实现Impl实现方式 最推荐使用的是redis版本的
+ * @Description: 点赞功能实现：多种实现Impl实现方式 最推荐使用的是redis版本的
  */
 @RestController
 @RequestMapping("/v1/like")
