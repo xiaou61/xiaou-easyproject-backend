@@ -205,6 +205,19 @@
             <version>${mapstruct.version}</version>
         </dependency>
 
+        <!-- IP定位 -->
+        <dependency>
+            <groupId>org.lionsoul</groupId>
+            <artifactId>ip2region</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.21</version>
+        </dependency>
+
 
 
     </dependencies>
