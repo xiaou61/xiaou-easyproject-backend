@@ -1,17 +1,13 @@
 package com.xiaou.xiaoueasyprojectbackend.module.support.ip.controller;
 
-import com.xiaou.xiaoueasyprojectbackend.common.domain.R;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.ResultUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.ip.entity.IpEntity;
 import com.xiaou.xiaoueasyprojectbackend.module.support.ip.utils.IpUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.BaseResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author xiaou61

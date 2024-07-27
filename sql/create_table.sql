@@ -62,3 +62,42 @@ CREATE TABLE `t_repo` (
                           PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
+
+-- 定时任务 用于JobControllerV1
+-- ----------------------------
+-- Table structure for t_job
+-- ----------------------------
+DROP TABLE IF EXISTS `t_job`;
+CREATE TABLE `t_job`  (
+                          `id` int NOT NULL AUTO_INCREMENT COMMENT '任务ID',
+                          `job_name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '任务名称',
+                          `job_group` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'DEFAULT' COMMENT '任务组名',
+                          `invoke_target` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '调用目标字符串',
+                          `cron_expression` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT 'cron执行表达式',
+                          `misfire_policy` tinyint(1) NULL DEFAULT 3 COMMENT '计划执行错误策略（1立即执行 2执行一次 3放弃执行）',
+                          `concurrent` tinyint(1) NULL DEFAULT 1 COMMENT '是否并发执行（0禁止 1允许）',
+                          `status` tinyint(1) NULL DEFAULT 0 COMMENT '状态（0暂停 1正常）',
+                          `create_time` datetime NOT NULL COMMENT '创建时间',
+                          `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+                          `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '备注信息',
+                          PRIMARY KEY (`id`, `job_name`, `job_group`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Table structure for t_job_log
+-- ----------------------------
+DROP TABLE IF EXISTS `t_job_log`;
+CREATE TABLE `t_job_log`  (
+                              `id` int NOT NULL AUTO_INCREMENT COMMENT '任务日志ID',
+                              `job_id` int NOT NULL COMMENT '任务ID',
+                              `job_name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '任务名称',
+                              `job_group` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '任务组名',
+                              `invoke_target` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '调用目标字符串',
+                              `job_message` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '日志信息',
+                              `status` tinyint(1) NULL DEFAULT 0 COMMENT '执行状态（0正常 1失败）',
+                              `exception_info` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '异常信息',
+                              `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+                              `start_time` datetime NULL DEFAULT NULL COMMENT '开始时间',
+                              `end_time` datetime NULL DEFAULT NULL COMMENT '结束时间',
+                              PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6175 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度日志表' ROW_FORMAT = DYNAMIC;
