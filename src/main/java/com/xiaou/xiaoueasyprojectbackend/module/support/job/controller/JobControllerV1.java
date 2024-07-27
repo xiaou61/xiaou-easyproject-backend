@@ -15,6 +15,7 @@ import java.util.List;
  * @author xiaou61
  * @Date 2024/7/27 11:37
  * @Description: 定时任务实现 用到了俩个表 定时任务存放在{@link com.xiaou.xiaoueasyprojectbackend.module.support.job.quartz.AuroraQuartz}
+ * 注意:这个还有一个扩展功能就是获取定时任务执行日志 在JobControllerV2
  */
 @RestController
 @RequestMapping("/v1/job")
