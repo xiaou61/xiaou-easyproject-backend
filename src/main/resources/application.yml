@@ -10,8 +10,11 @@ spring:
       max-request-size: 200MB
 
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/xiaou_easy_project
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    #这里的p6spy是为了方便打印sql 但是不建议上线使用 影响性能
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+#    url: jdbc:mysql://localhost:3306/xiaou_easy_project
+    url: jdbc:p6spy:mysql://localhost:3306/xiaou_easy_project
     username: root
     password: 1234
 

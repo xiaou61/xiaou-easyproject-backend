@@ -31,6 +31,8 @@
         <redisson.version>3.27.2</redisson.version>
         <bcprov.version>1.59</bcprov.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <p6spy.version>3.9.1</p6spy.version>
+        <ip2.version>2.7.0</ip2.version>
     </properties>
     <dependencies>
         <dependency>
@@ -209,7 +211,7 @@
         <dependency>
             <groupId>org.lionsoul</groupId>
             <artifactId>ip2region</artifactId>
-            <version>2.7.0</version>
+            <version>${ip2.version}</version>
         </dependency>
 
         <dependency>
@@ -222,6 +224,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.version}</version>
         </dependency>
 
 
