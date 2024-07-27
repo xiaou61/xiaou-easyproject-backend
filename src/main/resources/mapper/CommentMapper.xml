@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.support.comment.mapper.CommentMapper">
+    <select id="listComments" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.comment.dto.CommentDTO">
+        SELECT u.nickname,
+               u.avatar,
+               u.website,
+               c.user_id,
+               c.id,
+               c.comment_content,
+               c.create_time
+        FROM t_comment c
+                 JOIN t_user_info u ON c.user_id = u.id
+        where c.is_review = 1
+        ORDER BY c.id DESC
+    </select>
+    <select id="listReplies" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.comment.dto.ReplyDTO">
+        SELECT
+        *
+        FROM
+        (
+        SELECT
+        c.user_id,
+        u.nickname,
+        u.avatar,
+        u.website,
+        c.reply_user_id,
+        r.nickname AS reply_nickname,
+        r.website AS reply_website,
+        c.id,
+        c.parent_id,
+        c.comment_content,
+        c.create_time,
+        row_number () over ( PARTITION BY parent_id ORDER BY create_time ASC ) row_num
+        FROM
+        t_comment c
+        JOIN t_user_info u ON c.user_id = u.id
+        JOIN t_user_info r ON c.reply_user_id = r.id
+        WHERE
+        c.is_review = 1
+        AND
+        parent_id IN
+        (
+        <foreach collection="commentIds" item="commentId" separator=",">
+            #{commentId}
+        </foreach>
+        )
+        order by c.create_time desc
+        ) t
+    </select>
+
+
+    <select id="listTopSixComments" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.comment.dto.CommentDTO">
+        SELECT u.nickname,
+               u.avatar,
+               u.website,
+               c.user_id,
+               c.id,
+               c.comment_content,
+               c.create_time
+        FROM t_comment c
+                 JOIN t_user_info u ON c.user_id = u.id
+        where c.is_review = 1
+        ORDER BY c.id DESC
+        LIMIT 0 , 6
+    </select>
+
+
+</mapper>

@@ -101,3 +101,42 @@ CREATE TABLE `t_job_log`  (
                               `end_time` datetime NULL DEFAULT NULL COMMENT '结束时间',
                               PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6175 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度日志表' ROW_FORMAT = DYNAMIC;
+
+
+-- 用于commentcontrollerv1
+-- ----------------------------
+-- Table structure for t_comment
+-- ----------------------------
+DROP TABLE IF EXISTS `t_comment`;
+CREATE TABLE `t_comment`  (
+                              `id` int NOT NULL AUTO_INCREMENT COMMENT '主键',
+                              `user_id` int NOT NULL COMMENT '评论用户Id',
+                              `topic_id` int NULL DEFAULT NULL COMMENT '评论主题id',
+                              `comment_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '评论内容',
+                              `reply_user_id` int NULL DEFAULT NULL COMMENT '回复用户id',
+                              `parent_id` int NULL DEFAULT NULL COMMENT '父评论id',
+                              `type` tinyint NOT NULL COMMENT '评论类型 1.文章 2.留言 3.关于我 4.友链 5.说说',
+                              `is_delete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除  0否 1是',
+                              `is_review` tinyint(1) NOT NULL DEFAULT 1 COMMENT '是否审核',
+                              `create_time` datetime NOT NULL COMMENT '评论时间',
+                              `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+                              PRIMARY KEY (`id`) USING BTREE,
+                              INDEX `fk_comment_user`(`user_id` ASC) USING BTREE,
+                              INDEX `fk_comment_parent`(`parent_id` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1032 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+
+DROP TABLE IF EXISTS `t_user_info`;
+CREATE TABLE `t_user_info`  (
+                                `id` int NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+                                `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '邮箱号',
+                                `nickname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户昵称',
+                                `avatar` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '用户头像',
+                                `intro` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '用户简介',
+                                `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '个人网站',
+                                `is_subscribe` tinyint(1) NULL DEFAULT NULL COMMENT '是否订阅',
+                                `is_disable` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否禁用',
+                                `create_time` datetime NOT NULL COMMENT '创建时间',
+                                `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+                                PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1024 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
