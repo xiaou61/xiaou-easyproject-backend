@@ -88,6 +88,22 @@
 
 **[DashScope SDK](https://central.sonatype.com/artifact/com.alibaba/dashscope-sdk-java)**: 阿里巴巴的通义千问 SDK
 
+**[Bouncy Castle](https://www.bouncycastle.org/)**: 用于API接口加密的加密库
+
+**[Spring Boot Mail Starter](https://spring.io/projects/spring-boot)**: 用于发送邮件的Spring Boot启动器
+
+**[MapStruct](https://mapstruct.org/)**: 用于Java对象之间映射的注解处理器
+
+**[MapStruct Processor](https://mapstruct.org/)**: 用于MapStruct的注解处理器
+
+**[IP2Region](https://github.com/zoujingli/ip2region)**: 用于IP定位的库
+
+**[UserAgentUtils](https://github.com/HaraldWalker/user-agent-utils)**: 用户代理解析工具
+
+**[Spring Boot Quartz Starter](https://spring.io/projects/spring-boot)**: 用于任务调度的Spring Boot启动器
+
+**[P6Spy](https://github.com/p6spy/p6spy)**: 数据库查询性能监控工具
+
 <!-- 路线图 -->
 ## 路线图
 
@@ -154,3 +170,5 @@ https://gitee.com/y_project/RuoYi-Vue
 [valarchie/AgileBoot-Back-End](https://github.com/valarchie/AgileBoot-Back-End)
 
 [1024-lab/smart-admin: SmartAdmin)](https://github.com/1024-lab/smart-admin?tab=readme-ov-file)
+
+[linhaojun857/aurora: (github.com)](https://github.com/linhaojun857/aurora)
