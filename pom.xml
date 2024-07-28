@@ -34,6 +34,7 @@
         <p6spy.version>3.9.1</p6spy.version>
         <ip2.version>2.7.0</ip2.version>
         <minio.version>8.4.5</minio.version>
+        <pagehelper.version>1.4.5</pagehelper.version>
     </properties>
     <dependencies>
         <dependency>
@@ -247,7 +248,11 @@
             <version>${minio.version}</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
 
 
 

@@ -140,3 +140,25 @@ CREATE TABLE `t_user_info`  (
                                 `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
                                 PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1024 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+
+-- 广告表 用于AdvertiseControllerV1
+-- ----------------------------
+-- Table structure for sms_home_advertise
+-- ----------------------------
+DROP TABLE IF EXISTS `sms_home_advertise`;
+CREATE TABLE `sms_home_advertise`  (
+                                       `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                       `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+                                       `type` int(1) NULL DEFAULT NULL COMMENT '轮播位置：0->PC首页轮播；1->app首页轮播',
+                                       `pic` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+                                       `start_time` datetime NULL DEFAULT NULL,
+                                       `end_time` datetime NULL DEFAULT NULL,
+                                       `status` int(1) NULL DEFAULT NULL COMMENT '上下线状态：0->下线；1->上线',
+                                       `click_count` int(11) NULL DEFAULT NULL COMMENT '点击数',
+                                       `order_count` int(11) NULL DEFAULT NULL COMMENT '下单数',
+                                       `url` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '链接地址',
+                                       `note` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+                                       `sort` int(11) NULL DEFAULT 0 COMMENT '排序',
+                                       PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '首页轮播广告表' ROW_FORMAT = DYNAMIC;
