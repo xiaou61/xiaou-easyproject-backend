@@ -7,6 +7,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.upload.dto.MinioUploadDt
 import com.xiaou.xiaoueasyprojectbackend.module.support.upload.result.CommonResult;
 import io.minio.*;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,7 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping("/v3/upload")
+@Tag(name = "文件上传V3", description = "文件上传V3")
 public class FileUploadControllerV3 {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileUploadControllerV3.class);
     @Value("${minio.endpoint}")

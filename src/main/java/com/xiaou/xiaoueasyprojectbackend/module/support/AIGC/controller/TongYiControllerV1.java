@@ -10,6 +10,7 @@ import com.alibaba.dashscope.exception.InputRequiredException;
 import com.alibaba.dashscope.exception.NoApiKeyException;
 import com.alibaba.fastjson2.JSON;
 import io.reactivex.Flowable;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.MediaType;
@@ -34,6 +35,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/v1/tongyi")
+@Tag(name = "通义千问接口V1", description = "通义千问接口")
 public class TongYiControllerV1 {
 
     private final String apikey="";

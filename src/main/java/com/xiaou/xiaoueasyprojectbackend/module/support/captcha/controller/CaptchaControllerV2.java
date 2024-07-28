@@ -9,6 +9,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.domain.AjaxResul
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.text.Constants;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.utils.IdUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.utils.RedisCache;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @RequestMapping("/v2/captcha")
+@Tag(name = "验证码生成V2")
 public class CaptchaControllerV2 {
     private static final Logger log = LoggerFactory.getLogger(CaptchaControllerV2.class);
     @Resource(name = "captchaProducer")

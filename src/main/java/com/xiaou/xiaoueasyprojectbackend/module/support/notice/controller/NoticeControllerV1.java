@@ -8,6 +8,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.notice.entity.Notice;
 import com.xiaou.xiaoueasyprojectbackend.module.support.notice.entity.PageParam;
 import com.xiaou.xiaoueasyprojectbackend.module.support.notice.resp.ServerResponseEntity;
 import com.xiaou.xiaoueasyprojectbackend.module.support.notice.service.NoticeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.Date;
 
 @RestController
 @RequestMapping("/v1/notice")
+@Tag(name = "公告管理V1", description = "NoticeControllerV1")
 public class NoticeControllerV1 {
 
     @Resource

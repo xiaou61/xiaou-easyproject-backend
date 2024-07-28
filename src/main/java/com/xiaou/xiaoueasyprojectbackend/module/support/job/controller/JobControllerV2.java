@@ -5,6 +5,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.job.dto.PageResultDTO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.service.JobLogService;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.vo.JobLogSearchVO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.vo.ResultVO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v2/job")
+@Tag(name = "定时任务日志模块", description = "定时任务日志模块")
 public class JobControllerV2 {
     @Autowired
     private JobLogService jobLogService;

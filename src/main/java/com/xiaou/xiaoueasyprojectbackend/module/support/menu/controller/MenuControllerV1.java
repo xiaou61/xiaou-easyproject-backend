@@ -7,6 +7,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.menu.entity.UmsMenuNode;
 import com.xiaou.xiaoueasyprojectbackend.module.support.menu.service.UmsMenuService;
 import com.xiaou.xiaoueasyprojectbackend.module.support.upload.result.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v1/menu")
+@Tag(name = "菜单管理V1", description = "菜单管理")
 public class MenuControllerV1 {
 
 

@@ -1,6 +1,7 @@
 package com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.controller;
 
 import com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.annotations.Limit;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/v3/rateLimitTest")
 @Slf4j
+@Tag(name = "限流接口V3", description = "限流接口 Guava实现")
 public class RateLimitTestControllerV3 {
     @GetMapping("/test")
     @Limit(key = "limit3", permitsPerSecond = 1, timeout = 50, timeunit = TimeUnit.MILLISECONDS,msg = "系统繁忙，请稍后再试！")

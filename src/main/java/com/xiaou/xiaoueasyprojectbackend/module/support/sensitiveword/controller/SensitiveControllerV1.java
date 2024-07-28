@@ -7,6 +7,7 @@ import com.github.houbb.sensitive.word.support.resultcondition.WordResultConditi
 import com.github.houbb.sensitive.word.support.tag.WordTags;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.ResultUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.BaseResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/v1/sensitive")
+@Tag(name = "敏感词检测V1", description = "敏感词检测")
 public class SensitiveControllerV1 {
     @GetMapping
     public BaseResponse test(@RequestParam String content) {

@@ -4,6 +4,7 @@ import com.xiaou.xiaoueasyprojectbackend.common.utils.ResultUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.ip.entity.IpEntity;
 import com.xiaou.xiaoueasyprojectbackend.module.support.ip.utils.IpUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.BaseResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/v1/ip")
+@Tag(name = "获取ip功能V1", description = "获取ip功能")
 public class IpControllerV1 {
 
     @GetMapping("/getIp")

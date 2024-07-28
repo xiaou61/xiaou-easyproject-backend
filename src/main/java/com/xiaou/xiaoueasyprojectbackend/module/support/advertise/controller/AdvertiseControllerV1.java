@@ -5,6 +5,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.advertise.model.SmsHomeA
 import com.xiaou.xiaoueasyprojectbackend.module.support.advertise.service.SmsHomeAdvertiseService;
 import com.xiaou.xiaoueasyprojectbackend.module.support.upload.result.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Date 2024/7/28 11:42
  * @Description: 广告管理
  */
+@Tag(name = "广告管理V1", description = "广告管理")
 @RestController
 @RequestMapping("/v1/advertise")
 public class AdvertiseControllerV1 {

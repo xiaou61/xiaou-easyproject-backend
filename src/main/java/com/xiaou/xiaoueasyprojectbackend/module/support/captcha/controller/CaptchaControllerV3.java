@@ -6,6 +6,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.BaseRespons
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.domain.ToEmail;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.ResultUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.service.MailService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/v3/captcha")
+@Tag(name = "qq发送验证码V3", description = "验证码模块")
 public class CaptchaControllerV3 {
     @Resource
     private MailService mailService;

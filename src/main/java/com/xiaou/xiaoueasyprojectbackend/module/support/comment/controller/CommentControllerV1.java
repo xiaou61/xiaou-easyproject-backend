@@ -8,6 +8,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.comment.vo.CommentVO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.comment.vo.ReviewVO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.vo.ResultVO;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/comment")
+@Tag(name = "评论功能实现V1", description = "评论功能实现")
 public class CommentControllerV1 {
 
     @Resource

@@ -11,6 +11,7 @@ import com.xiaou.xiaoueasyprojectbackend.common.exception.BusinessException;
 import com.xiaou.xiaoueasyprojectbackend.module.support.upload.utils.FileUploadUtils;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.ServletHolderUtil;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v2/upload")
+@Tag(name = "文件上传V2", description = "文件上传V2")
 public class FileUploadControllerV2 {
     /**
      * 通用上传请求（单个）

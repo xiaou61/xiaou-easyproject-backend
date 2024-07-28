@@ -2,6 +2,7 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.controller;
 
 import com.xiaou.xiaoueasyprojectbackend.common.manager.RedisLimiterManager;
 import com.xiaou.xiaoueasyprojectbackend.config.RedissonConfig;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/v2/rateLimitTest")
+@Tag(name = "限流测试接口V2", description = "限流测试接口V2")
 public class RateLimitTestControllerV2 {
     @Resource
     private RedisLimiterManager redisLimiterManager;

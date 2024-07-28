@@ -10,6 +10,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.vo.LoginUse
 import com.xiaou.xiaoueasyprojectbackend.common.exception.BusinessException;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.ResultUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/v1/login")
+@Tag(name = "登录/注册通用接口V1")
 /**
  * @author xiaou61
  * @Date 2024/7/22 14:34

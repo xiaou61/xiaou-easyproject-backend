@@ -193,3 +193,26 @@ CREATE TABLE `tz_notice` (
                              `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
                              PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+-- 评论表 用于 CommentControllerV2
+CREATE TABLE `tz_prod_comm` (
+                                `prod_comm_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+                                `prod_id` bigint(20) unsigned NOT NULL COMMENT '商品ID',
+                                `order_item_id` bigint(20) unsigned DEFAULT NULL COMMENT '订单项ID',
+                                `user_id` varchar(36) DEFAULT NULL COMMENT '评论用户ID',
+                                `content` varchar(500) DEFAULT '' COMMENT '评论内容',
+                                `reply_content` varchar(500) DEFAULT '' COMMENT '掌柜回复',
+                                `rec_time` datetime DEFAULT NULL COMMENT '记录时间',
+                                `reply_time` datetime DEFAULT NULL COMMENT '回复时间',
+                                `reply_sts` int(1) DEFAULT '0' COMMENT '是否回复 0:未回复  1:已回复',
+                                `postip` varchar(16) DEFAULT NULL COMMENT 'IP来源',
+                                `score` tinyint(2) DEFAULT '0' COMMENT '得分，0-5分',
+                                `useful_counts` int(11) DEFAULT '0' COMMENT '有用的计数',
+                                `pics` varchar(1000) DEFAULT NULL COMMENT '晒图的json字符串',
+                                `is_anonymous` int(1) DEFAULT '0' COMMENT '是否匿名(1:是  0:否)',
+                                `status` int(1) DEFAULT NULL COMMENT '是否显示，1:为显示，0:待审核， -1：不通过审核，不显示。 如果需要审核评论，则是0,，否则1',
+                                `evaluate` tinyint(2) DEFAULT NULL COMMENT '评价(0好评 1中评 2差评)',
+                                PRIMARY KEY (`prod_comm_id`),
+                                KEY `prod_id` (`prod_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品评论';

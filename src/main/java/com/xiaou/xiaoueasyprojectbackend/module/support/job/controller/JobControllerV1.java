@@ -5,6 +5,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.job.dto.JobDTO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.dto.PageResultDTO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.service.JobService;
 import com.xiaou.xiaoueasyprojectbackend.module.support.job.vo.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v1/job")
+@Tag(name = "定时任务V1", description = "定时任务")
 public class JobControllerV1 {
 
     @Resource

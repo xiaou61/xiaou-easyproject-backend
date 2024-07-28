@@ -7,6 +7,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.apiencrypt.annotation.Ap
 import com.xiaou.xiaoueasyprojectbackend.module.support.apiencrypt.annotation.ApiEncrypt;
 import com.xiaou.xiaoueasyprojectbackend.module.support.apiencrypt.service.ApiEncryptService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -29,6 +30,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/v1/apiEncrypt")
+@Tag(name = "api接口加密解密测试V1", description = "api接口加密解密测试")
 public class EncryptControllerV1 {
 
     /**

@@ -6,6 +6,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.question.group.QuestionG
 import com.xiaou.xiaoueasyprojectbackend.module.support.question.model.vo.QuestionVO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.question.result.Result;
 import com.xiaou.xiaoueasyprojectbackend.module.support.question.service.IQuestionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/v1/question")
+@Tag(name = "答题功能实现V1", description = "答题功能实现")
 public class QuestionControllerV1 {
     @Resource
     private IQuestionService iQuestionService;

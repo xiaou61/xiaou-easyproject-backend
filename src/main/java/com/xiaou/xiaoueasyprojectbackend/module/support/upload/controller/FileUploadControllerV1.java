@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @RestController
 @RequestMapping("/v1/upload/file")
-@Tag(name = "文件上传")
+@Tag(name = "文件上传V1")
 public class FileUploadControllerV1 {
     @Autowired
     private FileStorageService fileStorageService;//注入实列

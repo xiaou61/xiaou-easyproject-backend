@@ -28,7 +28,7 @@ import java.util.UUID;
 @Deprecated
 @RestController
 @RequestMapping("/v1/upload/pic")
-@Tag(name = "图片上传")
+@Tag(name = "图片上传V1")
 public class PicUploadControllerV1 {
     private static final Logger log = LoggerFactory.getLogger(PicUploadControllerV1.class);
 

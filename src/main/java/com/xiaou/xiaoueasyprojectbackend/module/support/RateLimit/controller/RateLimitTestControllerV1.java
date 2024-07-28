@@ -2,6 +2,7 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.controller;
 
 import com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.annotations.RateLimitKey;
 import com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.annotations.ratelimit.RateLimit;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 */
 @RestController
 @RequestMapping("/v1/rateLimitTest")
+@Tag(name = "限流测试接口V1", description = "限流测试接口")
 public class RateLimitTestControllerV1 {
     @GetMapping("/redis")
     @RateLimit(key = RateLimitKey.TEST_KEY, time = 10, maxCount = 5, cacheType = RateLimit.CacheType.REDIS,

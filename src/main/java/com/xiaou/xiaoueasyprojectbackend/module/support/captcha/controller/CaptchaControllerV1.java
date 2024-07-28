@@ -25,7 +25,7 @@ import java.io.IOException;
  * @Date 2024/7/17 下午2:02
  * @Description 验证码生成
  */
-@Tag(name = "验证码生成")
+@Tag(name = "验证码生成V1")
 @RestController
 @RequestMapping("/v1/captcha")
 public class CaptchaControllerV1 {
