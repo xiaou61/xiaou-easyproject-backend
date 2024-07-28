@@ -179,3 +179,17 @@ CREATE TABLE `ums_menu`  (
                              `hidden` int(1) NULL DEFAULT NULL COMMENT '前端隐藏',
                              PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台菜单表' ROW_FORMAT = DYNAMIC;
+
+
+-- 公告表 用于NoticeControllerV1
+CREATE TABLE `tz_notice` (
+                             `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '公告id',
+                             `shop_id` bigint(20) DEFAULT NULL COMMENT '店铺id',
+                             `title` varchar(36) DEFAULT NULL COMMENT '公告标题',
+                             `content` text COMMENT '公告内容',
+                             `status` tinyint(1) DEFAULT NULL COMMENT '状态(1:公布 0:撤回)',
+                             `is_top` tinyint(2) DEFAULT NULL COMMENT '是否置顶',
+                             `publish_time` timestamp NULL DEFAULT NULL COMMENT '发布时间',
+                             `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+                             PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
