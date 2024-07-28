@@ -172,3 +172,5 @@ https://gitee.com/y_project/RuoYi-Vue
 [1024-lab/smart-admin: SmartAdmin)](https://github.com/1024-lab/smart-admin?tab=readme-ov-file)
 
 [linhaojun857/aurora: (github.com)](https://github.com/linhaojun857/aurora)
+
+[macrozheng/mall](https://github.com/macrozheng/mall)

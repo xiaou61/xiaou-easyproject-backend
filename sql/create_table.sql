@@ -33,7 +33,7 @@ CREATE TABLE `t_question` (
                               `user_id` int DEFAULT NULL COMMENT '用户id',
                               `is_deleted` int NOT NULL DEFAULT '0' COMMENT '逻辑删除：0代表未删除，1代表删除',
                               PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=702 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for t_option
@@ -48,7 +48,7 @@ CREATE TABLE `t_option` (
                             `sort` int DEFAULT NULL COMMENT '排序',
                             `is_deleted` int NOT NULL DEFAULT '0' COMMENT '逻辑删除：0代表未删除，1代表删除',
                             PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2608 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 -- ----------------------------
 -- Table structure for t_repo
 -- ----------------------------
@@ -60,7 +60,7 @@ CREATE TABLE `t_repo` (
                           `create_time` datetime DEFAULT NULL COMMENT '创建时间',
                           `is_deleted` int NOT NULL DEFAULT '0' COMMENT '逻辑删除：0代表未删除，1代表删除',
                           PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
 
 -- 定时任务 用于JobControllerV1
@@ -81,7 +81,7 @@ CREATE TABLE `t_job`  (
                           `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
                           `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '备注信息',
                           PRIMARY KEY (`id`, `job_name`, `job_group`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for t_job_log
@@ -100,7 +100,7 @@ CREATE TABLE `t_job_log`  (
                               `start_time` datetime NULL DEFAULT NULL COMMENT '开始时间',
                               `end_time` datetime NULL DEFAULT NULL COMMENT '结束时间',
                               PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6175 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度日志表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '定时任务调度日志表' ROW_FORMAT = DYNAMIC;
 
 
 -- 用于commentcontrollerv1
@@ -123,7 +123,7 @@ CREATE TABLE `t_comment`  (
                               PRIMARY KEY (`id`) USING BTREE,
                               INDEX `fk_comment_user`(`user_id` ASC) USING BTREE,
                               INDEX `fk_comment_parent`(`parent_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1032 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 
 DROP TABLE IF EXISTS `t_user_info`;
@@ -139,7 +139,7 @@ CREATE TABLE `t_user_info`  (
                                 `create_time` datetime NOT NULL COMMENT '创建时间',
                                 `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
                                 PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1024 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 
 -- 广告表 用于AdvertiseControllerV1
@@ -161,4 +161,21 @@ CREATE TABLE `sms_home_advertise`  (
                                        `note` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
                                        `sort` int(11) NULL DEFAULT 0 COMMENT '排序',
                                        PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '首页轮播广告表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '首页轮播广告表' ROW_FORMAT = DYNAMIC;
+
+
+
+-- 菜单表 用于 MenuControllerV1
+DROP TABLE IF EXISTS `ums_menu`;
+CREATE TABLE `ums_menu`  (
+                             `id` bigint(20) NOT NULL AUTO_INCREMENT,
+                             `parent_id` bigint(20) NULL DEFAULT NULL COMMENT '父级ID',
+                             `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+                             `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单名称',
+                             `level` int(4) NULL DEFAULT NULL COMMENT '菜单级数',
+                             `sort` int(4) NULL DEFAULT NULL COMMENT '菜单排序',
+                             `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '前端名称',
+                             `icon` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '前端图标',
+                             `hidden` int(1) NULL DEFAULT NULL COMMENT '前端隐藏',
+                             PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台菜单表' ROW_FORMAT = DYNAMIC;
