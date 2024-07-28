@@ -40,6 +40,7 @@ public class CaptchaControllerV2 {
     @Resource(name = "captchaProducer")
     private Producer captchaProducer;
 
+
     @Resource(name = "captchaProducerMath")
     private Producer captchaProducerMath;
 
