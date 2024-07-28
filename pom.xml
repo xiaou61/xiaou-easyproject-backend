@@ -33,6 +33,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <p6spy.version>3.9.1</p6spy.version>
         <ip2.version>2.7.0</ip2.version>
+        <minio.version>8.4.5</minio.version>
     </properties>
     <dependencies>
         <dependency>
@@ -238,6 +239,13 @@
             <version>0.18.0</version>
         </dependency>
 
+
+        <!--MinIO JAVA SDK-->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>${minio.version}</version>
+        </dependency>
 
 
 
