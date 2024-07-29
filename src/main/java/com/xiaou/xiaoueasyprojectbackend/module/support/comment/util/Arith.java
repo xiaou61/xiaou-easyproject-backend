@@ -13,9 +13,7 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.comment.util;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-/**
- * @author lanhai
- */
+
 public class Arith {
     /**
      * 默认除法运算精度

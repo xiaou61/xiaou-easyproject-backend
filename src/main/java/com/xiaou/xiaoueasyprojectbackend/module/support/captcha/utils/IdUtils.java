@@ -5,7 +5,7 @@ import cn.hutool.core.lang.UUID;
 /**
  * ID生成器工具类
  * 
- * @author ruoyi
+
  */
 public class IdUtils
 {

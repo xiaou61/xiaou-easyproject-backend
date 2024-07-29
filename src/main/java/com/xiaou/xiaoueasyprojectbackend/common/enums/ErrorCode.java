@@ -3,7 +3,7 @@ package com.xiaou.xiaoueasyprojectbackend.common.enums;
 /**
  * 错误码集合
  *
- * @author valarchie
+
  */
 public enum ErrorCode implements ErrorCodeInterface {
 

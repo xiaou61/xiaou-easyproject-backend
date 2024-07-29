@@ -216,3 +216,5 @@ CREATE TABLE `tz_prod_comm` (
                                 PRIMARY KEY (`prod_comm_id`),
                                 KEY `prod_id` (`prod_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品评论';
+
+

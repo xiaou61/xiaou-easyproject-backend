@@ -133,7 +133,7 @@ return ajax;
 /**
  * 验证码文本生成器
  *
- * @author ruoyi
+
  */
 public class KaptchaTextCreator extends DefaultTextCreator
 {

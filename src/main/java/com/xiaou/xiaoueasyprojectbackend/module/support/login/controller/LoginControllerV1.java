@@ -24,7 +24,6 @@ import jakarta.servlet.http.HttpServletRequest;
  * @author xiaou61
  * @Date 2024/7/22 14:34
  * @Description: 登录/注册 通用接口 鱼皮
- * 使用前记着导入sql 并且添加如下的配置： map-underscore-to-camel-case:false 这个去application里面找就可以
  */
 public class LoginControllerV1 {
 

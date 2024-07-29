@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 /**
  * 公告管理
  *
- * @author hzm
+
  * @date 2019-04-18 21:21:40
  */
 public interface NoticeMapper extends BaseMapper<Notice> {

@@ -3,9 +3,7 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.annotations.r
 
 import com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.annotations.ratelimit.RateLimit;
 
-/**
- * @author valarchie
- */
+
 public abstract class AbstractRateLimitChecker {
 
     /**

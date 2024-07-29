@@ -8,9 +8,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import org.springdoc.core.annotations.ParameterObject;
 
 import java.util.List;
-/**
- * @author lanhai
- */
+
 @Schema
 @ParameterObject
 public class PageParam<T> extends Page<T> {

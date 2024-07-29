@@ -3,7 +3,7 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.vo;
 /**
  * 状态码集合
  *
- * @author woniu
+
  * @date 2023/4/12 14:33
  */
 public enum ReturnCode {

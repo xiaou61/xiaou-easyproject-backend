@@ -2,7 +2,7 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.RateLimit.annotations;
 
 /**
  * 限流key
- * @author valarchie
+
  */
 public class RateLimitKey {
 

@@ -20,8 +20,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * redis配置
- *
- * @author valarchie
+
  */
 @Configuration
 @EnableCaching

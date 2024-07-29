@@ -10,7 +10,7 @@ import com.xiaou.xiaoueasyprojectbackend.common.constant.HttpStatus;
 /**
  * 操作消息提醒
  * 
- * @author ruoyi
+
  */
 public class AjaxResult extends HashMap<String, Object>
 {
