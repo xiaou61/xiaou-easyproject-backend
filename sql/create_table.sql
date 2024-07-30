@@ -218,3 +218,20 @@ CREATE TABLE `tz_prod_comm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品评论';
 
 
+-- notice表 用于 NoticeControllerV2
+create table sys_notice
+(
+    notice_id      int auto_increment comment '公告ID'
+        primary key,
+    notice_title   varchar(64)             not null comment '公告标题',
+    notice_type    smallint                not null comment '公告类型（1通知 2公告）',
+    notice_content text                    null comment '公告内容',
+    status         smallint     default 0  not null comment '公告状态（1正常 0关闭）',
+    creator_id     bigint                  not null comment '创建者ID',
+    create_time    datetime                null comment '创建时间',
+    updater_id     bigint                  null comment '更新者ID',
+    update_time    datetime                null comment '更新时间',
+    remark         varchar(255) default '' not null comment '备注',
+    deleted        tinyint(1)   default 0  not null comment '逻辑删除'
+)
+    comment '通知公告表';

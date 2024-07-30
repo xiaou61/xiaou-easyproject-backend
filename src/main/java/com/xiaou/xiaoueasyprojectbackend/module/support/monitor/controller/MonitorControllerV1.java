@@ -3,7 +3,6 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.monitor.controller;
 
 
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.PageDTO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.apiencrypt.dto.ResponseDTO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.monitor.dto.RedisCacheInfoDTO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.monitor.dto.ServerInfo;
@@ -16,8 +15,6 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 /**
  * @author xiaou61
  * @Date 2024/7/30 12:28
@@ -27,7 +24,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/monitor")
 @RequiredArgsConstructor
-public class MonitorController{
+public class MonitorControllerV1 {
 
     @Resource
     private MonitorApplicationService monitorApplicationService;
