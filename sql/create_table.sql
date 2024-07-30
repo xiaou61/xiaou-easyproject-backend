@@ -235,3 +235,26 @@ create table sys_notice
     deleted        tinyint(1)   default 0  not null comment '逻辑删除'
 )
     comment '通知公告表';
+
+
+-- 部门表 用于 DeptControllerV1
+create table sys_dept
+(
+    dept_id     bigint auto_increment comment '部门id'
+        primary key,
+    parent_id   bigint      default 0  not null comment '父部门id',
+    ancestors   text                   not null comment '祖级列表',
+    dept_name   varchar(64) default '' not null comment '部门名称',
+    order_num   int         default 0  not null comment '显示顺序',
+    leader_id   bigint                 null,
+    leader_name varchar(64)            null comment '负责人',
+    phone       varchar(16)            null comment '联系电话',
+    email       varchar(128)           null comment '邮箱',
+    status      smallint    default 0  not null comment '部门状态（0停用 1启用）',
+    creator_id  bigint                 null comment '创建者ID',
+    create_time datetime               null comment '创建时间',
+    updater_id  bigint                 null comment '更新者ID',
+    update_time datetime               null comment '更新时间',
+    deleted     tinyint(1)  default 0  not null comment '逻辑删除'
+)
+    comment '部门表';
