@@ -104,10 +104,32 @@
 
 **[P6Spy](https://github.com/p6spy/p6spy)**: 数据库查询性能监控工具
 
+**[Sensitive Word](https://github.com/houbb/sensitive-word)**: 敏感词过滤库
+
+**[MinIO Java SDK](https://github.com/minio/minio-java)**: MinIO对象存储服务的Java SDK
+
+**[PageHelper Spring Boot Starter](https://github.com/pagehelper/pagehelper-spring-boot)**: 用于分页的Spring Boot启动器
+
+[**JUnit**](https://junit.org/junit5/): 单元测试框架
+
+**[SMS4J Spring Boot Starter](https://github.com/dromara/sms4j)**: 短信服务的Spring Boot启动器
+
+**[Velocity Engine Core](https://velocity.apache.org/engine/)**: Apache Velocity模板引擎的核心库
+
+**[ZXing Core](https://github.com/zxing/zxing)**: 用于条形码和二维码的Java库
+
+**[ZXing JavaSE](https://github.com/zxing/zxing)**: ZXing的Java SE扩展
+
+**[QRCode Plugin](https://github.com/liuyueyi/qrcode-plugin)**: QR码生成插件
+
+**[Commons Lang](https://commons.apache.org/proper/commons-lang/)**: Apache Commons的语言库扩展
+
+**[OSHI Core](https://github.com/oshi/oshi)**: 用于获取系统信息的库
+
 <!-- 路线图 -->
 ## 路线图
 
-- [ ] 完成文档的搭建
+- [x] 完成文档的搭建
 - [ ] 完成测试用例的编写
 - [ ] 开发100个接口（预计半年内开发完毕）
 
@@ -175,4 +197,6 @@ https://gitee.com/y_project/RuoYi-Vue
 
 [macrozheng/mall](https://github.com/macrozheng/mall)
 
-[gz-yami/mall4j: ](https://github.com/gz-yami/mall4j/tree/master)
+[gz-yami/mall4j:](https://github.com/gz-yami/mall4j/tree/master)
+
+[jeecgboot/JeecgBoot](https://github.com/jeecgboot/JeecgBoot/tree/master)
