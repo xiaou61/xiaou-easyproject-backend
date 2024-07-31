@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Tag(name = "监控API", description = "监控相关信息")
 @RestController
-@RequestMapping("/monitor")
+@RequestMapping("/v1/monitor")
 @RequiredArgsConstructor
 public class MonitorControllerV1 {
 
