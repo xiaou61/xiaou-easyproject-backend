@@ -319,6 +319,14 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- ai体验栈 -->
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.15.4</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
