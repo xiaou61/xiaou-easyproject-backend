@@ -12,11 +12,6 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- * @Author: Xiaou61
- * @Date: 2024/08/03 14:08
- * @deprecated 一个每日自动拉取壁纸写入readme文件的程序
- */
 
 public class WallpaperApplication {
 
