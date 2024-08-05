@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.support.auth.mapper.SysUserMapperAuth">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xiaou.xiaoueasyprojectbackend.module.support.auth.entity.SysUser">
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="sex" property="sex"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="avatar" property="avatar"/>
+        <result column="personal_sign" property="personalSign"/>
+        <result column="salt" property="salt"/>
+        <result column="dept_id" property="deptId"/>
+        <result column="user_type" property="userType"/>
+        <result column="status" property="status"/>
+        <result column="login_ip" property="loginIp"/>
+        <result column="login_date" property="loginDate"/>
+        <result column="pwd_update_date" property="pwdUpdateDate"/>
+        <result column="remark" property="remark"/>
+        <result column="create_by" property="createBy"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="del_flag" property="delFlag"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+                user_id, user_name, email, password, sex, phone_number, avatar, personal_sign, salt, dept_id, user_type,
+                status,
+                login_ip, login_date, pwd_update_date, remark, create_by, update_by, create_time, update_time, del_flag
+    </sql>
+    <sql id="ConditionSql">
+        <where>
+            <if test="userId != null">
+                and user_id = #{userId,jdbcType=BIGINT}
+            </if>
+            <if test="deptId != null">
+                and dept_id = #{deptId,jdbcType=TINYINT}
+            </if>
+            <if test="userName != null">
+                and user_name = #{userName,jdbcType=VARCHAR}
+            </if>
+            <if test="userType != null">
+                and user_type = #{userType,jdbcType=TINYINT}
+            </if>
+            <if test="email != null">
+                and email = #{email,jdbcType=VARCHAR}
+            </if>
+            <if test="phoneNumber != null">
+                and phone_number = #{phoneNumber,jdbcType=VARCHAR}
+            </if>
+            <if test="sex != null">
+                and sex = #{sex,jdbcType=TINYINT}
+            </if>
+            <if test="avatar != null">
+                and avatar = #{avatar,jdbcType=VARCHAR}
+            </if>
+            <if test="password != null">
+                and password = #{password,jdbcType=VARCHAR}
+            </if>
+            <if test="personalSign != null">
+                and personal_sign = #{personalSign,jdbcType=VARCHAR}
+            </if>
+            <if test="salt != null">
+                and salt = #{salt,jdbcType=VARCHAR}
+            </if>
+            <if test="status != null">
+                and status = #{status,jdbcType=TINYINT}
+            </if>
+            <if test="delFlag != null">
+                and del_flag = #{delFlag,jdbcType=TINYINT}
+            </if>
+            <if test="loginIp != null">
+                and login_ip = #{loginIp,jdbcType=VARCHAR}
+            </if>
+            <if test="loginDate != null">
+                and login_date = #{loginDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="pwdUpdateDate != null">
+                and pwd_update_date = #{pwdUpdateDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="createBy != null">
+                and create_by = #{createBy,jdbcType=VARCHAR}
+            </if>
+            <if test="updateBy != null">
+                and update_by = #{updateBy,jdbcType=VARCHAR}
+            </if>
+            <if test="remark != null">
+                and remark = #{remark,jdbcType=VARCHAR}
+            </if>
+            <if test="createStartDate != null">
+                and create_time <![CDATA[ >= ]]> #{createStartDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="createEndDate != null">
+                and create_time <![CDATA[ <= ]]> #{createEndDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateStartDate != null">
+                and update_time <![CDATA[ >= ]]> #{updateStartDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateEndDate != null">
+                and update_time <![CDATA[ <= ]]> #{updateEndDate,jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </sql>
+    <select id="selectUserByCondition" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.auth.entity.SysUser" resultMap="BaseResultMap"
+            parameterType="com.xiaou.xiaoueasyprojectbackend.module.support.auth.query.SysUserQuery">
+        select
+        <include refid="BaseColumnList"/>
+        from sys_user
+        <include refid="ConditionSql"/>
+    </select>
+</mapper>

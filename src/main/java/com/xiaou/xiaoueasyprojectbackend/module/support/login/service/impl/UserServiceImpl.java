@@ -6,7 +6,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.enums.Error
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.entity.User;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.vo.LoginUserVO;
 import com.xiaou.xiaoueasyprojectbackend.common.exception.BusinessException;
-import com.xiaou.xiaoueasyprojectbackend.module.support.like.mapper.UserMapper;
+import com.xiaou.xiaoueasyprojectbackend.module.support.like.mapper.UsersMapper;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Service
 @Slf4j
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+public class UserServiceImpl extends ServiceImpl<UsersMapper, User> implements UserService {
 
 
     /**

@@ -69,8 +69,6 @@ minio:
   accessKey: minioadmin #访问的key
   secretKey: minioadmin #访问的秘钥
 
-
-
 sms:
   config-type: yaml
   blends:

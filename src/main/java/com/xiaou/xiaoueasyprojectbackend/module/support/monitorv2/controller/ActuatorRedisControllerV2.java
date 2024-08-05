@@ -23,8 +23,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Description: ActuatorRedisController
- * @author: jeecg-boot
+ * @author xiaou61
+ * @Date 2024/7/31 10:49
+ * @Description: redis监控
  */
 @Slf4j
 @RestController

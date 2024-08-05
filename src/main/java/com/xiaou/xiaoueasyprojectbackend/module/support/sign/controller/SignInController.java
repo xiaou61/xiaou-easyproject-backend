@@ -3,11 +3,13 @@ package com.xiaou.xiaoueasyprojectbackend.module.support.sign.controller;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.ResultUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.login.domain.BaseResponse;
 import com.xiaou.xiaoueasyprojectbackend.module.support.sign.service.SignInService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/signin")
+@Tag(name = "签到模块", description = "签到模块")
 public class SignInController {
 
 
