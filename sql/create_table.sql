@@ -294,3 +294,17 @@ create table sys_user
   default charset = utf8mb4
   auto_increment = 10000 comment = '用户信息表';
 
+
+-- 用于NoticeV3controller
+-- ----------------------------
+-- Table structure for notice
+-- ----------------------------
+DROP TABLE IF EXISTS `notice`;
+CREATE TABLE `notice`  (
+                           `id` int(0) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+                           `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '标题',
+                           `content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '内容',
+                           `time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '创建时间',
+                           `user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '创建人',
+                           PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '公告信息表' ROW_FORMAT = Dynamic;
