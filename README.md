@@ -9,15 +9,16 @@
 
   <p align="center">
     <br />
-    <a href="http://halo.xiaou61.top/"><strong>浏览讲解文档 »</strong></a>
+    <a href="http://halo.xiaou61.top/"><strong>点击浏览讲解文档 »</strong></a>
     <br />
     <br />
-    <a href="">接口地址正在建设中....</a>
+    <a href="https://apifox.com/apidoc/shared-5690a127-4d6f-40c6-b688-a56d7a43103c">点击浏览接口地址</a>
     ·<br />
     <a href="https://github.com/xiaou61/xiaou-easyproject-backend/issues">反馈 Bug</a>
     ·<br />
     <a href="https://github.com/xiaou61/xiaou-easyproject-backend/issues">请求新功能</a>
   </p>
+
 
 </div>
 
@@ -131,7 +132,8 @@
 
 - [x] 完成文档的搭建
 - [ ] 完成测试用例的编写
-- [ ] 开发100个接口（预计半年内开发完毕）
+- [x] 开发100个接口
+- [ ] 开发200个接口
 
 到 [open issues]([Issues · xiaou61/xiaou-easyproject-backend (github.com)](https://github.com/xiaou61/xiaou-easyproject-backend/issues)) 页查看所有请求的功能 （以及已知的问题）。
 
