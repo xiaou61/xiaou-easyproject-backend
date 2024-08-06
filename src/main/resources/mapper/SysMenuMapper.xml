@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.support.menuv2.mapper.SysMenuMapper">
+
+    <select id="query" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.menuv2.entity.SysMenu"
+            parameterType="com.xiaou.xiaoueasyprojectbackend.module.support.menuv2.search.SysMenuSearch">
+        SELECT
+            a.*
+        FROM
+            sys_menu a
+        <where>
+            <if test="null != menuName ">
+                and a.menu_name = #{menuName}
+            </if>
+            <if test="null != parentId ">
+                and a.parent_id = #{parentId}
+            </if>
+            <if test="null != path ">
+                and a.path = #{path}
+            </if>
+            <if test="null != component ">
+                and a.component = #{component}
+            </if>
+            <if test="null != query ">
+                and a.query = #{query}
+            </if>
+            <if test="null != isFrame ">
+                and a.is_frame = #{isFrame}
+            </if>
+            <if test="null != isCache ">
+                and a.is_cache = #{isCache}
+            </if>
+            <if test="null != menuType ">
+                and a.menu_type = #{menuType}
+            </if>
+            <if test="null != visible ">
+                and a.visible = #{visible}
+            </if>
+            <if test="null != status ">
+                and a.status = #{status}
+            </if>
+            <if test="null != perms ">
+                and a.perms = #{perms}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryPage" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.menuv2.entity.SysMenu"
+            parameterType="com.xiaou.xiaoueasyprojectbackend.module.support.menuv2.search.SysMenuSearch">
+        SELECT
+            a.*
+        FROM
+            sys_menu a
+        <where>
+            <if test="null != search.menuName ">
+                and a.menu_name = #{search.menuName}
+            </if>
+        </where>
+    </select>
+
+</mapper>

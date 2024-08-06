@@ -358,3 +358,29 @@ CREATE TABLE `sys_company`
     `update_time`  datetime(0)                                                  NULL DEFAULT NULL COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB  COMMENT = '部门表'  ROW_FORMAT = Compact;
+
+-- 菜单表 用于menuv2
+DROP TABLE IF EXISTS `sys_menu`;
+CREATE TABLE `sys_menu`  (
+                             `id` varchar(64) NOT NULL COMMENT 'PK',
+                             `parent_id` varchar(64) NOT NULL COMMENT '父菜单ID',
+                             `tree_path` varchar(255)  NULL DEFAULT NULL COMMENT '父节点ID路径',
+                             `name` varchar(64)  NOT NULL DEFAULT '' COMMENT '菜单名称',
+                             `menu_type` int NOT NULL COMMENT '菜单类型(1:菜单；2:目录；3:外链；4:按钮)',
+                             `path` varchar(128)  NULL DEFAULT '' COMMENT '路由路径(浏览器地址栏路径)',
+                             `component` varchar(128)  NULL DEFAULT NULL COMMENT '组件路径(vue页面完整路径，省略.vue后缀)',
+                             `perm` varchar(128)  NULL DEFAULT NULL COMMENT '权限标识',
+                             `visible` int NOT NULL DEFAULT 1 COMMENT '显示状态(1-显示;0-隐藏)',
+                             `menu_sort` int NULL DEFAULT 0 COMMENT '排序',
+                             `icon` varchar(64)  NULL DEFAULT '' COMMENT '菜单图标',
+                             `redirect` varchar(128)  NULL DEFAULT NULL COMMENT '跳转路径',
+                             `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+                             `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+                             `create_by`    varchar(64)  NULL DEFAULT '' COMMENT '创建者',
+                             `update_by`    varchar(64)  NULL DEFAULT '' COMMENT '更新者',
+                             `del_flag` int NOT NULL COMMENT '逻辑删除字段',
+                             `tenant_id` varchar(100)  NULL DEFAULT NULL COMMENT '租户id',
+                             `ancestors` varchar(600)  NULL DEFAULT NULL COMMENT '祖级id路径(parentid/sonid/id)',
+                             `query_params`  varchar(255)  NULL DEFAULT NULL COMMENT '路由参数',
+                             PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB  COMMENT = '菜单管理' ROW_FORMAT = DYNAMIC;
