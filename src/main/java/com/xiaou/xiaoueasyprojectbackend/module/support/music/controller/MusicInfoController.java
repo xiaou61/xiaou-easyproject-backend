@@ -13,6 +13,7 @@ import com.xiaou.xiaoueasyprojectbackend.module.support.music.util.JsonUtil;
 import com.xiaou.xiaoueasyprojectbackend.module.support.music.vo.LayuiPageVO;
 import com.xiaou.xiaoueasyprojectbackend.module.support.music.vo.MusicInfoLinkDetailVo;
 import com.xiaou.xiaoueasyprojectbackend.module.support.music.vo.RespVO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+/**
+ * @author xiaou61
+ * @Date 2024/8/06 14:56
+ * @Description: 音乐接口
+ */
 @Slf4j
-@RequestMapping("/admin")
+@RequestMapping("/v1/music")
 @RestController
+@Tag(name = "音乐接口", description = "音乐接口")
 public class MusicInfoController {
 	
 	@Resource

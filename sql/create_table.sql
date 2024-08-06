@@ -341,3 +341,20 @@ CREATE TABLE IF NOT EXISTS `music_info_link` (
                                                  PRIMARY KEY (`id`),
                                                  KEY `music_id` (`music_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='音乐链接信息表';
+
+
+-- 公司表 用于companyV1
+DROP TABLE IF EXISTS `sys_company`;
+CREATE TABLE `sys_company`
+(
+    `id`           varchar(64)  NOT NULL COMMENT '公司id',
+    `company_name` varchar(30)  NULL DEFAULT '' COMMENT '公司名称',
+    `order_num`    int(0)                                                       NULL DEFAULT 0 COMMENT '显示顺序',
+    `status`       char(1)      NULL DEFAULT '0' COMMENT '公司状态（0正常 1停用）',
+    `del_flag`     char(1)      NULL DEFAULT '0' COMMENT '删除标志（0代表存在 2代表删除）',
+    `create_by`    varchar(64)  NULL DEFAULT '' COMMENT '创建者',
+    `create_time`  datetime(0)                                                  NULL DEFAULT NULL COMMENT '创建时间',
+    `update_by`    varchar(64)  NULL DEFAULT '' COMMENT '更新者',
+    `update_time`  datetime(0)                                                  NULL DEFAULT NULL COMMENT '更新时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB  COMMENT = '部门表'  ROW_FORMAT = Compact;

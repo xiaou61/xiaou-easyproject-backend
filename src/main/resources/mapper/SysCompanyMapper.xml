@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.support.deptv2.mapper.SysCompanyMapper">
+
+    <select id="query" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.company.entity.SysCompany"
+            parameterType="com.xiaou.xiaoueasyprojectbackend.module.support.company.search.SysCompanySearch">
+        SELECT
+            a.*
+        FROM
+            sys_company a
+        <where>
+            <if test="null != companyName ">
+                and a.company_name = #{companyName}
+            </if>
+            <if test="null != status ">
+                and a.status = #{status}
+            </if>
+            <if test="null != delFlag ">
+                and a.del_flag = #{delFlag}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryPage" resultType="com.xiaou.xiaoueasyprojectbackend.module.support.company.entity.SysCompany"
+            parameterType="com.xiaou.xiaoueasyprojectbackend.module.support.company.search.SysCompanySearch">
+        SELECT
+            a.*
+        FROM
+            sys_company a
+        <where>
+            <if test="null != search.companyName ">
+                and a.company_name = #{search.companyName}
+            </if>
+            <if test="null != search.status ">
+                and a.status = #{search.status}
+            </if>
+            <if test="null != search.delFlag ">
+                and a.del_flag = #{search.delFlag}
+            </if>
+        </where>
+    </select>
+
+</mapper>
