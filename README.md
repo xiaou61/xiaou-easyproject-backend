@@ -204,3 +204,5 @@ https://gitee.com/y_project/RuoYi-Vue
 [gz-yami/mall4j:](https://github.com/gz-yami/mall4j/tree/master)
 
 [jeecgboot/JeecgBoot](https://github.com/jeecgboot/JeecgBoot/tree/master)
+
+[woodwhales/woodwhales-music](https://github.com/woodwhales/woodwhales-music)

@@ -308,3 +308,36 @@ CREATE TABLE `notice`  (
                            `user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '创建人',
                            PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '公告信息表' ROW_FORMAT = Dynamic;
+
+
+
+-- 用于musiccontroller
+-- 导出  表 open_music.music_info 结构
+CREATE TABLE IF NOT EXISTS `music_info` (
+                                            `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '音乐表主键',
+                                            `title` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '音乐名称标题（音乐名称）',
+                                            `artist` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '作者',
+                                            `album` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '专辑',
+                                            `sort` int DEFAULT '1' COMMENT '排序',
+                                            `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除，0-已启用，1-已停用，2-已删除',
+                                            `gmt_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                            `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                            `link_status` int unsigned NOT NULL DEFAULT '0' COMMENT '链接填充状态：0-未填充链接，1-已填充链接',
+                                            PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='音乐表';
+
+-- 数据导出被取消选择。
+
+-- 导出  表 open_music.music_info_link 结构
+CREATE TABLE IF NOT EXISTS `music_info_link` (
+                                                 `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+                                                 `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除，0-已启用，1-已停用，2-已删除',
+                                                 `gmt_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                                 `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                                 `link_url` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '音频链接',
+                                                 `link_type` int NOT NULL DEFAULT '0' COMMENT '链接类型：0-音频，1-封面',
+                                                 `link_source` int NOT NULL DEFAULT '0' COMMENT '链接来源：0-github，1-alist',
+                                                 `music_id` bigint unsigned NOT NULL COMMENT 'music表id',
+                                                 PRIMARY KEY (`id`),
+                                                 KEY `music_id` (`music_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='音乐链接信息表';

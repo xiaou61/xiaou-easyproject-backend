@@ -108,3 +108,16 @@ sms:
       accessKeySecret: UbXXXxxx
       #短信签名，可选；可选的时候，只能使用自定义短信不能使用模板短信； 具体在这里查看审核过的短信签名：https://mix2.zthysms.com/index.html#/SignatureManagement
       signature: 上海千XXXX
+
+
+music:
+  link:
+    # 链接来源：0-github，1-alist
+    source: 1
+  # 音乐网站首页
+  site: "https://music.icoders.cn/"
+author:
+  # 作者名称
+  name: "woodwhales"
+  # 作者网站
+  website: "https://www.woodwhales.cn"
