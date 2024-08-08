@@ -2,6 +2,8 @@ spring:
   application:
     name: xiaou-easyproject
 
+
+
   #文件上传大小限制
   servlet:
     multipart:
@@ -121,3 +123,4 @@ author:
   name: "woodwhales"
   # 作者网站
   website: "https://www.woodwhales.cn"
+

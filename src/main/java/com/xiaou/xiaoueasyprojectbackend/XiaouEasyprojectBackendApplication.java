@@ -1,5 +1,6 @@
 package com.xiaou.xiaoueasyprojectbackend;
 
+
 import org.dromara.x.file.storage.spring.EnableFileStorage;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //启动文件上传服务
 @EnableFileStorage
 @MapperScan("com.xiaou.xiaoueasyprojectbackend.**.mapper")
+@EnableTransactionManagement
+
 
 public class XiaouEasyprojectBackendApplication {
 
