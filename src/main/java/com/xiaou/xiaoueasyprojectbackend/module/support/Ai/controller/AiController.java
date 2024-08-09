@@ -1,6 +1,6 @@
 package com.xiaou.xiaoueasyprojectbackend.module.support.Ai.controller;
 
-import com.xiaou.xiaoueasyprojectbackend.module.support.AIGC.utils.AiUtils;
+import com.xiaou.xiaoueasyprojectbackend.module.support.AIGCTongyi.utils.AiUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.question.result.Result;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;

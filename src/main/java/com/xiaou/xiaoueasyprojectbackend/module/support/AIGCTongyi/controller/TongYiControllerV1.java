@@ -1,4 +1,4 @@
-package com.xiaou.xiaoueasyprojectbackend.module.support.AIGC.controller;
+package com.xiaou.xiaoueasyprojectbackend.module.support.AIGCTongyi.controller;
 
 import com.alibaba.dashscope.aigc.generation.Generation;
 import com.alibaba.dashscope.aigc.generation.GenerationParam;

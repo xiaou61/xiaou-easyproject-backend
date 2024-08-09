@@ -1,4 +1,4 @@
-package com.xiaou.xiaoueasyprojectbackend.module.support.AIGC.config;
+package com.xiaou.xiaoueasyprojectbackend.module.support.AIGCTongyi.config;
 
 import com.alibaba.dashscope.aigc.generation.Generation;
 import org.springframework.context.annotation.Bean;

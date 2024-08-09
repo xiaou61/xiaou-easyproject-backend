@@ -1,4 +1,4 @@
-package com.xiaou.xiaoueasyprojectbackend.module.support.AIGC.utils;
+package com.xiaou.xiaoueasyprojectbackend.module.support.AIGCTongyi.utils;
 
 
 
