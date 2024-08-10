@@ -27,6 +27,17 @@ public class RedisCache
     @Autowired
     public RedisTemplate redisTemplate;
 
+
+    /**
+     * 获取整个集合元素个数
+     * @param key
+     * @return
+     */
+    public Long zCard(String key) {
+        return redisTemplate.opsForZSet().zCard(key);
+    }
+
+
     public Object execute(String location, List keys, Object... args) {
         ClassPathResource resource = new ClassPathResource(location);
         return redisTemplate.execute(RedisScript.of(resource, Long.class), keys, args);

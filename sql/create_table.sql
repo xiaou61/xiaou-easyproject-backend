@@ -517,3 +517,30 @@ CREATE TABLE `book_info` (
                              KEY `idx_createTime` (`create_time`) USING BTREE,
                              KEY `idx_lastChapterUpdateTime` (`last_chapter_update_time`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1431630596354977793 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='小说信息';
+
+
+-- 用于commentv2
+--
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comment` (
+                           `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '评论主id',
+                           `vid` int(11) NOT NULL COMMENT '评论的视频id',
+                           `uid` int(11) DEFAULT NULL COMMENT '发送者id',
+                           `root_id` int(11) NOT NULL DEFAULT '0' COMMENT '根节点评论的id,如果为0表示为根节点',
+                           `parent_id` int(11) NOT NULL COMMENT '被回复的评论id，只有root_id为0时才允许为0，表示根评论',
+                           `to_user_id` int(11) NOT NULL COMMENT '回复目标用户id',
+                           `content` varchar(2000) NOT NULL COMMENT '评论内容',
+                           `love` int(11) NOT NULL DEFAULT '0' COMMENT '该条评论的点赞数',
+                           `bad` int(11) DEFAULT '0' COMMENT '不喜欢的数量',
+                           `create_time` datetime NOT NULL COMMENT '创建时间',
+                           `is_top` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否置顶 0普通 1置顶',
+                           `is_deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT '软删除 0未删除 1已删除',
+                           PRIMARY KEY (`id`),
+                           UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='评论表';
+/*!40101 SET character_set_client = @saved_cs_client */;

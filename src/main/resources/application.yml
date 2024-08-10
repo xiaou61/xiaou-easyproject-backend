@@ -124,3 +124,10 @@ author:
   # 作者网站
   website: "https://www.woodwhales.cn"
 
+
+
+
+com:
+  xiaou:
+    operate-log:
+      enabled: true
