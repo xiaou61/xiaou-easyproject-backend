@@ -14,10 +14,9 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 系统日志Controller
- *
- * @author xiaohai
- * @since 2023-03-30
+ * @author xiaou61
+ * @Date 2024/8/10 16:11
+ * @Description: 日志接口 使用方法就是在需要记录的方法前上加上@log就可以了
  */
 @Tag(name = "日志接口", description = "系统日志")
 @RestController
