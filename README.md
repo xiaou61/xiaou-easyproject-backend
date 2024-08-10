@@ -206,3 +206,5 @@ https://gitee.com/y_project/RuoYi-Vue
 [jeecgboot/JeecgBoot](https://github.com/jeecgboot/JeecgBoot/tree/master)
 
 [woodwhales/woodwhales-music](https://github.com/woodwhales/woodwhales-music)
+
+[wch2019/xiaohai-blog: DotCode](https://github.com/wch2019/xiaohai-blog)

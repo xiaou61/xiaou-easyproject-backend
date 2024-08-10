@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.support.log.mapper.LogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xiaou.xiaoueasyprojectbackend.module.support.log.entity.Log">
+        <id column="id" property="id"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="title" property="title"/>
+        <result column="method" property="method"/>
+        <result column="request_method" property="requestMethod"/>
+        <result column="oper_url" property="operUrl"/>
+        <result column="oper_ip" property="operIp"/>
+        <result column="oper_os" property="operOs"/>
+        <result column="oper_browser" property="operBrowser"/>
+        <result column="oper_param" property="operParam"/>
+        <result column="json_result" property="jsonResult"/>
+        <result column="error_msg" property="errorMsg"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        created_by,
+        created_time,
+        id, title, method, request_method, oper_url, oper_ip,oper_os,oper_browser, oper_param, json_result, error_msg, status
+    </sql>
+    <update id="truncateTable">
+        truncate table sys_log
+    </update>
+    <select id="getPVByWeek" resultType="java.util.Map">
+        SELECT
+            DISTINCT DATE_FORMAT(created_time, '%Y-%m-%d') date, COUNT(id) count
+        FROM
+            sys_log
+        where
+            created_time >= #{startTime} AND created_time &lt;= #{endTime} AND title ="站点信息展示"
+        GROUP BY
+            DATE_FORMAT(created_time, '%Y-%m-%d')
+    </select>
+
+    <select id="getRCByWeek" resultType="java.util.Map">
+        SELECT
+            DISTINCT DATE_FORMAT(created_time, '%Y-%m-%d') date, COUNT(id) count
+        FROM
+            sys_log
+        where
+            created_time >= #{startTime} AND created_time &lt;= #{endTime}
+        GROUP BY
+            DATE_FORMAT(created_time, '%Y-%m-%d')
+    </select>
+
+    <select id="getUVByWeek" resultType="java.util.Map">
+        SELECT date, COUNT(oper_ip) count FROM
+        (SELECT
+            DISTINCT DATE_FORMAT(created_time, '%Y-%m-%d') date, oper_ip
+        FROM
+            sys_log
+        where
+            created_time >= #{startTime} AND created_time &lt;= #{endTime}
+        GROUP BY
+            DATE_FORMAT(created_time, '%Y-%m-%d'),oper_ip) AS tmp
+        GROUP BY date
+    </select>
+
+</mapper>
