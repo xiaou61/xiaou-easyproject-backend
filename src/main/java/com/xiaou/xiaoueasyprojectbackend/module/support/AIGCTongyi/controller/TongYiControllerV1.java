@@ -38,7 +38,7 @@ import java.util.Map;
 @Tag(name = "通义千问接口V1", description = "通义千问接口")
 public class TongYiControllerV1 {
 
-    private final String apikey="";
+    private final String apikey="sk-ad40dbef9a2d4f318085d4d7fb519346";
     @Resource
     private Generation generation;
 
