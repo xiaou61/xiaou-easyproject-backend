@@ -59,7 +59,7 @@ public class SysMenuController {
 
         page = sysMenuService.queryPage(page, search);
 
-        log.info("page------>{}", page);
+        log.info("support------>{}", page);
 
         return RestResponse.success(page);
     }

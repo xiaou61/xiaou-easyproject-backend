@@ -22,7 +22,7 @@ public class WallpaperApplication {
     /**
      * 当前日期作为分页参数
      */
-    private static final String PAGE_API = WALLPAPER_API + "&page=" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+    private static final String PAGE_API = WALLPAPER_API + "&support=" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
 
 
     public static void main(String[] args) throws IOException {

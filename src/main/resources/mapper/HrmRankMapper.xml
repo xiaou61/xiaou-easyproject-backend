@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.hrm.md.mapper.HrmRankMapper">
+
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.hrm.md.domain.HrmRank" id="BaseResultMap">
+        <!--@Table hrm_rank-->
+        <result property="rankId"    column="rank_id"    />
+        <result property="rankCode"    column="rank_code"    />
+        <result property="rankType"    column="rank_type"    />
+        <result property="rankName"    column="rank_name"    />
+        <result property="salaryRangeMin"    column="salary_range_min"    />
+        <result property="salaryRangeMax"    column="salary_range_max"    />
+        <result property="createUserId"    column="create_user_id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateUserId"    column="update_user_id"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="deleted"    column="deleted"    />
+        <result property="deleteat"    column="deleteAt"    />
+        <result property="version"    column="version"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectHrmRankVo">
+        select rank_id, rank_code,rank_type, rank_name, salary_range_min, salary_range_max, create_user_id, create_by, update_user_id, update_by, create_time, update_time, deleted, deleteAt, version, remark from hrm_rank
+    </sql>
+
+</mapper>

@@ -22,7 +22,7 @@ public interface ProdCommMapper extends BaseMapper<ProdComm> {
      * @param evaluate
      * @return
      */
-    IPage<ProdCommDto> getProdCommDtoPageByProdId(@Param("page") Page page, @Param("prodId") Long prodId, @Param("evaluate") Integer evaluate);
+    IPage<ProdCommDto> getProdCommDtoPageByProdId(@Param("support") Page page, @Param("prodId") Long prodId, @Param("evaluate") Integer evaluate);
 
     /**
      * 根据用户id分页获取评论列表

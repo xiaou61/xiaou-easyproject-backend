@@ -46,7 +46,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu>
     public IPage<SysMenu> queryPage(IPage<SysMenu> page, SysMenuSearch search) {
 
         page = sysMenuMapper.queryPage(page, search);
-        log.info("page------>{}", page);
+        log.info("support------>{}", page);
 
         return page;
     }

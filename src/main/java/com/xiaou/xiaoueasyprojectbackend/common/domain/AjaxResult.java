@@ -1,4 +1,4 @@
-package com.xiaou.xiaoueasyprojectbackend.module.support.captcha.domain;
+package com.xiaou.xiaoueasyprojectbackend.common.domain;
 
 import java.util.HashMap;
 import java.util.Objects;

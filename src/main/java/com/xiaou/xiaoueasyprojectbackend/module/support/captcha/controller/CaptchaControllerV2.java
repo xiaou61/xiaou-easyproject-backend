@@ -5,7 +5,7 @@ import com.google.code.kaptcha.Producer;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.config.CaptchaConfig;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.config.KaptchaTextCreator;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.constant.CacheConstants;
-import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.domain.AjaxResult;
+import com.xiaou.xiaoueasyprojectbackend.common.domain.AjaxResult;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.text.Constants;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.utils.IdUtils;
 import com.xiaou.xiaoueasyprojectbackend.module.support.captcha.utils.RedisCache;

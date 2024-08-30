@@ -57,7 +57,7 @@ public class SysCompanyController {
 
         page = sysCompanyService.queryPage(page, search);
 
-        log.info("page------>{}", page);
+        log.info("support------>{}", page);
 
         return RestResponse.success(page);
     }

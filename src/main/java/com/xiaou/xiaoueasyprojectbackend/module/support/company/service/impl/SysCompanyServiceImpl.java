@@ -45,7 +45,7 @@ public class SysCompanyServiceImpl extends ServiceImpl<SysCompanyMapper, SysComp
     public IPage<SysCompany> queryPage(IPage<SysCompany> page, SysCompanySearch search) {
 
         page = sysCompanyMapper.queryPage(page, search);
-        log.info("page------>{}", page);
+        log.info("support------>{}", page);
 
         return page;
     }

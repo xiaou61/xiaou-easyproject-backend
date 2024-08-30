@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.hrm.sm.mapper.HrmStaffMapper">
+    <sql id="Base_Column_List">
+        staff_id,
+        staff_code,
+        staff_name,
+        contact_phone,
+        sex,
+        ethnicity,
+        birth_date,
+        email,
+        marital_status,
+        political_outlook,
+        id_card,
+        origin,
+        household_address,
+        emergency_contact,
+        relationship,
+        emergency_contact_phone,
+        education,
+        joined_time,
+        leave_time,
+        create_user_id,
+        create_by,
+        update_user_id,
+        update_by,
+        create_time,
+        update_time,
+        `status`,
+        current_address,
+        remark,
+        deleted,
+        deleteAt,
+        version,
+        actual_salary,
+        rank_id,
+        rank_code,
+        rank_name
+    </sql>
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.hrm.sm.domain.HrmStaff" id="BaseResultMap">
+        <!--@Table hrm_staff-->
+        <result property="staffId" column="staff_id"/>
+        <result property="staffCode" column="staff_code"/>
+        <result property="staffName" column="staff_name"/>
+        <result property="contactPhone" column="contact_phone"/>
+        <result property="sex" column="sex"/>
+        <result property="ethnicity" column="ethnicity"/>
+        <result property="birthDate" column="birth_date"/>
+        <result property="email" column="email"/>
+        <result property="maritalStatus" column="marital_status"/>
+        <result property="politicalOutlook" column="political_outlook"/>
+        <result property="idCard" column="id_card"/>
+        <result property="origin" column="origin"/>
+        <result property="householdAddress" column="household_address"/>
+        <result property="emergencyContact" column="emergency_contact"/>
+        <result property="relationship" column="relationship"/>
+        <result property="emergencyContactPhone" column="emergency_contact_phone"/>
+        <result property="education" column="education"/>
+        <result property="joinedTime" column="joined_time"/>
+        <result property="leaveTime" column="leave_time"/>
+        <result property="createUserId" column="create_user_id"/>
+        <result property="createBy" column="create_by"/>
+        <result property="updateUserId" column="update_user_id"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+        <result property="currentAddress" column="current_address"/>
+        <result property="remark" column="remark"/>
+        <result property="deleted" column="deleted"/>
+        <result property="deleteAt" column="deleteAt"/>
+        <result property="version" column="version"/>
+        <result property="actualSalary" column="actual_salary"/>
+        <result property="rankId" column="rank_id"/>
+        <result property="rankCode" column="rank_code"/>
+        <result property="rankName" column="rank_name"/>
+    </resultMap>
+
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.hrm.sm.vo.HrmStaffVo" id="HrmStaffVoResultMap">
+        <!--@Table hrm_staff-->
+        <result property="staffId" column="staff_id"/>
+        <result property="staffCode" column="staff_code"/>
+        <result property="staffName" column="staff_name"/>
+        <result property="contactPhone" column="contact_phone"/>
+        <result property="sex" column="sex"/>
+        <result property="ethnicity" column="ethnicity"/>
+        <result property="birthDate" column="birth_date"/>
+        <result property="email" column="email"/>
+        <result property="maritalStatus" column="marital_status"/>
+        <result property="politicalOutlook" column="political_outlook"/>
+        <result property="idCard" column="id_card"/>
+        <result property="origin" column="origin"/>
+        <result property="householdAddress" column="household_address"/>
+        <result property="emergencyContact" column="emergency_contact"/>
+        <result property="relationship" column="relationship"/>
+        <result property="emergencyContactPhone" column="emergency_contact_phone"/>
+        <result property="education" column="education"/>
+        <result property="joinedTime" column="joined_time"/>
+        <result property="leaveTime" column="leave_time"/>
+        <result property="createUserId" column="create_user_id"/>
+        <result property="createBy" column="create_by"/>
+        <result property="updateUserId" column="update_user_id"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+        <result property="currentAddress" column="current_address"/>
+        <result property="remark" column="remark"/>
+        <result property="deleted" column="deleted"/>
+        <result property="deleteAt" column="deleteAt"/>
+        <result property="version" column="version"/>
+        <result property="actualSalary" column="actual_salary"/>
+        <result property="rankId" column="rank_id"/>
+        <result property="rankCode" column="rank_code"/>
+        <result property="rankName" column="rank_name"/>
+        <result property="rankType" column="rank_type"/>
+    </resultMap>
+
+    <sql id="selectHrmStaffVo">
+        select staff_id,
+               staff_code,
+               staff_name,
+               contact_phone,
+               sex,
+               ethnicity,
+               birth_date,
+               email,
+               marital_status,
+               political_outlook,
+               id_card,
+               origin,
+               household_address,
+               emergency_contact,
+               relationship,
+               emergency_contact_phone,
+               education,
+               joined_time,
+               leave_time,
+               create_user_id,
+               create_by,
+               update_user_id,
+               update_by,
+               create_time,
+               update_time,
+               status,
+               current_address,
+               remark,
+               deleted,
+               deleteAt,
+               version,
+               actual_salary,
+               rank_id,
+               rank_code,
+               rank_name
+        from hrm_staff
+    </sql>
+
+    <!--auto generated by MybatisCodeHelper on 2024-07-24-->
+    <select id="listTalents" resultMap="HrmStaffVoResultMap">
+        select st.staff_id,
+               st.staff_code,
+               st.staff_name,
+               st.contact_phone,
+               st.sex,
+               st.ethnicity,
+               st.birth_date,
+               st.email,
+               st.marital_status,
+               st.political_outlook,
+               st.id_card,
+               st.origin,
+               st.household_address,
+               st.emergency_contact,
+               st.relationship,
+               st.emergency_contact_phone,
+               st.education,
+               st.joined_time,
+               st.leave_time,
+               st.create_user_id,
+               st.create_by,
+               st.update_user_id,
+               st.update_by,
+               st.create_time,
+               st.update_time,
+               st.status,
+               st.current_address,
+               st.remark,
+               st.actual_salary,
+               st.rank_id,
+               st.rank_code,
+               st.rank_name,
+               ra.salary_range_min,
+               ra.salary_range_max,
+               ra.rank_name,
+               ra.rank_type
+        from hrm_staff as st
+                 left join hrm_rank as ra on ra.rank_id = st.rank_id
+        <where>
+            <if test="staffCode != null  and staffCode != ''">
+                and st.staff_code = #{staffCode}
+            </if>
+            <if test="staffName != null  and staffName != ''">
+                and st.staff_name like concat('%', #{staffName}, '%')
+            </if>
+            <if test="contactPhone != null  and contactPhone != ''">
+                and st.contact_phone = #{contactPhone}
+            </if>
+            <if test="sex != null">
+                and st.sex = #{sex}
+            </if>
+            <if test="ethnicity != null  and ethnicity != ''">
+                and st.ethnicity = #{ethnicity}
+            </if>
+            <if test="birthDate != null">
+                and st.birth_date = #{birthDate}
+            </if>
+            <if test="email != null  and email != ''">
+                and st.email = #{email}
+            </if>
+            <if test="maritalStatus != null">
+                and st.marital_status = #{maritalStatus}
+            </if>
+            <if test="politicalOutlook != null">
+                and st.political_outlook = #{politicalOutlook}
+            </if>
+            <if test="idCard != null  and idCard != ''">
+                and st.id_card = #{idCard}
+            </if>
+            <if test="origin != null  and origin != ''">
+                and st.origin = #{origin}
+            </if>
+            <if test="householdAddress != null  and householdAddress != ''">
+                and st.household_address like concat('%', #{householdAddress}, '%')
+            </if>
+            <if test="emergencyContact != null  and emergencyContact != ''">
+                and st.emergency_contact = #{emergencyContact}
+            </if>
+            <if test="relationship != null  and relationship != ''">
+                and st.relationship = #{relationship}
+            </if>
+            <if test="emergencyContactPhone != null  and emergencyContactPhone != ''">
+                and st.emergency_contact_phone = #{emergencyContactPhone}
+            </if>
+            <if test="education != null">
+                and st.education = #{education}
+            </if>
+            <if test="joinedTime != null">
+                and st.joined_time = #{joinedTime}
+            </if>
+            <if test="leaveTime != null">
+                and st.leave_time = #{leaveTime}
+            </if>
+            <if test="status != null">
+                and st.status = #{status}
+            </if>
+            <if test="currentAddress != null  and currentAddress != ''">
+                and st.current_address like concat('%', #{currentAddress}, '%')
+            </if>
+            <if test="actualSalary != null">
+                and st.actual_salary = #{actualSalary}
+            </if>
+            <if test="rankId != null">
+                and st.rank_id = #{rankId}
+            </if>
+            <if test="rankCode != null  and rankCode != ''">
+                and st.rank_code = #{rankCode}
+            </if>
+            <if test="rankName != null  and rankName != ''">
+                and st.rank_name like concat('%', #{rankName}, '%')
+            </if>
+            and st.deleted = 0
+        </where>
+    </select>
+
+    <select id="getTalents" resultMap="HrmStaffVoResultMap">
+        select st.staff_id,
+               st.staff_code,
+               st.staff_name,
+               st.contact_phone,
+               st.sex,
+               st.ethnicity,
+               st.birth_date,
+               st.email,
+               st.marital_status,
+               st.political_outlook,
+               st.id_card,
+               st.origin,
+               st.household_address,
+               st.emergency_contact,
+               st.relationship,
+               st.emergency_contact_phone,
+               st.education,
+               st.joined_time,
+               st.leave_time,
+               st.create_user_id,
+               st.create_by,
+               st.update_user_id,
+               st.update_by,
+               st.create_time,
+               st.update_time,
+               st.status,
+               st.current_address,
+               st.remark,
+               st.actual_salary,
+               st.rank_id,
+               st.rank_code,
+               st.rank_name,
+               ra.salary_range_min,
+               ra.salary_range_max,
+               ra.rank_name,
+               ra.rank_type
+        from hrm_staff as st
+                 left join hrm_rank as ra on ra.rank_id = st.rank_id
+        where st.deleted = 0
+    </select>
+</mapper>
