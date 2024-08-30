@@ -2,7 +2,6 @@ package com.xiaou.xiaoueasyprojectbackend.module.hrm.sm.controller;
 
 import com.alibaba.excel.EasyExcel;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiaou.xiaoueasyprojectbackend.common.domain.AjaxResult;
 import com.xiaou.xiaoueasyprojectbackend.common.utils.StringUtils;
@@ -15,8 +14,6 @@ import com.xiaou.xiaoueasyprojectbackend.module.hrm.support.TableDataInfo;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -26,10 +23,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 员工花名册Controller
- *
- * @author 施子安
- * @date 2024-07-11
+ * @author xiaou61
+ * @Date 2024/8/30 18:26
+ * @Description 员工花名册接口
  */
 @RestController
 @RequestMapping("/hrm/sm/hrm-staff")
