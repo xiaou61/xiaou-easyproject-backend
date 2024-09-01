@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.mapper.CalTeamMapper">
+    
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeam" id="CalTeamResult">
+        <result property="teamId"    column="team_id"    />
+        <result property="teamCode"    column="team_code"    />
+        <result property="teamName"    column="team_name"    />
+        <result property="calendarType"    column="calendar_type"    />
+        <result property="remark"    column="remark"    />
+        <result property="attr1"    column="attr1"    />
+        <result property="attr2"    column="attr2"    />
+        <result property="attr3"    column="attr3"    />
+        <result property="attr4"    column="attr4"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCalTeamVo">
+        select team_id, team_code, team_name,calendar_type, remark, attr1, attr2, attr3, attr4, create_by, create_time, update_by, update_time from cal_team
+    </sql>
+
+    <select id="selectCalTeamList" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeam" resultMap="CalTeamResult">
+        <include refid="selectCalTeamVo"/>
+        <where>  
+            <if test="teamCode != null  and teamCode != ''"> and team_code = #{teamCode}</if>
+            <if test="calendarType != null  and calendarType != ''"> and calendar_type = #{calendarType}</if>
+            <if test="teamName != null  and teamName != ''"> and team_name like concat('%', #{teamName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectCalTeamByTeamId" parameterType="Long" resultMap="CalTeamResult">
+        <include refid="selectCalTeamVo"/>
+        where team_id = #{teamId}
+    </select>
+        
+    <insert id="insertCalTeam" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeam" useGeneratedKeys="true" keyProperty="teamId">
+        insert into cal_team
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="teamCode != null and teamCode != ''">team_code,</if>
+            <if test="teamName != null and teamName != ''">team_name,</if>
+            <if test="calendarType != null and calendarType != ''">calendar_type,</if>
+            <if test="remark != null">remark,</if>
+            <if test="attr1 != null">attr1,</if>
+            <if test="attr2 != null">attr2,</if>
+            <if test="attr3 != null">attr3,</if>
+            <if test="attr4 != null">attr4,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="teamCode != null and teamCode != ''">#{teamCode},</if>
+            <if test="teamName != null and teamName != ''">#{teamName},</if>
+            <if test="calendarType != null and calendarType != ''">#{calendarType},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="attr1 != null">#{attr1},</if>
+            <if test="attr2 != null">#{attr2},</if>
+            <if test="attr3 != null">#{attr3},</if>
+            <if test="attr4 != null">#{attr4},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCalTeam" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeam">
+        update cal_team
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="teamCode != null and teamCode != ''">team_code = #{teamCode},</if>
+            <if test="teamName != null and teamName != ''">team_name = #{teamName},</if>
+            <if test="calendarType != null and calendarType != ''">calendar_type = #{calendarType},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="attr1 != null">attr1 = #{attr1},</if>
+            <if test="attr2 != null">attr2 = #{attr2},</if>
+            <if test="attr3 != null">attr3 = #{attr3},</if>
+            <if test="attr4 != null">attr4 = #{attr4},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where team_id = #{teamId}
+    </update>
+
+    <delete id="deleteCalTeamByTeamId" parameterType="Long">
+        delete from cal_team where team_id = #{teamId}
+    </delete>
+
+    <delete id="deleteCalTeamByTeamIds" parameterType="String">
+        delete from cal_team where team_id in 
+        <foreach item="teamId" collection="array" open="(" separator="," close=")">
+            #{teamId}
+        </foreach>
+    </delete>
+</mapper>

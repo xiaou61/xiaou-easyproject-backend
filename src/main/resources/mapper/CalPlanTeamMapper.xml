@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.mapper.CalPlanTeamMapper">
+    
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlanTeam" id="CalPlanTeamResult">
+        <result property="recordId"    column="record_id"    />
+        <result property="planId"    column="plan_id"    />
+        <result property="teamId"    column="team_id"    />
+        <result property="teamCode"    column="team_code"    />
+        <result property="teamName"    column="team_name"    />
+        <result property="remark"    column="remark"    />
+        <result property="attr1"    column="attr1"    />
+        <result property="attr2"    column="attr2"    />
+        <result property="attr3"    column="attr3"    />
+        <result property="attr4"    column="attr4"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCalPlanTeamVo">
+        select record_id, plan_id, team_id, team_code, team_name, remark, attr1, attr2, attr3, attr4, create_by, create_time, update_by, update_time from cal_plan_team
+    </sql>
+
+    <select id="selectCalPlanTeamList" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlanTeam" resultMap="CalPlanTeamResult">
+        <include refid="selectCalPlanTeamVo"/>
+        <where>  
+            <if test="planId != null "> and plan_id = #{planId}</if>
+            <if test="teamId != null "> and team_id = #{teamId}</if>
+            <if test="teamCode != null  and teamCode != ''"> and team_code = #{teamCode}</if>
+            <if test="teamName != null  and teamName != ''"> and team_name like concat('%', #{teamName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectCalPlanTeamByRecordId" parameterType="Long" resultMap="CalPlanTeamResult">
+        <include refid="selectCalPlanTeamVo"/>
+        where record_id = #{recordId}
+    </select>
+
+    <select id="checkPlanTeamUnique" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlanTeam" resultMap="CalPlanTeamResult">
+        <include refid="selectCalPlanTeamVo"/>
+        where plan_id = #{planId} and team_id = #{teamId} limit 1
+    </select>
+        
+    <insert id="insertCalPlanTeam" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlanTeam" useGeneratedKeys="true" keyProperty="recordId">
+        insert into cal_plan_team
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="planId != null">plan_id,</if>
+            <if test="teamId != null">team_id,</if>
+            <if test="teamCode != null">team_code,</if>
+            <if test="teamName != null">team_name,</if>
+            <if test="remark != null">remark,</if>
+            <if test="attr1 != null">attr1,</if>
+            <if test="attr2 != null">attr2,</if>
+            <if test="attr3 != null">attr3,</if>
+            <if test="attr4 != null">attr4,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="planId != null">#{planId},</if>
+            <if test="teamId != null">#{teamId},</if>
+            <if test="teamCode != null">#{teamCode},</if>
+            <if test="teamName != null">#{teamName},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="attr1 != null">#{attr1},</if>
+            <if test="attr2 != null">#{attr2},</if>
+            <if test="attr3 != null">#{attr3},</if>
+            <if test="attr4 != null">#{attr4},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCalPlanTeam" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlanTeam">
+        update cal_plan_team
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="planId != null">plan_id = #{planId},</if>
+            <if test="teamId != null">team_id = #{teamId},</if>
+            <if test="teamCode != null">team_code = #{teamCode},</if>
+            <if test="teamName != null">team_name = #{teamName},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="attr1 != null">attr1 = #{attr1},</if>
+            <if test="attr2 != null">attr2 = #{attr2},</if>
+            <if test="attr3 != null">attr3 = #{attr3},</if>
+            <if test="attr4 != null">attr4 = #{attr4},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where record_id = #{recordId}
+    </update>
+
+    <delete id="deleteCalPlanTeamByRecordId" parameterType="Long">
+        delete from cal_plan_team where record_id = #{recordId}
+    </delete>
+
+    <delete id="deleteCalPlanTeamByRecordIds" parameterType="String">
+        delete from cal_plan_team where record_id in 
+        <foreach item="recordId" collection="array" open="(" separator="," close=")">
+            #{recordId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByPlanId" parameterType="Long">
+        delete from cal_plan_team where plan_id = #{planId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.mapper.CalTeamshiftMapper">
+    
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamshift" id="CalTeamshiftResult">
+        <result property="recordId"    column="record_id"    />
+        <result property="theDay"    column="the_day"    />
+        <result property="teamId"    column="team_id"    />
+        <result property="teamName"    column="team_name"    />
+        <result property="shiftId"    column="shift_id"    />
+        <result property="shiftName"    column="shift_name"    />
+        <result property="orderNum"    column="order_num"    />
+        <result property="planId"    column="plan_id"    />
+        <result property="calendarType"    column="calendar_type"    />
+        <result property="shiftType"    column="shift_type"    />
+        <result property="remark"    column="remark"    />
+        <result property="attr1"    column="attr1"    />
+        <result property="attr2"    column="attr2"    />
+        <result property="attr3"    column="attr3"    />
+        <result property="attr4"    column="attr4"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCalTeamshiftVo">
+        select record_id, the_day, team_id, team_name, shift_id, shift_name, order_num, plan_id,calendar_type, shift_type, remark, attr1, attr2, attr3, attr4, create_by, create_time, update_by, update_time from cal_teamshift
+    </sql>
+
+    <select id="selectCalTeamshiftList" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamshift" resultMap="CalTeamshiftResult">
+        <include refid="selectCalTeamshiftVo"/>
+        <where>  
+            <if test="theDay != null "> and the_day = #{theDay}</if>
+            <if test="teamId != null "> and team_id = #{teamId}</if>
+            <if test="teamName != null  and teamName != ''"> and team_name like concat('%', #{teamName}, '%')</if>
+            <if test="shiftId != null "> and shift_id = #{shiftId}</if>
+            <if test="shiftName != null  and shiftName != ''"> and shift_name like concat('%', #{shiftName}, '%')</if>
+            <if test="orderNum != null "> and order_num = #{orderNum}</if>
+            <if test="planId != null "> and plan_id = #{planId}</if>
+            <if test="calendarType != null "> and calendar_type = #{calendarType}</if>
+            <if test="shiftType != null  and shiftType != ''"> and shift_type = #{shiftType}</if>
+        </where>
+        order by order_num asc
+    </select>
+    
+    <select id="selectCalTeamshiftByRecordId" parameterType="Long" resultMap="CalTeamshiftResult">
+        <include refid="selectCalTeamshiftVo"/>
+        where record_id = #{recordId}
+    </select>
+        
+    <insert id="insertCalTeamshift" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamshift" useGeneratedKeys="true" keyProperty="recordId">
+        insert into cal_teamshift
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="theDay != null">the_day,</if>
+            <if test="teamId != null">team_id,</if>
+            <if test="teamName != null">team_name,</if>
+            <if test="shiftId != null">shift_id,</if>
+            <if test="shiftName != null">shift_name,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="planId != null">plan_id,</if>
+            <if test="calendarType != null">calendar_type,</if>
+            <if test="shiftType != null">shift_type,</if>
+            <if test="remark != null">remark,</if>
+            <if test="attr1 != null">attr1,</if>
+            <if test="attr2 != null">attr2,</if>
+            <if test="attr3 != null">attr3,</if>
+            <if test="attr4 != null">attr4,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="theDay != null">#{theDay},</if>
+            <if test="teamId != null">#{teamId},</if>
+            <if test="teamName != null">#{teamName},</if>
+            <if test="shiftId != null">#{shiftId},</if>
+            <if test="shiftName != null">#{shiftName},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="planId != null">#{planId},</if>
+            <if test="calendarType != null">#{calendarType},</if>
+            <if test="shiftType != null">#{shiftType},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="attr1 != null">#{attr1},</if>
+            <if test="attr2 != null">#{attr2},</if>
+            <if test="attr3 != null">#{attr3},</if>
+            <if test="attr4 != null">#{attr4},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCalTeamshift" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamshift">
+        update cal_teamshift
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="theDay != null">the_day = #{theDay},</if>
+            <if test="teamId != null">team_id = #{teamId},</if>
+            <if test="teamName != null">team_name = #{teamName},</if>
+            <if test="shiftId != null">shift_id = #{shiftId},</if>
+            <if test="shiftName != null">shift_name = #{shiftName},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="planId != null">plan_id = #{planId},</if>
+            <if test="calendarType != null">calendar_type = #{calendarType},</if>
+            <if test="shiftType != null">shift_type = #{shiftType},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="attr1 != null">attr1 = #{attr1},</if>
+            <if test="attr2 != null">attr2 = #{attr2},</if>
+            <if test="attr3 != null">attr3 = #{attr3},</if>
+            <if test="attr4 != null">attr4 = #{attr4},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where record_id = #{recordId}
+    </update>
+
+    <delete id="deleteCalTeamshiftByRecordId" parameterType="Long">
+        delete from cal_teamshift where record_id = #{recordId}
+    </delete>
+
+    <delete id="deleteCalTeamshiftByRecordIds" parameterType="String">
+        delete from cal_teamshift where record_id in 
+        <foreach item="recordId" collection="array" open="(" separator="," close=")">
+            #{recordId}
+        </foreach>
+    </delete>
+</mapper>

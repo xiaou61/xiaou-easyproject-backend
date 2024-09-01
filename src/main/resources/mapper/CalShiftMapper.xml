@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.mapper.CalShiftMapper">
+    
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalShift" id="CalShiftResult">
+        <result property="shiftId"    column="shift_id"    />
+        <result property="planId"    column="plan_id"    />
+        <result property="orderNum"    column="order_num"    />
+        <result property="shiftName"    column="shift_name"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="attr1"    column="attr1"    />
+        <result property="attr2"    column="attr2"    />
+        <result property="attr3"    column="attr3"    />
+        <result property="attr4"    column="attr4"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCalShiftVo">
+        select shift_id, plan_id, order_num, shift_name, start_time, end_time, remark, attr1, attr2, attr3, attr4, create_by, create_time, update_by, update_time from cal_shift
+    </sql>
+
+    <select id="selectCalShiftList" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalShift" resultMap="CalShiftResult">
+        <include refid="selectCalShiftVo"/>
+        <where>  
+            <if test="planId != null "> and plan_id = #{planId}</if>
+            <if test="orderNum != null "> and order_num = #{orderNum}</if>
+            <if test="shiftName != null  and shiftName != ''"> and shift_name like concat('%', #{shiftName}, '%')</if>
+            <if test="startTime != null "> and start_time = #{startTime}</if>
+            <if test="endTime != null "> and end_time = #{endTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectCalShiftByShiftId" parameterType="Long" resultMap="CalShiftResult">
+        <include refid="selectCalShiftVo"/>
+        where shift_id = #{shiftId}
+    </select>
+
+    <select id="checkShiftCount" parameterType="Long" resultType="Integer">
+        select count(*)
+        from cal_shift
+        where plan_id = #{planId}
+    </select>
+
+    <insert id="insertCalShift" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalShift" useGeneratedKeys="true" keyProperty="shiftId">
+        insert into cal_shift
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="planId != null">plan_id,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="shiftName != null and shiftName != ''">shift_name,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="remark != null">remark,</if>
+            <if test="attr1 != null">attr1,</if>
+            <if test="attr2 != null">attr2,</if>
+            <if test="attr3 != null">attr3,</if>
+            <if test="attr4 != null">attr4,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="planId != null">#{planId},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="shiftName != null and shiftName != ''">#{shiftName},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="attr1 != null">#{attr1},</if>
+            <if test="attr2 != null">#{attr2},</if>
+            <if test="attr3 != null">#{attr3},</if>
+            <if test="attr4 != null">#{attr4},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCalShift" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalShift">
+        update cal_shift
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="planId != null">plan_id = #{planId},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="shiftName != null and shiftName != ''">shift_name = #{shiftName},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="attr1 != null">attr1 = #{attr1},</if>
+            <if test="attr2 != null">attr2 = #{attr2},</if>
+            <if test="attr3 != null">attr3 = #{attr3},</if>
+            <if test="attr4 != null">attr4 = #{attr4},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where shift_id = #{shiftId}
+    </update>
+
+    <delete id="deleteCalShiftByShiftId" parameterType="Long">
+        delete from cal_shift where shift_id = #{shiftId}
+    </delete>
+
+    <delete id="deleteCalShiftByShiftIds" parameterType="String">
+        delete from cal_shift where shift_id in 
+        <foreach item="shiftId" collection="array" open="(" separator="," close=")">
+            #{shiftId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByPlanId" parameterType="Long">
+        delete from cal_shift where plan_id = #{planId}
+    </delete>
+</mapper>

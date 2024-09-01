@@ -208,3 +208,5 @@ https://gitee.com/y_project/RuoYi-Vue
 [woodwhales/woodwhales-music](https://github.com/woodwhales/woodwhales-music)
 
 [wch2019/xiaohai-blog: DotCode](https://github.com/wch2019/xiaohai-blog)
+
+[WangSanPing/t3rik-erp: ](https://github.com/WangSanPing/t3rik-erp)

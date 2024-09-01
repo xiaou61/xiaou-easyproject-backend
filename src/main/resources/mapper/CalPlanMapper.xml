@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.mapper.CalPlanMapper">
+    
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlan" id="CalPlanResult">
+        <result property="planId"    column="plan_id"    />
+        <result property="planCode"    column="plan_code"    />
+        <result property="planName"    column="plan_name"    />
+        <result property="calendarType"    column="calendar_type"    />
+        <result property="startDate"    column="start_date"    />
+        <result property="endDate"    column="end_date"    />
+        <result property="shiftType"    column="shift_type"    />
+        <result property="shiftMethod"    column="shift_method"    />
+        <result property="shiftCount"    column="shift_count"    />
+        <result property="status"    column="status"    />
+        <result property="remark"    column="remark"    />
+        <result property="attr1"    column="attr1"    />
+        <result property="attr2"    column="attr2"    />
+        <result property="attr3"    column="attr3"    />
+        <result property="attr4"    column="attr4"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCalPlanVo">
+        select plan_id, plan_code, plan_name,calendar_type, start_date, end_date, shift_type, shift_method, shift_count,status, remark, attr1, attr2, attr3, attr4, create_by, create_time, update_by, update_time from cal_plan
+    </sql>
+
+    <select id="selectCalPlanList" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlan" resultMap="CalPlanResult">
+        <include refid="selectCalPlanVo"/>
+        <where>  
+            <if test="planCode != null "> and plan_code like concat('%', #{planCode}, '%')</if>
+            <if test="planName != null  and planName != ''"> and plan_name like concat('%', #{planName}, '%')</if>
+            <if test="calendarType != null  and calendarType != ''"> and calendar_type =#{calendarType}</if>
+            <if test="startDate != null "> and start_date &gt;= #{startDate}</if>
+            <if test="endDate != null "> and end_date $lt; #{endDate}</if>
+            <if test="shiftType != null  and shiftType != ''"> and shift_type = #{shiftType}</if>
+            <if test="shiftMethod != null  and shiftMethod != ''"> and shift_method = #{shiftMethod}</if>
+            <if test="shiftCount != null "> and shift_count = #{shiftCount}</if>
+            <if test="status !=null and status !='' "> and status = #{status}</if>
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectCalPlanByPlanId" parameterType="Long" resultMap="CalPlanResult">
+        <include refid="selectCalPlanVo"/>
+        where plan_id = #{planId}
+    </select>
+        
+    <insert id="insertCalPlan" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlan" useGeneratedKeys="true" keyProperty="planId">
+        insert into cal_plan
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="planCode != null">plan_code,</if>
+            <if test="planName != null and planName != ''">plan_name,</if>
+            <if test="calendarType != null and calendarType != ''">calendar_type,</if>
+            <if test="startDate != null">start_date,</if>
+            <if test="endDate != null">end_date,</if>
+            <if test="shiftType != null">shift_type,</if>
+            <if test="shiftMethod != null">shift_method,</if>
+            <if test="shiftCount != null">shift_count,</if>
+            <if test="status != null and status !=''">status,</if>
+            <if test="remark != null">remark,</if>
+            <if test="attr1 != null">attr1,</if>
+            <if test="attr2 != null">attr2,</if>
+            <if test="attr3 != null">attr3,</if>
+            <if test="attr4 != null">attr4,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="planCode != null">#{planCode},</if>
+            <if test="planName != null and planName != ''">#{planName},</if>
+            <if test="calendarType != null and calendarType != ''">#{calendarType},</if>
+            <if test="startDate != null">#{startDate},</if>
+            <if test="endDate != null">#{endDate},</if>
+            <if test="shiftType != null">#{shiftType},</if>
+            <if test="shiftMethod != null">#{shiftMethod},</if>
+            <if test="shiftCount != null">#{shiftCount},</if>
+            <if test="status != null and status !=''">#{status},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="attr1 != null">#{attr1},</if>
+            <if test="attr2 != null">#{attr2},</if>
+            <if test="attr3 != null">#{attr3},</if>
+            <if test="attr4 != null">#{attr4},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCalPlan" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalPlan">
+        update cal_plan
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="planCode != null">plan_code = #{planCode},</if>
+            <if test="planName != null and planName != ''">plan_name = #{planName},</if>
+            <if test="calendarType != null and calendarType != ''">calendar_type = #{calendarType},</if>
+            <if test="startDate != null">start_date = #{startDate},</if>
+            <if test="endDate != null">end_date = #{endDate},</if>
+            <if test="shiftType != null">shift_type = #{shiftType},</if>
+            <if test="shiftMethod != null">shift_method = #{shiftMethod},</if>
+            <if test="shiftCount != null">shift_count = #{shiftCount},</if>
+            <if test="status != null and status !=''">status = #{status},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="attr1 != null">attr1 = #{attr1},</if>
+            <if test="attr2 != null">attr2 = #{attr2},</if>
+            <if test="attr3 != null">attr3 = #{attr3},</if>
+            <if test="attr4 != null">attr4 = #{attr4},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where plan_id = #{planId}
+    </update>
+
+    <delete id="deleteCalPlanByPlanId" parameterType="Long">
+        delete from cal_plan where plan_id = #{planId}
+    </delete>
+
+    <delete id="deleteCalPlanByPlanIds" parameterType="String">
+        delete from cal_plan where plan_id in 
+        <foreach item="planId" collection="array" open="(" separator="," close=")">
+            #{planId}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.mapper.CalTeamMemberMapper">
+    
+    <resultMap type="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamMember" id="CalTeamMemberResult">
+        <result property="memberId"    column="member_id"    />
+        <result property="teamId"    column="team_id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="userName"    column="user_name"    />
+        <result property="nickName"    column="nick_name"    />
+        <result property="tel"    column="tel"    />
+        <result property="remark"    column="remark"    />
+        <result property="attr1"    column="attr1"    />
+        <result property="attr2"    column="attr2"    />
+        <result property="attr3"    column="attr3"    />
+        <result property="attr4"    column="attr4"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCalTeamMemberVo">
+        select member_id, team_id, user_id, user_name, nick_name, tel, remark, attr1, attr2, attr3, attr4, create_by, create_time, update_by, update_time from cal_team_member
+    </sql>
+
+    <select id="selectCalTeamMemberList" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamMember" resultMap="CalTeamMemberResult">
+        <include refid="selectCalTeamMemberVo"/>
+        <where>  
+            <if test="teamId != null "> and team_id = #{teamId}</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="userName != null  and userName != ''"> and user_name like concat('%', #{userName}, '%')</if>
+            <if test="nickName != null  and nickName != ''"> and nick_name like concat('%', #{nickName}, '%')</if>
+            <if test="tel != null  and tel != ''"> and tel = #{tel}</if>
+        </where>
+    </select>
+    
+    <select id="selectCalTeamMemberByMemberId" parameterType="Long" resultMap="CalTeamMemberResult">
+        <include refid="selectCalTeamMemberVo"/>
+        where member_id = #{memberId}
+    </select>
+
+    <select id="checkUserUnique" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamMember" resultMap="CalTeamMemberResult">
+        <include refid="selectCalTeamMemberVo"/>
+        where user_id = #{userId}
+    </select>
+        
+    <insert id="insertCalTeamMember" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamMember" useGeneratedKeys="true" keyProperty="memberId">
+        insert into cal_team_member
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="teamId != null">team_id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="userName != null and userName != ''">user_name,</if>
+            <if test="nickName != null">nick_name,</if>
+            <if test="tel != null">tel,</if>
+            <if test="remark != null">remark,</if>
+            <if test="attr1 != null">attr1,</if>
+            <if test="attr2 != null">attr2,</if>
+            <if test="attr3 != null">attr3,</if>
+            <if test="attr4 != null">attr4,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="teamId != null">#{teamId},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="userName != null and userName != ''">#{userName},</if>
+            <if test="nickName != null">#{nickName},</if>
+            <if test="tel != null">#{tel},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="attr1 != null">#{attr1},</if>
+            <if test="attr2 != null">#{attr2},</if>
+            <if test="attr3 != null">#{attr3},</if>
+            <if test="attr4 != null">#{attr4},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCalTeamMember" parameterType="com.xiaou.xiaoueasyprojectbackend.module.mes.cal.domain.CalTeamMember">
+        update cal_team_member
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="teamId != null">team_id = #{teamId},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="userName != null and userName != ''">user_name = #{userName},</if>
+            <if test="nickName != null">nick_name = #{nickName},</if>
+            <if test="tel != null">tel = #{tel},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="attr1 != null">attr1 = #{attr1},</if>
+            <if test="attr2 != null">attr2 = #{attr2},</if>
+            <if test="attr3 != null">attr3 = #{attr3},</if>
+            <if test="attr4 != null">attr4 = #{attr4},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where member_id = #{memberId}
+    </update>
+
+    <delete id="deleteCalTeamMemberByMemberId" parameterType="Long">
+        delete from cal_team_member where member_id = #{memberId}
+    </delete>
+
+    <delete id="deleteCalTeamMemberByMemberIds" parameterType="String">
+        delete from cal_team_member where member_id in 
+        <foreach item="memberId" collection="array" open="(" separator="," close=")">
+            #{memberId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByTeamId" parameterType="Long">
+        delete from cal_team_member where team_id = #{teamId}
+    </delete>
+
+</mapper>

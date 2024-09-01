@@ -48,7 +48,7 @@ public class CalHolidayController extends BaseController
         List<CalHoliday> list = calHolidayService.selectCalHolidayList(calHoliday);
         //这里是用easyexcel导出 下载路径可以自己修改
         FileOutputStream outputStream = new FileOutputStream(new File("D://节假日设置数据.xlsx"));
-        EasyExcel.write(outputStream, HrmRank.class).sheet("节假日设置数据").doWrite(list);
+        EasyExcel.write(outputStream, CalHoliday.class).sheet("节假日设置数据").doWrite(list);
 
     }
 
