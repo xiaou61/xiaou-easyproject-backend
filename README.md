@@ -1,4 +1,6 @@
 [中文文档](README.md)    [English Docs](README-EN.md)
+⚠️：该项目目前已经废弃，不再更新
+后续打算做成基于若依修改的框架。
 
 <div align="center">
   <a href="">
