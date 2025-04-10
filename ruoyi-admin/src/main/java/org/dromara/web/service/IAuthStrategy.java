@@ -1,11 +1,10 @@
 package org.dromara.web.service;
 
 
+import org.dromara.web.domain.vo.LoginVo;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.SpringUtils;
-import org.dromara.system.domain.SysClient;
 import org.dromara.system.domain.vo.SysClientVo;
-import org.dromara.web.domain.vo.LoginVo;
 
 /**
  * 授权策略

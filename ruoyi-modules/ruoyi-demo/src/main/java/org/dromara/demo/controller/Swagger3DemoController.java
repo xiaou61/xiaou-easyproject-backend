@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @RestController
 @RequestMapping("/swagger/demo")
+
 public class Swagger3DemoController {
 
     /**

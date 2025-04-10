@@ -43,48 +43,49 @@ public class SecurityConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // 注册路由拦截器，自定义验证规则
-        registry.addInterceptor(new SaInterceptor(handler -> {
-                AllUrlHandler allUrlHandler = SpringUtils.getBean(AllUrlHandler.class);
-                // 登录验证 -- 排除多个路径
-                SaRouter
-                    // 获取所有的
-                    .match(allUrlHandler.getUrls())
-                    // 对未排除的路径进行检查
-                    .check(() -> {
-                        HttpServletRequest request = ServletUtils.getRequest();
-                        // 检查是否登录 是否有token
-                        try {
-                            StpUtil.checkLogin();
-                        } catch (NotLoginException e) {
-                            if (request.getRequestURI().contains("sse")) {
-                                throw new SseException(e.getMessage(), e.getCode());
-                            } else {
-                                throw e;
-                            }
-                        }
-
-                        // 检查 header 与 param 里的 clientid 与 token 里的是否一致
-                        String headerCid = request.getHeader(LoginHelper.CLIENT_KEY);
-                        String paramCid = ServletUtils.getParameter(LoginHelper.CLIENT_KEY);
-                        String clientId = StpUtil.getExtra(LoginHelper.CLIENT_KEY).toString();
-                        if (!StringUtils.equalsAny(clientId, headerCid, paramCid)) {
-                            // token 无效
-                            throw NotLoginException.newInstance(StpUtil.getLoginType(),
-                                "-100", "客户端ID与Token不匹配",
-                                StpUtil.getTokenValue());
-                        }
-
-                        // 有效率影响 用于临时测试
-                        // if (log.isDebugEnabled()) {
-                        //     log.info("剩余有效时间: {}", StpUtil.getTokenTimeout());
-                        //     log.info("临时有效时间: {}", StpUtil.getTokenActivityTimeout());
-                        // }
-
-                    });
-            })).addPathPatterns("/**")
-            // 排除不需要拦截的路径
-            .excludePathPatterns(securityProperties.getExcludes());
+        //todo 开启sa-token的拦截器 关闭注释既可打开 默认开发调试不打开 如果需要正式上线的要打开。
+//        // 注册路由拦截器，自定义验证规则
+//        registry.addInterceptor(new SaInterceptor(handler -> {
+//                AllUrlHandler allUrlHandler = SpringUtils.getBean(AllUrlHandler.class);
+//                // 登录验证 -- 排除多个路径
+//                SaRouter
+//                    // 获取所有的
+//                    .match(allUrlHandler.getUrls())
+//                    // 对未排除的路径进行检查
+//                    .check(() -> {
+//                        HttpServletRequest request = ServletUtils.getRequest();
+//                        // 检查是否登录 是否有token
+//                        try {
+//                            StpUtil.checkLogin();
+//                        } catch (NotLoginException e) {
+//                            if (request.getRequestURI().contains("sse")) {
+//                                throw new SseException(e.getMessage(), e.getCode());
+//                            } else {
+//                                throw e;
+//                            }
+//                        }
+//
+//                        // 检查 header 与 param 里的 clientid 与 token 里的是否一致
+//                        String headerCid = request.getHeader(LoginHelper.CLIENT_KEY);
+//                        String paramCid = ServletUtils.getParameter(LoginHelper.CLIENT_KEY);
+//                        String clientId = StpUtil.getExtra(LoginHelper.CLIENT_KEY).toString();
+//                        if (!StringUtils.equalsAny(clientId, headerCid, paramCid)) {
+//                            // token 无效
+//                            throw NotLoginException.newInstance(StpUtil.getLoginType(),
+//                                "-100", "客户端ID与Token不匹配",
+//                                StpUtil.getTokenValue());
+//                        }
+//
+//                        // 有效率影响 用于临时测试
+//                        // if (log.isDebugEnabled()) {
+//                        //     log.info("剩余有效时间: {}", StpUtil.getTokenTimeout());
+//                        //     log.info("临时有效时间: {}", StpUtil.getTokenActivityTimeout());
+//                        // }
+//
+//                    });
+//            })).addPathPatterns("/**")
+//            // 排除不需要拦截的路径
+//            .excludePathPatterns(securityProperties.getExcludes());
     }
 
     /**

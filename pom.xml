@@ -372,6 +372,7 @@
         <module>ruoyi-common</module>
         <module>ruoyi-extend</module>
         <module>ruoyi-modules</module>
+        <module>u-common</module>
     </modules>
     <packaging>pom</packaging>
 

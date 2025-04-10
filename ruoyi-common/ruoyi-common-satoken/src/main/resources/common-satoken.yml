@@ -8,6 +8,7 @@ sa-token:
   # 允许从 header 读取 token
   is-read-header: true
   # 关闭 cookie 鉴权 从根源杜绝 csrf 漏洞风险
+#  todo 关闭cookie
   is-read-cookie: false
   # token前缀
   token-prefix: "Bearer"
