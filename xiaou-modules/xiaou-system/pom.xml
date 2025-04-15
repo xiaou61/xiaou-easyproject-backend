@@ -20,6 +20,10 @@
             <groupId>com.xiaou</groupId>
             <artifactId>xiaou-common-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-core</artifactId>
+        </dependency>
     </dependencies>
 
 

@@ -26,6 +26,8 @@
 
         <spring-boot.version>3.4.4</spring-boot.version>
         <hutool.version>5.8.35</hutool.version>
+        <lombok.version>1.18.36</lombok.version>
+
 
 
         <!-- 插件版本 -->
@@ -58,6 +60,13 @@
                 <scope>import</scope>
             </dependency>
 
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
             <!-- common 的依赖配置-->
             <dependency>
                 <groupId>com.xiaou</groupId>
@@ -73,6 +82,8 @@
                 <version>${revision}</version>
             </dependency>
         </dependencies>
+
+
     </dependencyManagement>
 
 
