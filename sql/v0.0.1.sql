@@ -15,10 +15,8 @@ CREATE TABLE sys_user
 (
     id          INT AUTO_INCREMENT PRIMARY KEY COMMENT '用户ID',
     name        VARCHAR(50)  NOT NULL UNIQUE COMMENT '用户名',
-    password    VARCHAR(100) NOT NULL COMMENT '用户密码',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    update_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+    password    VARCHAR(100) NOT NULL COMMENT '用户密码'
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='用户表';
-INSERT INTO sys_user (name, password)
-VALUES ('xiaou', 'xiaou');
+INSERT INTO sys_user (id,name, password)
+VALUES (1,'xiaou', 'xiaou');
