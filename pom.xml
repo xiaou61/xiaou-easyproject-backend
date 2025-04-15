@@ -28,6 +28,8 @@
         <hutool.version>5.8.35</hutool.version>
         <lombok.version>1.18.36</lombok.version>
         <springdoc.version>2.8.5</springdoc.version>
+        <mybatis-plus.version>3.5.11</mybatis-plus.version>
+        <p6spy.version>3.9.1</p6spy.version>
 
 
 
@@ -80,6 +82,19 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- sql性能分析插件 -->
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
             </dependency>
 
             <!-- common 的依赖配置-->
