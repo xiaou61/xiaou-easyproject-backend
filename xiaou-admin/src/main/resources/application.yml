@@ -9,3 +9,5 @@ server:
 spring:
   application:
     name: SXEasy
+swagger:
+  enabled: true
