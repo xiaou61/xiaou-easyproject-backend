@@ -36,6 +36,11 @@
             <groupId>com.xiaou</groupId>
             <artifactId>xiaou-common-mybatis</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-redis</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

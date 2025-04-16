@@ -30,6 +30,10 @@
         <springdoc.version>2.8.5</springdoc.version>
         <mybatis-plus.version>3.5.11</mybatis-plus.version>
         <p6spy.version>3.9.1</p6spy.version>
+        <redisson-spring-boot-starter-version>3.38.1</redisson-spring-boot-starter-version>
+        <redis.version>3.3.2</redis.version>
+        <jackson.version>2.18.3</jackson.version>
+
 
 
 
@@ -97,6 +101,26 @@
                 <version>${p6spy.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+
+
             <!-- common 的依赖配置-->
             <dependency>
                 <groupId>com.xiaou</groupId>
@@ -111,6 +135,8 @@
                 <artifactId>xiaou-system</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+
         </dependencies>
 
 
