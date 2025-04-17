@@ -24,8 +24,8 @@ public class SingerController {
 
 
     // 删除歌手
-    @DeleteMapping("/singer/delete")
-    public R deleteSinger(@RequestParam int id) {
+    @DeleteMapping("/singer/delete/{id}")
+    public R deleteSinger(@PathVariable("id") Integer id) {
         return singerService.deleteSinger(id);
     }
 
@@ -42,14 +42,14 @@ public class SingerController {
     }
 
     // 根据歌手名查找歌手
-    @GetMapping("/singer/name/detail")
-    public R singerOfName(@RequestParam String name) {
+    @GetMapping("/singer/name/detail/{name}")
+    public R singerOfName(@PathVariable String name) {
         return singerService.singerOfName(name);
     }
 
     // 根据歌手性别查找歌手
-    @GetMapping("/singer/sex/detail")
-    public R singerOfSex(@RequestParam int sex) {
+    @GetMapping("/singer/sex/detail/{sex}")
+    public R singerOfSex(@PathVariable int sex) {
         return singerService.singerOfSex(sex);
     }
 
@@ -64,6 +64,5 @@ public class SingerController {
     public R updateSingerPic(@RequestParam("file") MultipartFile avatorFile, @RequestParam("id") int id) {
         return singerService.updateSingerPic(avatorFile, id);
     }
-
 
 }

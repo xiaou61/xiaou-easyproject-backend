@@ -1,7 +1,11 @@
 package com.xiaou.music.model.req;
 
+import lombok.Data;
+
 import java.util.Date;
 
+
+@Data
 public class SingerRequest {
     private Integer id;
 
