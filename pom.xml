@@ -91,6 +91,12 @@
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
             <!-- sql性能分析插件 -->
             <dependency>
                 <groupId>p6spy</groupId>

@@ -14,10 +14,10 @@ import com.xiaou.music.service.SingerService;
 import com.xiaou.utils.R;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Collection;
-
+@Service
 public class SingerServiceImpl extends ServiceImpl<SingerMapper, Singer> implements SingerService {
 
     @Resource

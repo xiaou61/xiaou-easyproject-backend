@@ -17,6 +17,12 @@
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
         </dependency>
 
+        <!-- 这个用于分页插件的注册 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-jsqlparser</artifactId>
+        </dependency>
+
         <!-- sql性能分析插件 -->
         <dependency>
             <groupId>p6spy</groupId>
