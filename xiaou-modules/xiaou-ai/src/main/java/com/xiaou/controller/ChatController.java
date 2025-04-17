@@ -31,9 +31,6 @@ public class ChatController {
             @RequestParam("prompt") String prompt,
             @RequestParam("chatId") String chatId,
             @RequestParam(value = "files", required = false) List<MultipartFile> files) {
-        // 1.保存会话id
-//        chatHistoryRepository.save("chat", chatId);
-        // 2.请求模型
         if (files == null || files.isEmpty()) {
             // 没有附件，纯文本聊天
             return textChat(prompt, chatId);
