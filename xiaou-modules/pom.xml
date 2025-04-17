@@ -19,6 +19,7 @@
     <modules>
         <module>xiaou-system</module>
         <module>xiaou-ai</module>
+        <module>xiaou-musics</module>
     </modules>
 
 </project>
