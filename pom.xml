@@ -33,6 +33,7 @@
         <redis.version>3.3.2</redis.version>
         <jackson.version>2.18.3</jackson.version>
         <springai.version>1.0.0-M6</springai.version>
+        <minio.version>8.5.12</minio.version>
 
 
         <!-- 插件版本 -->
@@ -123,6 +124,13 @@
                 <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
                 <version>${springai.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
 
 
             <!-- common 的依赖配置-->
