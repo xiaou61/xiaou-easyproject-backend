@@ -7,6 +7,16 @@ server:
     context-path: /
   # Spring配置
 spring:
+  ai:
+    openai:
+      # openai的api-key
+      api-key: sk-4ecd546690124085b63316161bb6de39
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+
+
   data:
     redis:
       host: 127.0.0.1
@@ -35,3 +45,7 @@ mybatis-plus:
   enableLogicDelete: true
 
 
+#springai日志
+#logging:
+#  level:
+#    org.springframework.ai.chat.client.advisor: debug

@@ -1,6 +1,7 @@
 package com.xiaou.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.util.pattern.PathPatternParser;
@@ -14,5 +15,14 @@ public class ApiPrefixConfig implements WebMvcConfigurer {
 
         // 只给加了 @RestController 注解的类添加前缀
         configurer.addPathPrefix("/uapi", c -> c.isAnnotationPresent(org.springframework.web.bind.annotation.RestController.class));
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*");
     }
 }

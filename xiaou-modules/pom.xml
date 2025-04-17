@@ -18,6 +18,7 @@
     </description>
     <modules>
         <module>xiaou-system</module>
+        <module>xiaou-ai</module>
     </modules>
 
 </project>

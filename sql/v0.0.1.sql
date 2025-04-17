@@ -20,3 +20,5 @@ CREATE TABLE sys_user
   DEFAULT CHARSET = utf8mb4 COMMENT ='用户表';
 INSERT INTO sys_user (id,name, password)
 VALUES (1,'xiaou', 'xiaou');
+
+
