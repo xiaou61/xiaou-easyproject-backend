@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xiaou.minio.utils.MinIOUtils;
 import com.xiaou.model.page.PageReqDto;
 import com.xiaou.model.page.PageRespDto;
 import com.xiaou.music.mapper.SingerMapper;
@@ -88,8 +89,13 @@ public class SingerServiceImpl extends ServiceImpl<SingerMapper, Singer> impleme
     @Override
     public R updateSingerPic(MultipartFile avatorFile, int id) {
         String fileName = avatorFile.getOriginalFilename();
-//        MinioUploadController.uploadImgFile(avatorFile);
-        String imgPath = "/user01/singer/img/" + fileName;
+        try {
+            MinIOUtils.uploadFile("test1", avatorFile, fileName, "image/jpeg");
+        } catch (Exception e) {
+            log.error("上传失败", e);
+            throw new RuntimeException("上传失败");
+        }
+        String imgPath = "/test1/singer/img/" + fileName;
         Singer singer = new Singer();
         singer.setId(id);
         singer.setPic(imgPath);
