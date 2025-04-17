@@ -49,3 +49,16 @@ mybatis-plus:
 #logging:
 #  level:
 #    org.springframework.ai.chat.client.advisor: debug
+
+
+
+#minio
+# MinIO 配置
+minio:
+  endpoint: http://127.0.0.1:9090     # MinIO服务地址
+  bucketName: test                     # 存储桶bucket名称
+  accessKey: root                         # 用户名
+  secretKey: 123456789                     # 密码
+  imgSize: 1024                           # 图片大小限制，单位：m
+  fileSize: 1024                          # 文件大小限制，单位：m
+  enable: true #是否开启
