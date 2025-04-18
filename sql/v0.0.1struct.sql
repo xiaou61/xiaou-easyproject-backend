@@ -45,3 +45,19 @@ CREATE TABLE `u_singer` (
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 
+-- 如果存在名为 `song` 的表，则将其删除
+DROP TABLE IF EXISTS `u_song`;
+
+-- 创建 `song` 表
+CREATE TABLE `u_song` (
+                        `id` int(10) unsigned NOT NULL AUTO_INCREMENT,           -- 歌曲ID，自增主键
+                        `singer_id` int(10) unsigned NOT NULL,                   -- 歌手ID，外键
+                        `name` varchar(45) NOT NULL,                             -- 歌曲名称
+                        `introduction` varchar(255) DEFAULT NULL,                -- 歌曲简介
+                        `create_time` datetime NOT NULL COMMENT '发行时间',      -- 歌曲发行时间
+                        `update_time` datetime NOT NULL,                         -- 最后更新时间
+                        `pic` varchar(255) DEFAULT NULL,                         -- 歌曲封面图片路径
+                        `lyric` text,                                            -- 歌词内容
+                        `url` varchar(255) NOT NULL,                             -- 歌曲播放路径
+                        PRIMARY KEY (`id`)                                       -- 主键设置为 `id`
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
