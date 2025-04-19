@@ -5,10 +5,13 @@ import com.xiaou.model.page.PageRespDto;
 import com.xiaou.novel.entity.dto.ChapterUpdateReqDto;
 import com.xiaou.novel.entity.req.BookAddReqDto;
 import com.xiaou.novel.entity.req.ChapterAddReqDto;
+import com.xiaou.novel.entity.resp.BookCategoryRespDto;
 import com.xiaou.novel.entity.resp.BookChapterRespDto;
 import com.xiaou.novel.entity.resp.BookInfoRespDto;
 import com.xiaou.novel.entity.resp.ChapterContentRespDto;
 import com.xiaou.utils.R;
+
+import java.util.List;
 
 public interface BookService {
 
@@ -73,6 +76,22 @@ public interface BookService {
     R<PageRespDto<BookChapterRespDto>> listBookChapters(Long bookId, PageReqDto dto);
 
 
+    /**
+     * 小说分类列表查询
+     *
+     * @param workDirection 作品方向;0-男频 1-女频
+     * @return 分类列表
+     */
+    R<List<BookCategoryRespDto>> listCategory(Integer workDirection);
+
+
+    /**
+     * 小说信息查询
+     *
+     * @param bookId 小说ID
+     * @return 小说信息
+     */
+    R<BookInfoRespDto> getBookById(Long bookId);
 
 
 }

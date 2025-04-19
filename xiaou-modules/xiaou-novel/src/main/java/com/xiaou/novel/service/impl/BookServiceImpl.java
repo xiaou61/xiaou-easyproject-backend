@@ -13,13 +13,11 @@ import com.xiaou.novel.entity.po.BookContent;
 import com.xiaou.novel.entity.po.BookInfo;
 import com.xiaou.novel.entity.req.BookAddReqDto;
 import com.xiaou.novel.entity.req.ChapterAddReqDto;
+import com.xiaou.novel.entity.resp.BookCategoryRespDto;
 import com.xiaou.novel.entity.resp.BookChapterRespDto;
 import com.xiaou.novel.entity.resp.BookInfoRespDto;
 import com.xiaou.novel.entity.resp.ChapterContentRespDto;
-import com.xiaou.novel.manager.AuthorManger;
-import com.xiaou.novel.manager.BookChapterManager;
-import com.xiaou.novel.manager.BookContentManager;
-import com.xiaou.novel.manager.BookInfoManager;
+import com.xiaou.novel.manager.*;
 import com.xiaou.novel.mapper.BookChapterMapper;
 import com.xiaou.novel.mapper.BookContentMapper;
 import com.xiaou.novel.mapper.BookInfoMapper;
@@ -30,6 +28,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -55,6 +54,11 @@ public class BookServiceImpl implements BookService {
 
     @Resource
     private BookContentManager bookContentManager;
+
+    @Resource
+    private BookCategoryManager bookCategoryManager;
+
+
 
     @Override
     public R<Void> saveBook(BookAddReqDto dto) {
@@ -277,5 +281,15 @@ public class BookServiceImpl implements BookService {
                         .chapterWordCount(v.getWordCount())
                         .isVip(v.getIsVip())
                         .build()).toList()));
+    }
+
+    @Override
+    public R<List<BookCategoryRespDto>> listCategory(Integer workDirection) {
+        return R.ok(bookCategoryManager.listCategory(workDirection));
+    }
+
+    @Override
+    public R<BookInfoRespDto> getBookById(Long bookId) {
+        return R.ok(bookInfoManager.getBookInfo(bookId));
     }
 }

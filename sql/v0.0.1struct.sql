@@ -150,3 +150,19 @@ CREATE TABLE `u_book_content` (
                                 UNIQUE KEY `uk_chapterId` (`chapter_id`) USING BTREE,
                                 UNIQUE KEY `pk_id` (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4256332 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='小说内容';
+
+
+-- ----------------------------
+-- Table structure for book_category
+-- ----------------------------
+DROP TABLE IF EXISTS `u_book_category`;
+CREATE TABLE `u_book_category` (
+                                 `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                                 `work_direction` tinyint(3) unsigned NOT NULL COMMENT '作品方向;0-男频 1-女频',
+                                 `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '类别名',
+                                 `sort` tinyint(3) unsigned NOT NULL DEFAULT '10' COMMENT '排序',
+                                 `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                                 `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+                                 PRIMARY KEY (`id`) USING BTREE,
+                                 UNIQUE KEY `pk_id` (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='小说类别';

@@ -28,6 +28,7 @@ public class BookInfoManager {
 
         // 查询基础信息
         BookInfo bookInfo = bookInfoMapper.selectById(id);
+
         // 查询首章ID
         QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
         queryWrapper
