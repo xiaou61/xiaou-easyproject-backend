@@ -56,7 +56,12 @@
         <dependency>
             <groupId>com.xiaou</groupId>
             <artifactId>xiaou-musics</artifactId>
-            <version>0.0.1</version>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-novel</artifactId>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 
