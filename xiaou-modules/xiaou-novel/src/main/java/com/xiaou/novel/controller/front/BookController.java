@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @RestController
@@ -62,6 +63,16 @@ public class BookController {
     public R<BookChapterAboutRespDto> getLastChapterAbout(
             @Parameter(description = "小说ID") Long bookId) {
         return bookService.getLastChapterAbout(bookId);
+    }
+
+    /**
+     * 小说推荐列表查询接口
+     */
+    @Operation(summary = "小说推荐列表查询接口")
+    @GetMapping("rec_list")
+    public R<List<BookInfoRespDto>> listRecBooks(
+            @Parameter(description = "小说ID") Long bookId) throws NoSuchAlgorithmException {
+        return bookService.listRecBooks(bookId);
     }
 
 

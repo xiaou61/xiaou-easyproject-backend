@@ -25,9 +25,11 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -55,6 +57,8 @@ public class BookServiceImpl implements BookService {
 
     @Resource
     private BookCategoryManager bookCategoryManager;
+
+    private static final Integer REC_BOOK_COUNT = 4;
 
 
     @Override
@@ -323,7 +327,33 @@ public class BookServiceImpl implements BookService {
         return R.ok(BookChapterAboutRespDto.builder()
                 .chapterInfo(bookChapter)
                 .chapterTotal(chapterTotal)
-                .contentSummary(content.substring(0, 30))
+                .contentSummary(content.substring(0, 20))
                 .build());
     }
+
+    @Override
+    public R<List<BookInfoRespDto>> listRecBooks(Long bookId) {
+        // 获取当前小说的分类 ID
+        Long categoryId = bookInfoManager.getBookInfo(bookId).getCategoryId();
+
+        // 获取该分类下最近更新的小说 ID 列表
+        List<Long> lastUpdateIdList = bookInfoManager.getLastUpdateIdList(categoryId);
+
+        if (lastUpdateIdList.isEmpty()) {
+            return R.ok(Collections.emptyList());
+        }
+
+        // 打乱顺序，做推荐用
+        Collections.shuffle(lastUpdateIdList, new SecureRandom());
+
+        // 截取推荐数量，如果小说不足就推荐全部
+        int recCount = Math.min(REC_BOOK_COUNT, lastUpdateIdList.size());
+
+        List<BookInfoRespDto> respDtoList = lastUpdateIdList.subList(0, recCount).stream()
+                .map(bookInfoManager::getBookInfo)
+                .collect(Collectors.toList());
+
+        return R.ok(respDtoList);
+    }
+
 }

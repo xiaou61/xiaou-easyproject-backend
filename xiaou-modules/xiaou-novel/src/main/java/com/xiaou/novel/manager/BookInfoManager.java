@@ -10,6 +10,7 @@ import com.xiaou.novel.mapper.BookInfoMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Objects;
 
 @Component
@@ -60,4 +61,13 @@ public class BookInfoManager {
                 .build();
     }
 
+
+    public List<Long> getLastUpdateIdList(Long categoryId) {
+        QueryWrapper<BookInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookTable.COLUMN_CATEGORY_ID, categoryId)
+                .gt(DatabaseConsts.BookTable.COLUMN_WORD_COUNT, 0)
+                .orderByDesc(DatabaseConsts.BookTable.COLUMN_LAST_CHAPTER_UPDATE_TIME)
+                .last(DatabaseConsts.SqlEnum.LIMIT_500.getSql());
+        return bookInfoMapper.selectList(queryWrapper).stream().map(BookInfo::getId).toList();
+    }
 }

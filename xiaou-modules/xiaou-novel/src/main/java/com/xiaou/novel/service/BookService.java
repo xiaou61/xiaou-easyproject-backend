@@ -8,6 +8,7 @@ import com.xiaou.novel.entity.req.ChapterAddReqDto;
 import com.xiaou.novel.entity.resp.*;
 import com.xiaou.utils.R;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public interface BookService {
@@ -105,6 +106,15 @@ public interface BookService {
      * @return 章节相关联的信息
      */
     R<BookChapterAboutRespDto> getLastChapterAbout(Long bookId);
+
+
+    /**
+     * 小说推荐列表查询
+     *
+     * @param bookId 小说ID
+     * @return 小说信息列表
+     */
+    R<List<BookInfoRespDto>> listRecBooks(Long bookId) throws NoSuchAlgorithmException;
 
 
 
