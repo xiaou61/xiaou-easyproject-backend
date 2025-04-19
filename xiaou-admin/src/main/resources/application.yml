@@ -48,7 +48,7 @@ mybatis-plus:
 #springai日志
 #logging:
 #  level:
-#    org.springframework.ai.chat.client.advisor: debug
+#    org.springframework.Ai.chat.client.advisor: debug
 
 
 

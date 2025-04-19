@@ -123,7 +123,7 @@
             </dependency>
 
 
-            <!-- spring ai 的依赖配置-->
+            <!-- spring Ai 的依赖配置-->
 
             <dependency>
                 <groupId>org.springframework.ai</groupId>

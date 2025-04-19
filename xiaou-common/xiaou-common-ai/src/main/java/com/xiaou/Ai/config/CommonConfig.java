@@ -1,6 +1,5 @@
-package com.xiaou.config;
+package com.xiaou.Ai.config;
 
-import org.springframework.ai.autoconfigure.ollama.OllamaChatProperties;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
