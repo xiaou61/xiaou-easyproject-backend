@@ -1,6 +1,7 @@
 package com.xiaou.novel.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiaou.model.page.PageReqDto;
@@ -13,10 +14,7 @@ import com.xiaou.novel.entity.po.BookContent;
 import com.xiaou.novel.entity.po.BookInfo;
 import com.xiaou.novel.entity.req.BookAddReqDto;
 import com.xiaou.novel.entity.req.ChapterAddReqDto;
-import com.xiaou.novel.entity.resp.BookCategoryRespDto;
-import com.xiaou.novel.entity.resp.BookChapterRespDto;
-import com.xiaou.novel.entity.resp.BookInfoRespDto;
-import com.xiaou.novel.entity.resp.ChapterContentRespDto;
+import com.xiaou.novel.entity.resp.*;
 import com.xiaou.novel.manager.*;
 import com.xiaou.novel.mapper.BookChapterMapper;
 import com.xiaou.novel.mapper.BookContentMapper;
@@ -57,7 +55,6 @@ public class BookServiceImpl implements BookService {
 
     @Resource
     private BookCategoryManager bookCategoryManager;
-
 
 
     @Override
@@ -291,5 +288,42 @@ public class BookServiceImpl implements BookService {
     @Override
     public R<BookInfoRespDto> getBookById(Long bookId) {
         return R.ok(bookInfoManager.getBookInfo(bookId));
+    }
+
+
+    @Override
+    public R<Void> addVisitCount(Long bookId) {
+        bookInfoMapper.update(
+                null,
+                new UpdateWrapper<BookInfo>()
+                        .eq("id", bookId)
+                        .setSql("visit_count = visit_count + 1")
+        );
+        return R.ok();
+    }
+
+    @Override
+    public R<BookChapterAboutRespDto> getLastChapterAbout(Long bookId) {
+        // 查询小说信息
+        BookInfoRespDto bookInfo = bookInfoManager.getBookInfo(bookId);
+
+        // 查询最新章节信息
+        BookChapterRespDto bookChapter = bookChapterManager.getChapter(
+                bookInfo.getLastChapterId());
+
+        // 查询章节内容
+        String content = bookContentManager.getBookContent(bookInfo.getLastChapterId());
+
+        // 查询章节总数
+        QueryWrapper<BookChapter> chapterQueryWrapper = new QueryWrapper<>();
+        chapterQueryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId);
+        Long chapterTotal = bookChapterMapper.selectCount(chapterQueryWrapper);
+
+        // 组装数据并返回
+        return R.ok(BookChapterAboutRespDto.builder()
+                .chapterInfo(bookChapter)
+                .chapterTotal(chapterTotal)
+                .contentSummary(content.substring(0, 30))
+                .build());
     }
 }

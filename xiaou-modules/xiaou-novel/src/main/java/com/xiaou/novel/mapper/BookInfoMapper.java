@@ -3,6 +3,7 @@ package com.xiaou.novel.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xiaou.novel.entity.po.BookInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface BookInfoMapper extends BaseMapper<BookInfo> {
+
+
 
 
 }

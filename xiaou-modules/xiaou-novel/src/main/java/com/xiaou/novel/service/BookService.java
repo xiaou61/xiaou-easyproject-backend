@@ -5,10 +5,7 @@ import com.xiaou.model.page.PageRespDto;
 import com.xiaou.novel.entity.dto.ChapterUpdateReqDto;
 import com.xiaou.novel.entity.req.BookAddReqDto;
 import com.xiaou.novel.entity.req.ChapterAddReqDto;
-import com.xiaou.novel.entity.resp.BookCategoryRespDto;
-import com.xiaou.novel.entity.resp.BookChapterRespDto;
-import com.xiaou.novel.entity.resp.BookInfoRespDto;
-import com.xiaou.novel.entity.resp.ChapterContentRespDto;
+import com.xiaou.novel.entity.resp.*;
 import com.xiaou.utils.R;
 
 import java.util.List;
@@ -92,6 +89,23 @@ public interface BookService {
      * @return 小说信息
      */
     R<BookInfoRespDto> getBookById(Long bookId);
+
+    /**
+     * 增加小说点击量
+     *
+     * @param bookId 小说ID
+     * @return 成功状态
+     */
+    R<Void> addVisitCount(Long bookId);
+
+    /**
+     * 小说最新章节相关信息查询
+     *
+     * @param bookId 小说ID
+     * @return 章节相关联的信息
+     */
+    R<BookChapterAboutRespDto> getLastChapterAbout(Long bookId);
+
 
 
 }
