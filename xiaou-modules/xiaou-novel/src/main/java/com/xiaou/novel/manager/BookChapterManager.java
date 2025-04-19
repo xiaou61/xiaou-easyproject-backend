@@ -6,6 +6,8 @@ import com.xiaou.novel.mapper.BookChapterMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class BookChapterManager {
     @Resource
@@ -13,6 +15,9 @@ public class BookChapterManager {
 
     public BookChapterRespDto getChapter(Long chapterId) {
         BookChapter bookChapter = bookChapterMapper.selectById(chapterId);
+        if (Objects.isNull(bookChapter)) {
+            return null;
+        }
         return BookChapterRespDto.builder()
                 .id(chapterId)
                 .bookId(bookChapter.getBookId())

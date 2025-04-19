@@ -10,6 +10,8 @@ import com.xiaou.novel.mapper.BookInfoMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class BookInfoManager {
 
@@ -28,6 +30,9 @@ public class BookInfoManager {
 
         // 查询基础信息
         BookInfo bookInfo = bookInfoMapper.selectById(id);
+        if (Objects.isNull(bookInfo)) {
+            return null;
+        }
 
         // 查询首章ID
         QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();

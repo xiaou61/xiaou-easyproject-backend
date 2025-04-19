@@ -7,6 +7,8 @@ import com.xiaou.novel.mapper.BookContentMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class BookContentManager {
 
@@ -18,6 +20,9 @@ public class BookContentManager {
         contentQueryWrapper.eq(DatabaseConsts.BookContentTable.COLUMN_CHAPTER_ID, chapterId)
                 .last(DatabaseConsts.SqlEnum.LIMIT_1.getSql());
         BookContent bookContent = bookContentMapper.selectOne(contentQueryWrapper);
+        if (Objects.isNull(bookContent)) {
+            return null;
+        }
         return bookContent.getContent();
     }
 
