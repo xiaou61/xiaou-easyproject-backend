@@ -28,6 +28,10 @@
             <groupId>com.xiaou</groupId>
             <artifactId>xiaou-common-docs</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-ai</artifactId>
+        </dependency>
 
     </dependencies>
 
