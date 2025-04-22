@@ -10,9 +10,6 @@ import lombok.Data;
 
 /**
  * 章节发布 请求DTO
- *
- * @author xiongxiaoyang
- * @date 2022/5/23
  */
 @Data
 public class ChapterAddReqDto {

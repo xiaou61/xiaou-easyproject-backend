@@ -116,6 +116,46 @@ public interface BookService {
      */
     R<List<BookInfoRespDto>> listRecBooks(Long bookId) throws NoSuchAlgorithmException;
 
+    /**
+     * 小说章节列表查询
+     *
+     * @param bookId 小说ID
+     * @return 小说章节列表
+     */
+    R<List<BookChapterRespDto>> listChapters(Long bookId);
+
+    /**
+     * 小说内容相关信息查询
+     *
+     * @param chapterId 章节ID
+     * @return 内容相关联的信息
+     */
+    R<BookContentAboutRespDto> getBookContentAbout(Long chapterId);
+
+    /**
+     * 获取上一章节ID
+     *
+     * @param chapterId 章节ID
+     * @return 上一章节ID
+     */
+    R<Long> getPreChapterId(Long chapterId);
+
+
+    /**
+     * 获取下一章节ID
+     *
+     * @param chapterId 章节ID
+     * @return 下一章节ID
+     */
+    R<Long> getNextChapterId(Long chapterId);
+
+
+    /**
+     * 小说点击榜查询
+     *
+     * @return 小说点击排行列表
+     */
+    R<List<BookRankRespDto>> listVisitRankBooks();
 
 
 }

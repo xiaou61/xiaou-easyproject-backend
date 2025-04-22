@@ -356,4 +356,109 @@ public class BookServiceImpl implements BookService {
         return R.ok(respDtoList);
     }
 
+    @Override
+    public R<List<BookChapterRespDto>> listChapters(Long bookId) {
+        QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId)
+                .orderByAsc(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM);
+        return R.ok(bookChapterMapper.selectList(queryWrapper).stream()
+                .map(v -> BookChapterRespDto.builder()
+                        .id(v.getId())
+                        .bookId(v.getBookId())
+                        .chapterWordCount(v.getWordCount())
+                        .chapterNum(v.getChapterNum())
+                        .chapterUpdateTime(v.getUpdateTime())
+                        .chapterName(v.getChapterName())
+                        .isVip(v.getIsVip())
+                        .build()).toList());
+    }
+
+    @Override
+    public R<BookContentAboutRespDto> getBookContentAbout(Long chapterId) {
+        // 查询章节信息
+        BookChapterRespDto bookChapter = bookChapterManager.getChapter(chapterId);
+
+        // 查询章节内容
+        String content = bookContentManager.getBookContent(chapterId);
+
+        // 查询小说信息
+        BookInfoRespDto bookInfo = bookInfoManager.getBookInfo(bookChapter.getBookId());
+
+        // 组装数据并返回
+        return R.ok(BookContentAboutRespDto.builder()
+                .bookInfo(bookInfo)
+                .chapterInfo(bookChapter)
+                .bookContent(content)
+                .build());
+    }
+
+    @Override
+    public R<Long> getPreChapterId(Long chapterId) {
+        // 查询小说ID 和 章节号
+        BookChapterRespDto chapter = bookChapterManager.getChapter(chapterId);
+        Long bookId = chapter.getBookId();
+        Integer chapterNum = chapter.getChapterNum();
+
+        // 查询上一章信息并返回章节ID
+        QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId)
+                .lt(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM, chapterNum)
+                .orderByDesc(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM)
+                .last(DatabaseConsts.SqlEnum.LIMIT_1.getSql());
+        return R.ok(
+                Optional.ofNullable(bookChapterMapper.selectOne(queryWrapper))
+                        .map(BookChapter::getId)
+                        .orElse(null)
+        );
+    }
+
+    @Override
+    public R<Long> getNextChapterId(Long chapterId) {
+        // 查询小说ID 和 章节号
+        BookChapterRespDto chapter = bookChapterManager.getChapter(chapterId);
+        Long bookId = chapter.getBookId();
+        Integer chapterNum = chapter.getChapterNum();
+
+        // 查询下一章信息并返回章节ID
+        QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId)
+                .gt(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM, chapterNum)
+                .orderByAsc(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM)
+                .last(DatabaseConsts.SqlEnum.LIMIT_1.getSql());
+        return R.ok(
+                Optional.ofNullable(bookChapterMapper.selectOne(queryWrapper))
+                        .map(BookChapter::getId)
+                        .orElse(null)
+        );
+    }
+
+    @Override
+    public R<List<BookRankRespDto>> listVisitRankBooks() {
+        QueryWrapper<BookInfo> bookInfoQueryWrapper = new QueryWrapper<>();
+        bookInfoQueryWrapper.orderByDesc(DatabaseConsts.BookTable.COLUMN_VISIT_COUNT);
+        return R.ok(listRankBooks(bookInfoQueryWrapper));
+
+    }
+
+        private List<BookRankRespDto> listRankBooks(QueryWrapper<BookInfo> bookInfoQueryWrapper) {
+            bookInfoQueryWrapper
+                    .gt(DatabaseConsts.BookTable.COLUMN_WORD_COUNT, 0)
+                    .last(DatabaseConsts.SqlEnum.LIMIT_30.getSql());
+            return bookInfoMapper.selectList(bookInfoQueryWrapper).stream().map(v -> {
+                BookRankRespDto respDto = new BookRankRespDto();
+                respDto.setId(v.getId());
+                respDto.setCategoryId(v.getCategoryId());
+                respDto.setCategoryName(v.getCategoryName());
+                respDto.setBookName(v.getBookName());
+                respDto.setAuthorName(v.getAuthorName());
+                respDto.setPicUrl(v.getPicUrl());
+                respDto.setBookDesc(v.getBookDesc());
+                respDto.setLastChapterName(v.getLastChapterName());
+                respDto.setLastChapterUpdateTime(v.getLastChapterUpdateTime());
+                respDto.setWordCount(v.getWordCount());
+                return respDto;
+            }).toList();
+        }
+
+
 }

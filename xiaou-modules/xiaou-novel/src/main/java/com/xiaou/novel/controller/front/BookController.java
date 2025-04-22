@@ -1,8 +1,6 @@
 package com.xiaou.novel.controller.front;
 
-import com.xiaou.novel.entity.resp.BookCategoryRespDto;
-import com.xiaou.novel.entity.resp.BookChapterAboutRespDto;
-import com.xiaou.novel.entity.resp.BookInfoRespDto;
+import com.xiaou.novel.entity.resp.*;
 import com.xiaou.novel.service.BookService;
 import com.xiaou.utils.R;
 import io.swagger.v3.oas.annotations.Operation;
@@ -74,6 +72,59 @@ public class BookController {
             @Parameter(description = "小说ID") Long bookId) throws NoSuchAlgorithmException {
         return bookService.listRecBooks(bookId);
     }
+
+    /**
+     * 小说章节列表查询接口
+     */
+    @Operation(summary = "小说章节列表查询接口")
+    @GetMapping("chapter/list")
+    public R<List<BookChapterRespDto>> listChapters(
+            @Parameter(description = "小说ID") Long bookId) {
+        return bookService.listChapters(bookId);
+    }
+
+    /**
+     * 小说内容相关信息查询接口
+     */
+    @Operation(summary = "小说内容相关信息查询接口")
+    @GetMapping("content/{chapterId}")
+    public R<BookContentAboutRespDto> getBookContentAbout(
+            @Parameter(description = "章节ID") @PathVariable("chapterId") Long chapterId) {
+        return bookService.getBookContentAbout(chapterId);
+    }
+
+
+
+    /**
+     * 获取上一章节ID接口
+     */
+    @Operation(summary = "获取上一章节ID接口")
+    @GetMapping("pre_chapter_id/{chapterId}")
+    public R<Long> getPreChapterId(
+            @Parameter(description = "章节ID") @PathVariable("chapterId") Long chapterId) {
+        return bookService.getPreChapterId(chapterId);
+    }
+
+    /**
+     * 获取下一章节ID接口
+     */
+    @Operation(summary = "获取下一章节ID接口")
+    @GetMapping("next_chapter_id/{chapterId}")
+    public R<Long> getNextChapterId(
+            @Parameter(description = "章节ID") @PathVariable("chapterId") Long chapterId) {
+        return bookService.getNextChapterId(chapterId);
+    }
+
+
+    /**
+     * 小说点击榜查询接口
+     */
+    @Operation(summary = "小说点击榜查询接口")
+    @GetMapping("visit_rank")
+    public R<List<BookRankRespDto>> listVisitRankBooks() {
+        return bookService.listVisitRankBooks();
+    }
+
 
 
 }
