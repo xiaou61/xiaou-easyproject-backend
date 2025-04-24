@@ -15,6 +15,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/xiaou-common/xiaou-common-system/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaou-mydiy-famework/xiaou-diy-mybatis/pom.xml" />
       </set>
     </option>
   </component>

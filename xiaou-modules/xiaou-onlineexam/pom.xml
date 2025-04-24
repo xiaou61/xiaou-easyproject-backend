@@ -5,23 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.xiaou</groupId>
-        <artifactId>SXEasy-backend</artifactId>
+        <artifactId>xiaou-modules</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>xiaou-modules</artifactId>
+    <artifactId>xiaou-onlineexam</artifactId>
 
-    <packaging>pom</packaging>
-
-    <description>
-        xiaou-modules 业务模块
-    </description>
-    <modules>
-        <module>xiaou-system</module>
-        <module>xiaou-ai</module>
-        <module>xiaou-musics</module>
-        <module>xiaou-novel</module>
-        <module>xiaou-onlineexam</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-web</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
