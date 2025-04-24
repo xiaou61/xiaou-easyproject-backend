@@ -92,7 +92,7 @@ public class CategoryController {
      */
     @GetMapping("/children/{parentId}")
     @Operation(summary = "获取子分类")
-    public Result<List<CategoryVO>> getChildCategories(@PathVariable("parentId") Integer parentId) {
+    public R<List<CategoryVO>> getChildCategories(@PathVariable("parentId") Integer parentId) {
         return categoryService.getChildCategories(parentId);
     }
 
