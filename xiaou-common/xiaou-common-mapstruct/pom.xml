@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.xiaou</groupId>
+        <artifactId>xiaou-common</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>xiaou-common-mapstruct</artifactId>
+    <description>mapstruct工具类</description>
+<dependencies>
+    <!-- MapStruct 注解处理器，用于自动生成 Bean 映射代码 -->
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-processor</artifactId>
+    </dependency>
+    <!-- MapStruct 核心库，用于 Bean 映射 -->
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+    </dependency>
+    <!-- Lombok 和 MapStruct 绑定库，解决两者之间的兼容性问题 -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok-mapstruct-binding</artifactId>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+
+
+</project>

@@ -18,6 +18,7 @@
         <module>xiaou-common-ratelimiter</module>
         <module>xiaou-common-minio</module>
         <module>xiaou-common-ai</module>
+        <module>xiaou-common-mapstruct</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>xiaou-common</artifactId>

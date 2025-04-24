@@ -26,31 +26,8 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
     private OptionMapper optionMapper;
 
 
-//    @Override
-//    @Transactional
-//    public R<String> addSingleQuestion(QuestionFrom questionFrom) {
-//        // 入参校验
-//        List<Option> options = questionFrom.getOptions();
-//        if (questionFrom.getQuType() != 4 && (Objects.isNull(options) || options.size() < 2)) {
-//            return R.fail("非简答题的试题选项不能少于两个");
-//        }
-//        Question question = questionConverter.fromToEntity(questionFrom);
-//        // 开始添加题干
-//        questionMapper.insert(question);
-//        // 根据试题类型添加选项
-//        if (question.getQuType() == 4) {
-//            // 简答题添加选项
-//            Option option = questionFrom.getOptions().get(0);
-//            option.setQuId(question.getId());
-//            optionMapper.insert(option);
-//        } else {
-//            // 非简答题添加选项
-//            // 把新建试题获取的id，填入选项中
-//            options.forEach(option -> {
-//                option.setQuId(question.getId());
-//            });
-//            optionMapper.insertBatch(options);
-//        }
-//        return R.ok("添加成功");
-//    }
+    @Override
+    public R<String> addSingleQuestion(QuestionFrom questionFrom) {
+        return null;
+    }
 }
