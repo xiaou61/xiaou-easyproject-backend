@@ -15,6 +15,8 @@
     <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-docs/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-docs/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-mapstruct/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-mapstruct/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-minio/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-minio/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaou-common/xiaou-common-mybatis/src/main/java" charset="UTF-8" />

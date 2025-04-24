@@ -19,7 +19,7 @@ import java.io.Serializable;
  * @since 2024-03-21
  */
 @Data
-@TableName("t_option")
+@TableName("u_exam_option")
 public class Option implements Serializable {
 
     private static final long serialVersionUID = 1L;

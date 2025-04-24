@@ -33,6 +33,10 @@
             <artifactId>validation-api</artifactId>
             <version>2.0.1.Final</version>
         </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-mapstruct</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

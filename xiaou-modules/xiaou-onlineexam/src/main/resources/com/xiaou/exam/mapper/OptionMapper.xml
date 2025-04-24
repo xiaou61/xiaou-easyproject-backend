@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.exam.mapper.OptionMapper">
+
+    <!-- 批量添加选型 -->
+    <insert id="insertBatch">
+        insert into u_exam_option
+        values
+        <foreach collection="options" item="option" separator="," index="i">
+            (null,#{option.quId},#{option.isRight},#{option.image},#{option.content},#{i},0)
+        </foreach>
+    </insert>
+
+
+</mapper>
