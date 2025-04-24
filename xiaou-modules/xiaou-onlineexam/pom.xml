@@ -28,6 +28,11 @@
             <groupId>com.xiaou</groupId>
             <artifactId>xiaou-common-mybatis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
     </dependencies>
 
 </project>
