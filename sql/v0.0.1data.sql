@@ -42,3 +42,11 @@ VALUES (0, '玄幻', 1, NOW(), NOW()),
        (1, '言情', 1, NOW(), NOW()),
        (1, '古代言情', 2, NOW(), NOW()),
        (1, '现代言情', 3, NOW(), NOW());
+
+
+#xiaou-exam模块
+INSERT INTO `u_exam_category` (`id`, `name`, `parent_id`, `sort`, `create_time`, `is_deleted`) VALUES (1, '语文', 0, 1, NOW(), 0);
+INSERT INTO `u_exam_category` (`id`, `name`, `parent_id`, `sort`, `create_time`, `is_deleted`) VALUES (2, '数学', 0, 2, NOW(), 0);
+INSERT INTO `u_exam_category` (`id`, `name`, `parent_id`, `sort`, `create_time`, `is_deleted`) VALUES (3, '英语', 0, 3, NOW(), 0);
+INSERT INTO `u_exam_category` (`id`, `name`, `parent_id`, `sort`, `create_time`, `is_deleted`) VALUES (4, '模拟试题', 1, 1, NOW(), 0);
+INSERT INTO `u_exam_category` (`id`, `name`, `parent_id`, `sort`, `create_time`, `is_deleted`) VALUES (5, '历年真题', 1, 2, NOW(), 0);

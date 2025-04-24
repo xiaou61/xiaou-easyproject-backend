@@ -20,6 +20,14 @@
             <groupId>com.xiaou</groupId>
             <artifactId>xiaou-common-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-docs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaou</groupId>
+            <artifactId>xiaou-common-mybatis</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
