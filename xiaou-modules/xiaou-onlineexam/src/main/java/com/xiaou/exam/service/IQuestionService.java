@@ -1,8 +1,13 @@
 package com.xiaou.exam.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xiaou.exam.model.entity.Question;
+import com.xiaou.exam.model.req.BatchDeleteRequest;
 import com.xiaou.exam.model.req.QuestionFrom;
+import com.xiaou.exam.model.vo.QuestionVO;
+import com.xiaou.model.page.PageReqDto;
+import com.xiaou.model.page.PageRespDto;
 import com.xiaou.utils.R;
 import org.xnio.Result;
 
@@ -14,4 +19,9 @@ public interface IQuestionService extends IService<Question> {
      * @return 响应
      */
     R<String> addSingleQuestion(QuestionFrom questionFrom);
+
+
+    R<String> deleteBatchByIds(BatchDeleteRequest req);
+
+    R<PageRespDto<Question>> pageQuestion(PageReqDto req);
 }

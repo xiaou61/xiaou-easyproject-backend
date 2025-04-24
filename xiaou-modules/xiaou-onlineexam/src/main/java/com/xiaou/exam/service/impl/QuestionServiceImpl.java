@@ -1,13 +1,20 @@
 package com.xiaou.exam.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xiaou.exam.converter.QuestionConverter;
 import com.xiaou.exam.mapper.OptionMapper;
 import com.xiaou.exam.mapper.QuestionMapper;
 import com.xiaou.exam.model.entity.Option;
 import com.xiaou.exam.model.entity.Question;
+import com.xiaou.exam.model.req.BatchDeleteRequest;
 import com.xiaou.exam.model.req.QuestionFrom;
+import com.xiaou.exam.model.vo.QuestionVO;
 import com.xiaou.exam.service.IQuestionService;
+import com.xiaou.model.page.PageReqDto;
+import com.xiaou.model.page.PageRespDto;
 import com.xiaou.utils.R;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -64,5 +71,38 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
         // 返回成功信息
         return R.ok("单题添加成功");
     }
+
+    @Override
+    @Transactional
+    public R<String> deleteBatchByIds(BatchDeleteRequest req) {
+        List<Integer> ids = req.getIds();
+
+        // 批量删除选项
+        if (!ids.isEmpty()) {
+            QueryWrapper<Option> optionQueryWrapper = new QueryWrapper<>();
+            optionQueryWrapper.in("qu_id", ids);  // 一次性删除所有相关选项
+            optionMapper.delete(optionQueryWrapper);
+        }
+
+        // 批量删除问题
+        questionMapper.deleteByIds(ids);
+
+        return R.ok("批量删除成功");
+    }
+
+    @Override
+    public R<PageRespDto<Question>> pageQuestion(PageReqDto dto) {
+        IPage<Question> page = new Page<>();
+        page.setCurrent(dto.getPageNum());
+        page.setSize(dto.getPageSize());
+
+        QueryWrapper<Question> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("is_deleted", 0);
+
+        IPage<Question> questionIPage = questionMapper.selectPage(page, queryWrapper);
+        return R.ok(PageRespDto.of(dto.getPageNum(), dto.getPageSize(), page.getTotal(),
+                questionIPage.getRecords()));
+    }
+
 
 }
