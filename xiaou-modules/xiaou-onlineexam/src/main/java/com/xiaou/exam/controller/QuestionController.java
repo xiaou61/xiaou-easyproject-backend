@@ -53,5 +53,16 @@ public class QuestionController {
         return iQuestionService.pageQuestion(req);
     }
 
+    /**
+     * 根据试题id获取单题详情
+     *
+     * @param id 试题id
+     * @return 响应结果
+     */
+    @Operation(summary = "根据试题id获取单题详情")
+    @GetMapping("/single/{id}")
+    public R<QuestionVO> querySingle(@PathVariable("id") Integer id) {
+        return iQuestionService.querySingle(id);
+    }
 
 }

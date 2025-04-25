@@ -24,4 +24,12 @@ public interface IQuestionService extends IService<Question> {
     R<String> deleteBatchByIds(BatchDeleteRequest req);
 
     R<PageRespDto<Question>> pageQuestion(PageReqDto req);
+
+    /**
+     * 根据试题id获取单题详情
+     *
+     * @param id 试题id
+     * @return 结果集
+     */
+    R<QuestionVO> querySingle(Integer id);
 }

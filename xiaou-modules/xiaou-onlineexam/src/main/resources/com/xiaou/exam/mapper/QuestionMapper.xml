@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaou.exam.mapper.QuestionMapper">
+
+    <resultMap id="singleQuestion" autoMapping="true" type="com.xiaou.exam.model.vo.QuestionVO">
+        <id column="id" property="id"/>
+        <collection property="options" autoMapping="true" column="id" ofType="com.xiaou.exam.model.entity.Option"
+                    select="com.xiaou.exam.mapper.OptionMapper.selectAllByQuestionId"/>
+    </resultMap>
+
+
+    <!-- 根据试题id获取单题详情 一对多查询 -->
+    <select id="selectSingle" resultMap="singleQuestion">
+        select q.id,
+        q.content,
+        q.image,
+        q.analysis,
+        q.qu_type
+<!--        q.repo_id,-->
+<!--        r.title as repoTitle-->
+        from u_exam_question as q
+<!--        join u_exam_repo as r on q.repo_id = r.id-->
+        where q.id = #{id}
+    </select>
+
+</mapper>

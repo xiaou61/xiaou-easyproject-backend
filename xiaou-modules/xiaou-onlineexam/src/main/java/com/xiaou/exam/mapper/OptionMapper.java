@@ -15,4 +15,12 @@ public interface OptionMapper extends BaseMapper<Option> {
      * @return 影响数据库内容的记录数
      */
     Integer insertBatch(List<Option> options);
+
+    /**
+     * 根据试题id获取所有选项
+     *
+     * @param id 试题id
+     * @return 结果集
+     */
+    List<Option> selectAllByQuestionId(Integer id);
 }

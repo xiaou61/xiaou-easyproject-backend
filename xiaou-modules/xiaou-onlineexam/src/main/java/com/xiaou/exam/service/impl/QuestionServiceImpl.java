@@ -1,5 +1,6 @@
 package com.xiaou.exam.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -102,6 +103,12 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
         IPage<Question> questionIPage = questionMapper.selectPage(page, queryWrapper);
         return R.ok(PageRespDto.of(dto.getPageNum(), dto.getPageSize(), page.getTotal(),
                 questionIPage.getRecords()));
+    }
+
+    @Override
+    public R<QuestionVO> querySingle(Integer id) {
+        QuestionVO result = questionMapper.selectSingle(id);
+        return R.ok("根据试题id获取单题详情成功", result);
     }
 
 
