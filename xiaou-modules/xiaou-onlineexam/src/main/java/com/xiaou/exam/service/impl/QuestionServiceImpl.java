@@ -21,8 +21,10 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> implements IQuestionService {
@@ -109,6 +111,20 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
     public R<QuestionVO> querySingle(Integer id) {
         QuestionVO result = questionMapper.selectSingle(id);
         return R.ok("根据试题id获取单题详情成功", result);
+    }
+
+    @Override
+    public R<String> updateQuestion(QuestionFrom questionFrom) {
+        // 修改试题
+        Question question = questionConverter.fromToEntity(questionFrom);
+        questionMapper.updateById(question);
+        // 修改选项
+        List<Option> options = questionFrom.getOptions();
+        // 流式 API 批量更新选项，简洁清晰
+        Optional.ofNullable(questionFrom.getOptions())
+                .orElse(Collections.emptyList())
+                .forEach(optionMapper::updateById);
+        return R.ok("修改试题成功");
     }
 
 

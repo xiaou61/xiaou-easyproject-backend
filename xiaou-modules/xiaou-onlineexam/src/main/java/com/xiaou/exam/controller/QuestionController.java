@@ -65,4 +65,18 @@ public class QuestionController {
         return iQuestionService.querySingle(id);
     }
 
+    /**
+     * 修改试题
+     *
+     * @param id           试题Id
+     * @param questionFrom 入参
+     * @return 响应结果
+     */
+    @Operation(summary = "修改试题")
+    @PutMapping("/{id}")
+    public R<String> updateQuestion(@PathVariable("id") Integer id, @RequestBody QuestionFrom questionFrom) {
+        questionFrom.setId(id);
+        return iQuestionService.updateQuestion(questionFrom);
+    }
+
 }

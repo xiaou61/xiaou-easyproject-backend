@@ -32,4 +32,12 @@ public interface IQuestionService extends IService<Question> {
      * @return 结果集
      */
     R<QuestionVO> querySingle(Integer id);
+
+    /**
+     * 修改试题
+     *
+     * @param questionFrom 需要修改的试题
+     * @return 结果
+     */
+    R<String> updateQuestion(QuestionFrom questionFrom);
 }
