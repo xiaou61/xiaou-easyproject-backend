@@ -37,7 +37,6 @@ public class SongController {
         return songService.allSong();
     }
 
-    //TODO ok
     // 返回指定歌曲ID的歌曲
     @GetMapping("/song/detail")
     public R songOfId(@RequestParam int id) {

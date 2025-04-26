@@ -206,3 +206,16 @@ CREATE TABLE `u_exam_option` (
                             `is_deleted` int(11) NOT NULL DEFAULT '0' COMMENT '逻辑删除：0代表未删除，1代表删除',
                             PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2642 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
+
+
+DROP TABLE IF EXISTS `u_exam_repo`;
+CREATE TABLE `u_exam_repo` (
+                          `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id   题库表',
+                          `user_id` int(11) NOT NULL COMMENT '创建人id',
+                          `title` varchar(255) COLLATE utf8mb4_bin NOT NULL COMMENT '题库标题',
+                          `category_id` int(11) DEFAULT NULL COMMENT '分类ID',
+                          `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+                          `is_deleted` int(11) NOT NULL DEFAULT '0' COMMENT '逻辑删除：0代表未删除，1代表删除',
+                          `is_exercise` int(11) NOT NULL DEFAULT '0',
+                          PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;

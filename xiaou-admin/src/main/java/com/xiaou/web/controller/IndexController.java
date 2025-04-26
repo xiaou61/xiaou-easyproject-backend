@@ -18,7 +18,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import java.util.*;
 
-//todo 等satoken开启时候要忽略这个
 @Slf4j
 @RestController
 @Tag(name = "首页")
