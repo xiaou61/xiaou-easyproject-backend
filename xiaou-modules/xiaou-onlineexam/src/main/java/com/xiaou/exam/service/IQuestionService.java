@@ -1,6 +1,5 @@
 package com.xiaou.exam.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xiaou.exam.model.entity.Question;
 import com.xiaou.exam.model.req.BatchDeleteRequest;
@@ -9,7 +8,7 @@ import com.xiaou.exam.model.vo.QuestionVO;
 import com.xiaou.model.page.PageReqDto;
 import com.xiaou.model.page.PageRespDto;
 import com.xiaou.utils.R;
-import org.xnio.Result;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface IQuestionService extends IService<Question> {
     /**
@@ -40,4 +39,6 @@ public interface IQuestionService extends IService<Question> {
      * @return 结果
      */
     R<String> updateQuestion(QuestionFrom questionFrom);
+
+    R<String> importQuestion(Integer id, MultipartFile file);
 }

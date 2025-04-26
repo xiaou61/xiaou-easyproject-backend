@@ -1,5 +1,6 @@
 package com.xiaou.exam.service.impl;
 
+import com.alibaba.excel.EasyExcel;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -11,6 +12,7 @@ import com.xiaou.exam.mapper.QuestionMapper;
 import com.xiaou.exam.model.entity.Option;
 import com.xiaou.exam.model.entity.Question;
 import com.xiaou.exam.model.req.BatchDeleteRequest;
+import com.xiaou.exam.model.req.QuestionExcelFrom;
 import com.xiaou.exam.model.req.QuestionFrom;
 import com.xiaou.exam.model.vo.QuestionVO;
 import com.xiaou.exam.service.IQuestionService;
@@ -20,11 +22,11 @@ import com.xiaou.utils.R;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.*;
 
 @Service
 public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> implements IQuestionService {
@@ -126,6 +128,54 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
                 .forEach(optionMapper::updateById);
         return R.ok("修改试题成功");
     }
+
+    @Override
+    public R<String> importQuestion(Integer id, MultipartFile file) {
+        // 判断是否为 Excel 文件
+        if (!file.getOriginalFilename().endsWith(".xls") && !file.getOriginalFilename().endsWith(".xlsx")) {
+            throw new RuntimeException("该文件不是一个合法的Excel文件");
+        }
+
+        List<QuestionExcelFrom> questionExcelFroms;
+        try {
+            // 使用 EasyExcel 读取数据
+            questionExcelFroms = EasyExcel.read(file.getInputStream(), QuestionExcelFrom.class, null).sheet().doReadSync();
+        } catch (IOException e) {
+            throw new RuntimeException("读取 Excel 文件失败", e);
+        }
+
+        // 类型转换
+        List<QuestionFrom> list = QuestionExcelFrom.converterQuestionFrom(questionExcelFroms);
+
+        for (QuestionFrom questionFrom : list) {
+            Question question = questionConverter.fromToEntity(questionFrom);
+            question.setRepoId(id);
+            question.setCreateTime(LocalDateTime.now());
+
+            // 插入题目
+            questionMapper.insert(question);
+
+            // 批量添加选项
+            List<Option> options = questionFrom.getOptions();
+            final int[] count = {0};
+            options.forEach(option -> {
+                if (question.getQuType() == 4) { // 简答题默认正确
+                    option.setIsRight(1);
+                }
+                option.setSort(++count[0]);
+                option.setQuId(question.getId());
+            });
+
+            if (!options.isEmpty()) {
+                optionMapper.insertBatch(options);
+            }
+        }
+
+        return R.ok("导入试题成功");
+    }
+
+
+
 
 
 }

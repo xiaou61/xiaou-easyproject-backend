@@ -1,6 +1,5 @@
 package com.xiaou.exam.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.xiaou.exam.model.entity.Question;
 import com.xiaou.exam.model.req.BatchDeleteRequest;
 import com.xiaou.exam.model.req.QuestionFrom;
@@ -14,9 +13,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.xnio.Result;
-
-import java.util.List;
 
 @Tag(name = "试题管理相关接口")
 @RestController
@@ -78,5 +76,19 @@ public class QuestionController {
         questionFrom.setId(id);
         return iQuestionService.updateQuestion(questionFrom);
     }
+
+    /**
+     * 批量导入试题
+     *
+     * @param id   题库Id
+     * @param file Excel文件
+     * @return 响应结果
+     */
+    @Operation(summary = "批量导入试题")
+    @PostMapping("/import/{id}")
+    public R<String> importQuestion(@PathVariable("id") Integer id, @RequestParam("file") MultipartFile file) {
+        return iQuestionService.importQuestion(id, file);
+    }
+
 
 }
