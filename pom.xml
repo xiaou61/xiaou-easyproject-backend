@@ -171,11 +171,6 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>com.xiaou</groupId>
-                <artifactId>xiaou-system</artifactId>
-                <version>${revision}</version>
-            </dependency>
 
         </dependencies>
 
@@ -185,6 +180,8 @@
 
     <build>
         <plugins>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

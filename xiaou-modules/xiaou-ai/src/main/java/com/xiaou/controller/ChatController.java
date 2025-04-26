@@ -24,7 +24,6 @@ public class ChatController {
 
     private final ChatClient chatClient;
 
-//    private final ChatHistoryRepository chatHistoryRepository;
 
     @PostMapping(value = "/chat", produces = "text/html;charset=utf-8")
     public Flux<String> chat(

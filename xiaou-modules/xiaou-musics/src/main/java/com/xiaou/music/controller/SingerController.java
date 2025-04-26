@@ -36,7 +36,7 @@ public class SingerController {
     }
 
     // 返回所有歌手 分页
-    @GetMapping("/singer/page")
+    @PostMapping("/singer/page")
     public R<PageRespDto<Singer>> allSingerPage(@RequestBody PageReqDto pageReqDto) {
         return singerService.allSingerPage(pageReqDto);
     }

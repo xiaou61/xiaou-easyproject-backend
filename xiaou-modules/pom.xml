@@ -17,7 +17,6 @@
         xiaou-modules 业务模块
     </description>
     <modules>
-        <module>xiaou-system</module>
         <module>xiaou-ai</module>
         <module>xiaou-musics</module>
         <module>xiaou-novel</module>
