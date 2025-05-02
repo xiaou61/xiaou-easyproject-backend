@@ -4,6 +4,8 @@
 
 这是一个基于 Spring Boot 3 的后端通用接口案例项目，汇总了实际开发中常见的需求代码片段。该项目旨在帮助开发者快速搭建后端服务，解决实际业务需求中的常见问题。
 
+项目前端地址：[xiaou61/xiaou-easyproject-frontend (github.com)](https://github.com/xiaou61/xiaou-easyproject-frontend)
+
 ------
 
 ## ✨ 项目特色

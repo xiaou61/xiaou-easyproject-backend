@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="fix: 修改端口号" />
+    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="fix: hot模块">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +258,7 @@
       <workItem from="1746144949358" duration="889000" />
       <workItem from="1746146761720" duration="3996000" />
       <workItem from="1746156673446" duration="2151000" />
-      <workItem from="1746165839653" duration="3975000" />
+      <workItem from="1746165839653" duration="6462000" />
     </task>
     <task id="LOCAL-00001" summary="init 框架">
       <option name="closed" value="true" />
@@ -618,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746169686432</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fix: hot模块">
+      <option name="closed" value="true" />
+      <created>1746169988512</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1746169988512</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +673,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="feat: 新增歌曲" />
     <MESSAGE value="feat: xiaou-novel模块 作家后台接口" />
     <MESSAGE value="feat: common模块集成xiaou-common-ai" />
     <MESSAGE value="feat: 小说模块添加AI扩写，缩写，续写，润色等功能" />
@@ -688,6 +697,7 @@
     <MESSAGE value="fix: 修改" />
     <MESSAGE value="feat: hot模块添加" />
     <MESSAGE value="fix: 修改端口号" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 修改端口号" />
+    <MESSAGE value="fix: hot模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: hot模块" />
   </component>
 </project>
