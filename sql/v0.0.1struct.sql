@@ -219,23 +219,3 @@ CREATE TABLE `u_exam_repo` (
                           `is_exercise` int(11) NOT NULL DEFAULT '0',
                           PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
-
-
-#xiaou-hot模块
--- 热点表
-create table if not exists u_hot_post
-(
-    id             bigint auto_increment comment 'id' primary key,
-    name           varchar(256)                            null comment '排行榜名称',
-    type           varchar(256)                            null comment ' 热点类型',
-    typeName       varchar(256)                            null comment ' 热点类型名称',
-    iconUrl        varchar(512)                            null comment '图标地址',
-    hostJson       mediumtext                              null comment '热点数据（json）',
-    category       int                                     null comment '分类',
-    updateInterval decimal(7, 2) default 0.50              null comment '更新间隔，以小时为单位',
-    sort           int           default 0                 not null comment ' 排序',
-    createTime     datetime      default CURRENT_TIMESTAMP not null comment '创建时间',
-    updateTime     datetime      default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
-    isDelete       tinyint       default 0                 not null comment '是否删除',
-    index idx_postId (sort)
-) comment '热点表' collate = utf8mb4_unicode_ci;
