@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaou-modules/xiaou-hot/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-bom/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-core/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-encrypt/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-excel/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-idempotent/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-job/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-json/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-log/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-mail/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-mybatis/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-oss/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-ratelimiter/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-redis/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-satoken/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-security/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-sensitive/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-sms/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-social/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-sse/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-tenant/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-translation/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-web/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-common/ruoyi-common-websocket/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-extend/ruoyi-monitor-admin/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-extend/ruoyi-snailjob-server/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-modules/ruoyi-demo/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-modules/ruoyi-generator/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-modules/ruoyi-job/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-modules/ruoyi-system/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/ruoyi-modules/ruoyi-workflow/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/u-common/u-actuator/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/u-common/u-qrcode/pom.xml" />
+        <option value="D:/U-Eeasyproject/U-Easyproject/u-modules/u-novel/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaou-common/xiaou-common-system/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaou-modules/xiaou-system/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaou-mydiy-famework/xiaou-diy-mybatis/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="graalvm-21" project-jdk-type="JavaSDK" />
+</project>

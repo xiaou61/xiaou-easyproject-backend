@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="fix: 修改端口号" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-17/lib/src.zip!/java.base/java/nio/file/Path.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="$PROJECT_DIR$/../../apache-maven-3.9.0" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="E:\apache-maven-3.9.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="17 (2)" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2vl1EtaYf5yz3srBPxBIEnhDwU0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP 请求.generated-requests | #12.executor": "Run",
+    "JAR 应用程序.xiaou-admin-0.0.1.jar.executor": "Run",
+    "JUnit.BeanTest.testGetBean.executor": "Run",
+    "JUnit.SimpleBeanContainerTest.testGetBean.executor": "Run",
+    "JUnit.SimpleBeanContainerTest.testGetBeanFromBeanDefinition.executor": "Run",
+    "JUnit.SimpleBeanContainerTest.testGetBeanFromFactory.executor": "Run",
+    "Maven.SXEasy-backend [clean].executor": "Run",
+    "Maven.SXEasy-backend [compile].executor": "Run",
+    "Maven.SXEasy-backend [install].executor": "Run",
+    "Maven.SXEasy-backend [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.SXEasy-backend [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
+    "Maven.SXEasy-backend [org.apache.maven.plugins:maven-install-plugin:3.1.0:help].executor": "Run",
+    "Maven.SXEasy-backend [org.apache.maven.plugins:maven-install-plugin:3.1.0:install].executor": "Run",
+    "Maven.SXEasy-backend [org.codehaus.mojo:flatten-maven-plugin:1.3.0:clean].executor": "Run",
+    "Maven.SXEasy-backend [org.codehaus.mojo:flatten-maven-plugin:1.3.0:flatten].executor": "Run",
+    "Maven.SXEasy-backend [package].executor": "Run",
+    "Maven.xiaou-admin [clean].executor": "Run",
+    "Maven.xiaou-admin [compile].executor": "Run",
+    "Maven.xiaou-admin [install].executor": "Run",
+    "Maven.xiaou-admin [package].executor": "Run",
+    "Maven.xiaou-ai [compile].executor": "Run",
+    "Maven.xiaou-common [clean].executor": "Run",
+    "Maven.xiaou-common [compile].executor": "Run",
+    "Maven.xiaou-common [install].executor": "Run",
+    "Maven.xiaou-common [org.apache.maven.plugins:maven-install-plugin:3.1.0:help].executor": "Run",
+    "Maven.xiaou-common [org.apache.maven.plugins:maven-install-plugin:3.1.0:install-file].executor": "Run",
+    "Maven.xiaou-common [org.apache.maven.plugins:maven-install-plugin:3.1.0:install].executor": "Run",
+    "Maven.xiaou-common [package].executor": "Run",
+    "Maven.xiaou-common-bom [clean].executor": "Run",
+    "Maven.xiaou-common-bom [install].executor": "Run",
+    "Maven.xiaou-common-docs [install].executor": "Run",
+    "Maven.xiaou-common-mapstruct [install].executor": "Run",
+    "Maven.xiaou-common-web [install].executor": "Run",
+    "Maven.xiaou-modules [compile].executor": "Run",
+    "Maven.xiaou-modules [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
+    "Maven.xiaou-system [clean].executor": "Run",
+    "Maven.xiaou-system [compile].executor": "Run",
+    "Maven.xiaou-system [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.XiaouApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/ck/SXEasy-backend/xiaou-modules/xiaou-hot/doc",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.itangcent.idea.plugin.configurable.rootConfigurable.apifox",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.MyBatisTest.executor": "Run"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ck\SXEasy-backend\xiaou-modules\xiaou-hot\doc" />
+      <recent name="E:\ck\SXEasy-backend\xiaou-modules\xiaou-hot\src\main\java\com\xiaou\hot\datasource" />
+      <recent name="E:\ck\SXEasy-backend\xiaou-modules\xiaou-onlineexam\src\main\resources\com\xiaou\exam\mapper" />
+      <recent name="E:\ck\SXEasy-backend\xiaou-common\xiaou-common-ratelimiter\src\main\java\com\xiaou\ratelimiter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ck\SXEasy-backend\xiaou-common\xiaou-common-ai\src\main\java\com\xiaou\ai" />
+      <recent name="E:\ck\SXEasy-backend\xiaou-modules\xiaou-musics" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xiaou.hot.job.cycle" />
+      <recent name="com.xiaou.hot.model.enums" />
+      <recent name="com.xiaou.spring.beans.support" />
+      <recent name="com.xiaou.redis.config" />
+      <recent name="com.xiaou.utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.XiaouApplication">
+    <configuration name="MyBatisTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xiaou.MyBatisTest" />
+      <module name="xiaou-diy-mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="v0.0.1struct.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/sql/v0.0.1struct.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="BeanTest.testGetBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xiaou-diy-spring" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BeanTest" />
+      <option name="METHOD_NAME" value="testGetBean" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="xiaou-admin-0.0.1.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/xiaou-admin/target/xiaou-admin-0.0.1.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ruoyi-modules" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ruoyi-modules" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XiaouApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xiaou-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xiaou.XiaouApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.XiaouApplication" />
+        <item itemvalue="JAR 应用程序.xiaou-admin-0.0.1.jar" />
+        <item itemvalue="数据库脚本.v0.0.1struct.sql" />
+        <item itemvalue="应用程序.MyBatisTest" />
+        <item itemvalue="JUnit.BeanTest.testGetBean" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="" />
+      <created>1744704739560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744704739560</updated>
+      <workItem from="1744704740927" duration="15885000" />
+      <workItem from="1744721449628" duration="12000" />
+      <workItem from="1744794447527" duration="5349000" />
+      <workItem from="1744855575386" duration="17868000" />
+      <workItem from="1744882671984" duration="8103000" />
+      <workItem from="1744953586332" duration="9195000" />
+      <workItem from="1745026036269" duration="3657000" />
+      <workItem from="1745043541246" duration="1080000" />
+      <workItem from="1745047092415" duration="32000" />
+      <workItem from="1745047155102" duration="1423000" />
+      <workItem from="1745048595159" duration="462000" />
+      <workItem from="1745049069629" duration="9984000" />
+      <workItem from="1745212301700" duration="6506000" />
+      <workItem from="1745302312706" duration="5388000" />
+      <workItem from="1745477192517" duration="13911000" />
+      <workItem from="1745498085100" duration="36000" />
+      <workItem from="1745544830934" duration="2945000" />
+      <workItem from="1745632390031" duration="2698000" />
+      <workItem from="1745635397411" duration="2327000" />
+      <workItem from="1745643483490" duration="4893000" />
+      <workItem from="1745661440235" duration="3882000" />
+      <workItem from="1745665555943" duration="1187000" />
+      <workItem from="1745669314454" duration="54000" />
+      <workItem from="1745669376047" duration="64000" />
+      <workItem from="1745669448786" duration="2941000" />
+      <workItem from="1745713090420" duration="611000" />
+      <workItem from="1745755934506" duration="542000" />
+      <workItem from="1746004281734" duration="1147000" />
+      <workItem from="1746009667826" duration="306000" />
+      <workItem from="1746060626592" duration="6013000" />
+      <workItem from="1746098017203" duration="2589000" />
+      <workItem from="1746144462586" duration="14000" />
+      <workItem from="1746144949358" duration="889000" />
+      <workItem from="1746146761720" duration="3996000" />
+      <workItem from="1746156673446" duration="2151000" />
+      <workItem from="1746165839653" duration="3975000" />
+    </task>
+    <task id="LOCAL-00001" summary="init 框架">
+      <option name="closed" value="true" />
+      <created>1744709887165</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744709887165</updated>
+    </task>
+    <task id="LOCAL-00002" summary="文档">
+      <option name="closed" value="true" />
+      <created>1744709966283</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744709966283</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: index接口">
+      <option name="closed" value="true" />
+      <created>1744712410096</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744712410096</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: 集成springdoc">
+      <option name="closed" value="true" />
+      <created>1744716291597</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744716291597</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: 集成hutool验证码">
+      <option name="closed" value="true" />
+      <created>1744717357027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744717357027</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: 集成获取所有API列表">
+      <option name="closed" value="true" />
+      <created>1744717735438</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744717735438</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 集成mybatis-plus + p6spy">
+      <option name="closed" value="true" />
+      <created>1744720219440</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744720219440</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: 集成mybatis-plus + p6spy">
+      <option name="closed" value="true" />
+      <created>1744720228278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744720228278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: 简单登录，">
+      <option name="closed" value="true" />
+      <created>1744721427606</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744721427606</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: 集成redis">
+      <option name="closed" value="true" />
+      <created>1744795867046</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744795867046</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: 添加controller接口统一拦截前面加/uap">
+      <option name="closed" value="true" />
+      <created>1744798192782</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744798192782</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: 简单ai对话集成">
+      <option name="closed" value="true" />
+      <created>1744873386970</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744873386970</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: 限流结构，目前未实现">
+      <option name="closed" value="true" />
+      <created>1744879025742</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744879025742</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: 集成minio">
+      <option name="closed" value="true" />
+      <created>1744880901677</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744880901677</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: u-music模块 音乐模块 歌手CRUD开发完成">
+      <option name="closed" value="true" />
+      <created>1744886517898</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1744886517898</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: 整合minio工具类">
+      <option name="closed" value="true" />
+      <created>1744887451132</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744887451132</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: updateSingerPic方法">
+      <option name="closed" value="true" />
+      <created>1744887650464</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744887650464</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: 新增mybatis-plus分页插件">
+      <option name="closed" value="true" />
+      <created>1744888730739</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744888730739</updated>
+    </task>
+    <task id="LOCAL-00019" summary="docs: docs优化">
+      <option name="closed" value="true" />
+      <created>1744889936218</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744889936218</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: 新增歌曲">
+      <option name="closed" value="true" />
+      <created>1744959624803</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744959624803</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: xiaou-novel模块 作家后台接口">
+      <option name="closed" value="true" />
+      <created>1745061812351</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745061812351</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: common模块集成xiaou-common-ai">
+      <option name="closed" value="true" />
+      <created>1745062255621</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1745062255621</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: 小说模块添加AI扩写，缩写，续写，润色等功能">
+      <option name="closed" value="true" />
+      <created>1745062804401</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1745062804401</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: 作家前台俩个接口">
+      <option name="closed" value="true" />
+      <created>1745064670207</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1745064670207</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix(添加了一些判空): 作家前台俩个接口">
+      <option name="closed" value="true" />
+      <created>1745064942175</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1745064942175</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: 前台模块新增接口">
+      <option name="closed" value="true" />
+      <created>1745065842434</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1745065842434</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: 前台模块小说推荐">
+      <option name="closed" value="true" />
+      <created>1745066370471</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1745066370471</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: 小说模块至此完结">
+      <option name="closed" value="true" />
+      <created>1745302345041</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1745302345041</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: 提交banner">
+      <option name="closed" value="true" />
+      <created>1745482233850</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1745482233850</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: 在线考试基本结构">
+      <option name="closed" value="true" />
+      <created>1745482797081</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1745482797081</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: 在线考试分类模块开发完成">
+      <option name="closed" value="true" />
+      <created>1745484153935</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1745484153936</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix: 修改了一些bug">
+      <option name="closed" value="true" />
+      <created>1745486109706</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1745486109706</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: 答题模块暂存">
+      <option name="closed" value="true" />
+      <created>1745488227518</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1745488227518</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat: xiaou-common-mapstruct集成">
+      <option name="closed" value="true" />
+      <created>1745488415628</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1745488415628</updated>
+    </task>
+    <task id="LOCAL-00035" summary="feat: exam模块单题添加">
+      <option name="closed" value="true" />
+      <created>1745489862540</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1745489862540</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat: exam模块批量删除+分页">
+      <option name="closed" value="true" />
+      <created>1745493096647</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1745493096647</updated>
+    </task>
+    <task id="LOCAL-00037" summary="feat: exam根据试题id获取单题详情">
+      <option name="closed" value="true" />
+      <created>1745546178730</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1745546178730</updated>
+    </task>
+    <task id="LOCAL-00038" summary="feat: exam修改试题">
+      <option name="closed" value="true" />
+      <created>1745546389953</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1745546389953</updated>
+    </task>
+    <task id="LOCAL-00039" summary="feat: question模块完成">
+      <option name="closed" value="true" />
+      <created>1745634219490</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1745634219490</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat: repo模块暂时添加">
+      <option name="closed" value="true" />
+      <created>1745643681424</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1745643681424</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fix: 修改了一些东西">
+      <option name="closed" value="true" />
+      <created>1745671835162</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1745671835162</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fix: 修改">
+      <option name="closed" value="true" />
+      <created>1746099805756</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1746099805756</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat: hot模块添加">
+      <option name="closed" value="true" />
+      <created>1746150005898</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1746150005898</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix: 修改端口号">
+      <option name="closed" value="true" />
+      <created>1746169554960</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1746169554960</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fix: 修改端口号">
+      <option name="closed" value="true" />
+      <created>1746169686432</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1746169686432</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="dd981d21-1378-4d7a-b734-d17455792554" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="dd981d21-1378-4d7a-b734-d17455792554">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="feat: 新增歌曲" />
+    <MESSAGE value="feat: xiaou-novel模块 作家后台接口" />
+    <MESSAGE value="feat: common模块集成xiaou-common-ai" />
+    <MESSAGE value="feat: 小说模块添加AI扩写，缩写，续写，润色等功能" />
+    <MESSAGE value="feat: 作家前台俩个接口" />
+    <MESSAGE value="fix(添加了一些判空): 作家前台俩个接口" />
+    <MESSAGE value="feat: 前台模块新增接口" />
+    <MESSAGE value="feat: 前台模块小说推荐" />
+    <MESSAGE value="feat: 小说模块至此完结" />
+    <MESSAGE value="feat: 提交banner" />
+    <MESSAGE value="feat: 在线考试基本结构" />
+    <MESSAGE value="feat: 在线考试分类模块开发完成" />
+    <MESSAGE value="fix: 修改了一些bug" />
+    <MESSAGE value="feat: 答题模块暂存" />
+    <MESSAGE value="feat: xiaou-common-mapstruct集成" />
+    <MESSAGE value="feat: exam模块单题添加" />
+    <MESSAGE value="feat: exam模块批量删除+分页" />
+    <MESSAGE value="feat: exam根据试题id获取单题详情" />
+    <MESSAGE value="feat: exam修改试题" />
+    <MESSAGE value="feat: question模块完成" />
+    <MESSAGE value="feat: repo模块暂时添加" />
+    <MESSAGE value="fix: 修改了一些东西" />
+    <MESSAGE value="fix: 修改" />
+    <MESSAGE value="feat: hot模块添加" />
+    <MESSAGE value="fix: 修改端口号" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 修改端口号" />
+  </component>
+</project>
