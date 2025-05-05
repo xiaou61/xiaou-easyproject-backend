@@ -1,7 +1,10 @@
 package com.xiaou.upload.service.impl;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.IdUtil;
+import com.aliyun.oss.OSS;
+import com.aliyun.oss.OSSClient;
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
 import com.qcloud.cos.auth.BasicCOSCredentials;
@@ -10,6 +13,7 @@ import com.qcloud.cos.model.PutObjectRequest;
 import com.qcloud.cos.region.Region;
 import com.qcloud.cos.transfer.TransferManager;
 import com.qcloud.cos.transfer.Upload;
+import com.xiaou.upload.config.AliOssProperties;
 import com.xiaou.upload.config.COSProperties;
 import com.xiaou.upload.config.OssProperties;
 import com.xiaou.upload.service.FileUploadService;
@@ -32,6 +36,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 
     @Resource
     private COSProperties cosProperties;
+
+    @Resource
+    private AliOssProperties aliOssProperties;
 
     @Value("${server.servlet.context-path}")
     private String contextPath;  // 自动获取context-path
@@ -105,5 +112,44 @@ public class FileUploadServiceImpl implements FileUploadService {
         } finally {
             cosClient.shutdown();
         }
+    }
+
+    @Override
+    public String uploadOSS(MultipartFile file) {
+        String endpoint = aliOssProperties.getEndpoint();
+        String accessKeyId = aliOssProperties.getKeyId();
+        String accessKeySecret = aliOssProperties.getKeySecret();
+        String bucketName = aliOssProperties.getBucketName();
+        String url = null;
+
+        //创建OSSClient实例。
+        OSS ossClient = new OSSClient(endpoint, accessKeyId, accessKeySecret);
+
+        //获取上传文件输入流
+        InputStream inputStream = null;
+        try {
+            inputStream = file.getInputStream();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //获取文件名称
+        String fileName = file.getOriginalFilename();
+
+        //保证文件名唯一，去掉uuid中的'-'
+        String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+        fileName = uuid + fileName;
+
+        //调用oss方法上传到阿里云
+        //第一个参数：Bucket名称
+        //第二个参数：上传到oss文件路径和文件名称
+        //第三个参数：上传文件输入流
+        ossClient.putObject(bucketName, fileName, inputStream);
+        //把上传后把文件url返回
+        url = "https://" + bucketName + "." + endpoint + "/" + fileName;
+        //关闭OSSClient
+        ossClient.shutdown();
+
+        return url;
+
     }
 }

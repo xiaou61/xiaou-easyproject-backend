@@ -13,4 +13,9 @@ public interface FileUploadService {
      * 腾讯云 COS 上传
      */
     String uploadCOS(MultipartFile file);
+
+    /**
+     * 阿里云 OSS 上传
+     */
+    String uploadOSS(MultipartFile file);
 }

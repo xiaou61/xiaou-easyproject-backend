@@ -55,4 +55,14 @@ public class UploadController {
 
     }
 
+    @PostMapping("/oss")
+    public R<String> uploadFileOss(@RequestParam("file") MultipartFile file) {
+        // 判断文件是否为空
+        if (file.getSize() == 0) {
+            return R.fail("文件为空");
+        }
+        String url = fileUploadService.uploadOSS(file);
+        return R.ok(url);
+    }
+
 }

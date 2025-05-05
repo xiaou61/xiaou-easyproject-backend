@@ -71,7 +71,7 @@ xiaou:
     access-prefix: /upload-files  # 访问文件的URL前缀
     service-host: http://localhost:8081  # 本地服务的host
 
-
+#腾讯云上传配置
 tencent:
   cos:
     secretId: xxx
@@ -79,3 +79,10 @@ tencent:
     region: ap-chengdu
     bucketName: 11-1305448902
     base-url: xxx
+#阿里云上传配置
+aliyun:
+  oss:
+    bucket-name: blogman
+    endpoint: oss-cn-beijing.aliyuncs.com
+    key-id: LTAI5tKcgLtNZSx2mi6tXY8z
+    key-secret: sQQRUPJEB3RFFgGnxxBOmHP4uiCuXQ
