@@ -71,3 +71,11 @@ xiaou:
     access-prefix: /upload-files  # 访问文件的URL前缀
     service-host: http://localhost:8081  # 本地服务的host
 
+
+tencent:
+  cos:
+    secretId: xxx
+    secretKey: xxx
+    region: ap-chengdu
+    bucketName: 11-1305448902
+    base-url: xxx

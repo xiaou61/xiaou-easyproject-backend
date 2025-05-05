@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="docs: 文档编写">
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/config/OssProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/LocalFileUploadServiceImpl.java" afterDir="false" />
+    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="docs: 本地文件上传">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/config/COSProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.cache/.Apifox_Helper/.toolWindow.db" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.cache/.Apifox_Helper/.toolWindow.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-admin/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xiaou-admin/src/main/java/com/xiaou/XiaouApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-admin/src/main/java/com/xiaou/XiaouApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xiaou-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-common/xiaou-common-web/src/main/java/com/xiaou/config/ApiPrefixConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-common/xiaou-common-web/src/main/java/com/xiaou/config/ApiPrefixConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/LocalFileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/LocalFileUploadServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +104,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.XiaouApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -280,7 +277,7 @@
       <workItem from="1746268175686" duration="14000" />
       <workItem from="1746322116679" duration="30000" />
       <workItem from="1746322796234" duration="600000" />
-      <workItem from="1746439493470" duration="3428000" />
+      <workItem from="1746439493470" duration="8579000" />
     </task>
     <task id="LOCAL-00001" summary="init 框架">
       <option name="closed" value="true" />
@@ -658,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746173863280</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="docs: 本地文件上传">
+      <option name="closed" value="true" />
+      <created>1746443220620</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1746443220620</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +708,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="feat: common模块集成xiaou-common-ai" />
     <MESSAGE value="feat: 小说模块添加AI扩写，缩写，续写，润色等功能" />
     <MESSAGE value="feat: 作家前台俩个接口" />
     <MESSAGE value="fix(添加了一些判空): 作家前台俩个接口" />
@@ -728,6 +732,7 @@
     <MESSAGE value="fix: 修改端口号" />
     <MESSAGE value="fix: hot模块" />
     <MESSAGE value="docs: 文档编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: 文档编写" />
+    <MESSAGE value="docs: 本地文件上传" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: 本地文件上传" />
   </component>
 </project>

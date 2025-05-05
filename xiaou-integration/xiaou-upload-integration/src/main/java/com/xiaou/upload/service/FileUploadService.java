@@ -4,7 +4,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface FileUploadService {
     /**
-     * 上传文件并返回可访问地址
+     * 本地上传
      */
     String uploadLocal(MultipartFile file);
+
+
+    /**
+     * 腾讯云 COS 上传
+     */
+    String uploadCOS(MultipartFile file);
 }
