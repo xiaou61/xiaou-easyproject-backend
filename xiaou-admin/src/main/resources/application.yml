@@ -62,3 +62,12 @@ minio:
   imgSize: 1024                           # 图片大小限制，单位：m
   fileSize: 1024                          # 文件大小限制，单位：m
   enable: false #是否开启
+
+
+#本地上传配置
+xiaou:
+  upload:
+    local-path: E:/ck/SXEasy-backend/upload  # 上传文件的本地路径
+    access-prefix: /upload-files  # 访问文件的URL前缀
+    service-host: http://localhost:8081  # 本地服务的host
+
