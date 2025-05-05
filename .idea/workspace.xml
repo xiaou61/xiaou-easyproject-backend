@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="docs: 集成cos腾讯">
-      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/config/AliOssProperties.java" afterDir="false" />
+    <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="docs: 集成oss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/FileUploadServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,15 +268,7 @@
       <workItem from="1746268175686" duration="14000" />
       <workItem from="1746322116679" duration="30000" />
       <workItem from="1746322796234" duration="600000" />
-      <workItem from="1746439493470" duration="10904000" />
-    </task>
-    <task id="LOCAL-00001" summary="init 框架">
-      <option name="closed" value="true" />
-      <created>1744709887165</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1744709887165</updated>
+      <workItem from="1746439493470" duration="11332000" />
     </task>
     <task id="LOCAL-00002" summary="文档">
       <option name="closed" value="true" />
@@ -668,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746449150586</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="docs: 集成oss">
+      <option name="closed" value="true" />
+      <created>1746451614779</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1746451614780</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +707,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="feat: 作家前台俩个接口" />
     <MESSAGE value="fix(添加了一些判空): 作家前台俩个接口" />
     <MESSAGE value="feat: 前台模块新增接口" />
     <MESSAGE value="feat: 前台模块小说推荐" />
@@ -738,6 +731,7 @@
     <MESSAGE value="docs: 文档编写" />
     <MESSAGE value="docs: 本地文件上传" />
     <MESSAGE value="docs: 集成cos腾讯" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: 集成cos腾讯" />
+    <MESSAGE value="docs: 集成oss" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: 集成oss" />
   </component>
 </project>

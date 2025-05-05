@@ -84,5 +84,5 @@ aliyun:
   oss:
     bucket-name: blogman
     endpoint: oss-cn-beijing.aliyuncs.com
-    key-id: LTAI5tKcgLtNZSx2mi6tXY8z
-    key-secret: sQQRUPJEB3RFFgGnxxBOmHP4uiCuXQ
+    key-id: xxx
+    key-secret: xxx
