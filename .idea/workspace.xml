@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccae00c2-430c-4b7b-9e61-4be4cebc494f" name="更改" comment="docs: 集成oss">
+      <change afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/config/ObsProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.cache/.Apifox_Helper/.toolWindow.db" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.cache/.Apifox_Helper/.toolWindow.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/FileUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaou-integration/xiaou-upload-integration/src/main/java/com/xiaou/upload/service/impl/FileUploadServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +117,8 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "com.itangcent.idea.plugin.configurable.rootConfigurable.apifox",
     "vue.rearranger.settings.migration": "true",
+    "应用程序.AttackGame (1).executor": "Run",
+    "应用程序.AttackGame.executor": "Run",
     "应用程序.MyBatisTest.executor": "Run"
   },
   "keyToStringList": {
@@ -142,9 +151,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.XiaouApplication">
-    <configuration name="MyBatisTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xiaou.MyBatisTest" />
-      <module name="xiaou-diy-mybatis" />
+    <configuration name="AttackGame (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xiaou.AttackGame" />
+      <module name="xiaou-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AttackGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xiaou.AttackGame" />
+      <module name="xiaou-admin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.xiaou.*" />
@@ -159,16 +181,6 @@
       <script-file value="$PROJECT_DIR$/sql/v0.0.1struct.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
-    </configuration>
-    <configuration name="BeanTest.testGetBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="xiaou-diy-spring" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BeanTest" />
-      <option name="METHOD_NAME" value="testGetBean" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="xiaou-admin-0.0.1.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/xiaou-admin/target/xiaou-admin-0.0.1.jar" />
@@ -203,10 +215,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.XiaouApplication" />
+        <item itemvalue="应用程序.AttackGame (1)" />
+        <item itemvalue="应用程序.AttackGame" />
         <item itemvalue="JAR 应用程序.xiaou-admin-0.0.1.jar" />
         <item itemvalue="数据库脚本.v0.0.1struct.sql" />
-        <item itemvalue="应用程序.MyBatisTest" />
-        <item itemvalue="JUnit.BeanTest.testGetBean" />
       </list>
     </recent_temporary>
   </component>
@@ -269,14 +281,8 @@
       <workItem from="1746322116679" duration="30000" />
       <workItem from="1746322796234" duration="600000" />
       <workItem from="1746439493470" duration="11332000" />
-    </task>
-    <task id="LOCAL-00002" summary="文档">
-      <option name="closed" value="true" />
-      <created>1744709966283</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1744709966283</updated>
+      <workItem from="1746451838006" duration="352000" />
+      <workItem from="1746519483766" duration="6632000" />
     </task>
     <task id="LOCAL-00003" summary="feat: index接口">
       <option name="closed" value="true" />
@@ -662,7 +668,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746451614780</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="docs: 集成oss">
+      <option name="closed" value="true" />
+      <created>1746451855966</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1746451855966</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,6 +690,11 @@
     </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="dd981d21-1378-4d7a-b734-d17455792554">
           <value>
             <State>

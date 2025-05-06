@@ -18,4 +18,9 @@ public interface FileUploadService {
      * 阿里云 OSS 上传
      */
     String uploadOSS(MultipartFile file);
+
+    /**
+     * 华为云 OBS 上传
+     */
+    String uploadOBS(MultipartFile file);
 }

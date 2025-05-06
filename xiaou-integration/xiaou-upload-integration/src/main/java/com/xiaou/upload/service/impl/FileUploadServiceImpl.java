@@ -5,6 +5,10 @@ import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.IdUtil;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClient;
+import com.obs.services.ObsClient;
+import com.obs.services.model.AccessControlList;
+import com.obs.services.model.PutObjectResult;
+import com.obs.services.model.PutObjectsRequest;
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
 import com.qcloud.cos.auth.BasicCOSCredentials;
@@ -15,8 +19,10 @@ import com.qcloud.cos.transfer.TransferManager;
 import com.qcloud.cos.transfer.Upload;
 import com.xiaou.upload.config.AliOssProperties;
 import com.xiaou.upload.config.COSProperties;
+import com.xiaou.upload.config.ObsProperties;
 import com.xiaou.upload.config.OssProperties;
 import com.xiaou.upload.service.FileUploadService;
+import com.xiaou.utils.R;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,6 +32,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 @Slf4j
 @Service
@@ -39,6 +48,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 
     @Resource
     private AliOssProperties aliOssProperties;
+
+    @Resource
+    private ObsProperties obsProperties;
 
     @Value("${server.servlet.context-path}")
     private String contextPath;  // 自动获取context-path
@@ -151,5 +163,44 @@ public class FileUploadServiceImpl implements FileUploadService {
 
         return url;
 
+    }
+
+    @Override
+    public String uploadOBS(MultipartFile file) {
+        String endpoint = obsProperties.getEndpoint();      // OBS终端节点
+        String accessKey = obsProperties.getAccessKey();    // Access Key
+        String secretKey = obsProperties.getSecretAccessKey();    // Secret Key
+        String bucketName = obsProperties.getBucketName();  // Bucket名称
+
+        // 创建OBS客户端
+        ObsClient obsClient = new ObsClient(accessKey, secretKey, endpoint);
+
+        try {
+            // 获取文件名并加上唯一标识符
+            String originalFileName = file.getOriginalFilename();
+            String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+            String objectKey = uuid + originalFileName;
+
+            // 创建临时文件
+            File tempFile = File.createTempFile("obs-temp", null);
+            Path tempPath = tempFile.toPath();
+            Files.copy(file.getInputStream(), tempPath, StandardCopyOption.REPLACE_EXISTING);
+            // 上传
+            PutObjectResult putObjectResult = obsClient.putObject(bucketName, objectKey, tempFile);
+            log.info(putObjectResult.getObjectUrl());
+            return putObjectResult.getObjectUrl();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("上传失败：" + e.getMessage());
+        } finally {
+            try {
+                obsClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return null;
     }
 }

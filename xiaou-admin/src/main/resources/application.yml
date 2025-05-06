@@ -86,3 +86,12 @@ aliyun:
     endpoint: oss-cn-beijing.aliyuncs.com
     key-id: xxx
     key-secret: xxx
+
+#华为云上传配置
+huawei:
+  obs:
+    endpoint: xxx
+    accessKey: xxx
+    secretAccessKey: xxx
+    bucketName: youtiao
+    expiration: 60
